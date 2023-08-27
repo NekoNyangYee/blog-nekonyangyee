@@ -95,7 +95,7 @@ const StyledPost = styled.div(({ theme }) => `
 
     & .post-container.grid-view {
         width: 100%;
-        
+
         & hr {
             display: none;
         }

@@ -2,7 +2,7 @@
 teaser: /my-blog-preview.jpg
 category: ✏️ 기타
 title: 나의 일상과 개발 관련 포스트를 올리는 곳
-date: 2023-08-25
+date: 2023-08-02
 description: 반갑습니다. 이 글은 Next.JS 프로젝트를 생성하고 처음 쓰는 글입니다.
 ---
 

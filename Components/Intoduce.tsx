@@ -10,6 +10,7 @@ const StyledIntroduceHeader = styled.div(({ theme }) => `
     & p {
         text-align: center;
         font-weight: bold;
+        font-size: 15px;
         color: ${theme.colors.text(90)};
     }
 `);
