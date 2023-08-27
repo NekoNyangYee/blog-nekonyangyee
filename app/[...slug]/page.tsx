@@ -5,6 +5,8 @@ import { format } from "date-fns";
 
 import { StyledPost } from "./style";
 import Giscus from "@/Components/Giscus";
+import ScrollProgressBar from "@/Components/ScrollProgressBar";
+import ContentHeader from "@/Components/ContentHeader";
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ params: { slug: post._raw.flattenedPath.split('/') } }))
 
@@ -47,6 +49,8 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
 
     return (
         <StyledPost>
+            <ContentHeader {...post} />
+            <ScrollProgressBar />
             <div className="post-container">
                 <article>
                     <h1 className="post-title">{post.title}</h1>
