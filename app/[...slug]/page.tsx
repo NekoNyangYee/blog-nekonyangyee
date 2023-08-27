@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { format } from "date-fns";
 
 import { StyledPost } from "./style";
+import Giscus from "@/Components/Giscus";
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ params: { slug: post._raw.flattenedPath.split('/') } }))
 
@@ -53,6 +54,7 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
                     <span> | {post.category}</span>
                     <hr />
                     <Content />
+                    <Giscus />
                 </article>
             </div>
         </StyledPost>
