@@ -3,6 +3,7 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Introduce } from "./Intoduce";
 
 const StyledFlexContainer = styled.div(() => `
     &.nav-container {
@@ -549,6 +550,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
 
             <StyledArticleContainer>
                 <StyledPost>
+                    <Introduce />
                     <h1 className="page-title-mobile">카테고리</h1>
                     <div className="category-container-moblie">
                         {categories.map(category => (
