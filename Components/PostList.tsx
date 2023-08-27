@@ -139,6 +139,7 @@ const StyledPost = styled.div(({ theme }) => `
             font-weight: bold;
             color: ${theme.colors.text()};
             word-break: break-all;
+            margin: 0;
 
             @media (max-width: 1272px) {
                 font-size: 15px;
@@ -406,6 +407,29 @@ const SortCategory = styled.div(({ theme }) => `
     }
 `);
 
+const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => `
+    background-color: ${copied ? theme.colors.copiedButtonBackground(90) : theme.colors.white()};
+    color: ${copied ? theme.colors.buttonText() : theme.colors.black()};
+    border: 1px solid #ccc;
+    font-size: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+
+    & span {
+        color: ${copied ? theme.colors.white() : theme.colors.black()};
+    }
+
+    & path {
+        width: 100%;
+        fill: ${copied ? theme.colors.white() : theme.colors.black()};
+        transform: ;msFilter:;
+        stroke: ${copied ? theme.colors.white() : theme.colors.black()};
+    }
+`);
+
 export interface Post {
     _id: any;
     url: string;
@@ -414,6 +438,10 @@ export interface Post {
     category: string;
     description: string;
     date: string;
+}
+
+interface CopyUrlButtonProps {
+    url: string;
 }
 
 const PostList = ({ allPosts }: { allPosts: any }) => {
@@ -602,8 +630,8 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     <div className={`post-container ${viewMode === "list" ? "list-view" : "grid-view"}`}>
                         {paginatedPosts.map((post: Post) => (
                             <>
-                                <Link href={post.url} key={post._id} prefetch={false}>
-                                    <article key={post._id}>
+                                <article key={post._id}>
+                                    <Link href={post.url} key={post._id} prefetch={false}>
                                         <div className="description-area">
                                             <img src={post.teaser} alt={post.title} />
                                             <div>
@@ -612,9 +640,9 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                             </div>
                                         </div>
                                         <p className="post-description">{post.description}</p>
-                                    </article>
-                                </Link>
-                                <hr key={`hr-${post._id}`} />
+                                    </Link>
+                                </article>
+                                <hr className="post-divider" />
                             </>
                         ))}
                     </div>

@@ -21,14 +21,16 @@ const light = {
     text: common.black,
     background: common.white,
     buttonText: common.white,
-    buttonBackground: common.blue
+    buttonBackground: common.blue,
+    copiedButtonBackground: common.green
 };
 
 const dark = {
     text: common.white,
     background: common.black,
     buttonText: common.white,
-    buttonBackground: common.blue
+    buttonBackground: common.blue,
+    copiedButtonBackground: common.green
 };
 
 const colors = { dark, light, common };

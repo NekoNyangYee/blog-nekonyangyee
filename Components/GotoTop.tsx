@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const StyledGoToTop = styled.div<{ topscrolled: boolean }>(({ theme, topscrolled }) => `
     display: block;
     position: fixed;
-    bottom: 14%;
+    bottom: 20%;
     right: ${topscrolled ? "80px" : "-50%"};
     transition: all .3s;
     transform: translate(${topscrolled ? "50%" : 0}, 0);
