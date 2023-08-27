@@ -14,7 +14,7 @@ const StyledGoToTop = styled.div<{ topscrolled: boolean }>(({ theme, topscrolled
     z-index: 30;
 
     @media (max-width: 872px) {
-        bottom: 28%;
+        bottom: 20%;
     }
 
     & button {

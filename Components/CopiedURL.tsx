@@ -7,7 +7,7 @@ import { Post } from "./PostList";
 const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => `
     width: 100%;
     position: sticky;
-    bottom: 40px;
+    bottom: 20px;
     background-color: ${copied ? theme.colors.copiedButtonBackground(70) : theme.colors.buttonBackground(80)};
     color: ${copied ? theme.colors.buttonText() : theme.colors.black()};
     font-size: 14px;
