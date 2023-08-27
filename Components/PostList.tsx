@@ -251,7 +251,7 @@ const StyledPost = styled.div(({ theme }) => `
             color: ${theme.colors.text(80)};
         }
 
-        p {
+        & p {
             margin-bottom: 0;
         }   
     }
