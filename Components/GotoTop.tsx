@@ -6,12 +6,16 @@ import { useEffect, useState } from "react";
 const StyledGoToTop = styled.div<{ topscrolled: boolean }>(({ theme, topscrolled }) => `
     display: block;
     position: fixed;
-    bottom: 20%;
+    bottom: 15%;
     right: ${topscrolled ? "80px" : "-50%"};
     transition: all .3s;
     transform: translate(${topscrolled ? "50%" : 0}, 0);
     transform-origin: center;
     z-index: 30;
+
+    @media (max-width: 872px) {
+        bottom: 28%;
+    }
 
     & button {
         position: fixed;
