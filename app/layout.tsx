@@ -25,7 +25,6 @@ export default function RootLayout({
       <ThemeProvider>
         <body className={inter.className}>
           {children}
-          <Header />
           <GotoTop />
           <Footer />
         </body>
