@@ -96,8 +96,31 @@ const StyledPost = styled.div(({ theme }) => `
     & .post-container.grid-view {
         width: 100%;
 
-        & hr {
-            display: none;
+        & .post-main-title {
+            display: block;
+            font-size: 18px;
+            word-break: break-all;
+            margin: 0;
+
+            @media (max-width: 1272px) {
+                font-size: 15px;
+            }
+            
+            @media (max-width: 672px) {
+                font-size: 17px;
+            }
+        }
+
+        & .article-container {
+            border: 1px solid ${theme.colors.text(10)};
+            border-radius: 12px;
+            margin: 6px 0;
+            overflow: hidden;
+            padding: 0;
+
+            & .article-info {
+                padding: 16px;
+            }
         }
     }
 
@@ -107,10 +130,11 @@ const StyledPost = styled.div(({ theme }) => `
         gap: 0;
 
         & img {
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
+            width: 120px;
+            height: 120px;
             object-fit: cover;
+            display: flex;
+            align-items: center;
         }
 
         & article {
@@ -126,27 +150,38 @@ const StyledPost = styled.div(({ theme }) => `
             display: none;
         }
 
-        hr {
-            height: 1px;
-            background-color: ${theme.colors.text(10)};
-            border: none;
-            margin: 0;
-        }
-
         & .post-main-title {
             display: block;
+            max-width: 100%;
             font-size: 18px;
             font-weight: bold;
             color: ${theme.colors.text()};
             word-break: break-all;
             margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
-            @media (max-width: 1272px) {
+            @media (max-width: 1572px) {
                 font-size: 15px;
+                max-width: 400px;
+            }
+
+            @media (max-width: 1372px) {
+                font-size: 15px;
+                max-width: 400px;
             }
             
-            @media (max-width: 672px) {
+            @media (max-width: 932px) {
                 font-size: 17px;
+                max-width: 200px;
+            }
+        }
+
+        & .article-container {
+
+            & .article-info {
+                padding: 8px 0;
             }
         }
     }
@@ -183,7 +218,6 @@ const StyledPost = styled.div(({ theme }) => `
         justify-content: space-between;
         margin: 20px 0 10px 0;
         padding: 12px 0 12px 0;
-        background-color: ${theme.colors.background(100)};
        
         & button {
             background-color: ${theme.colors.background(100)};
@@ -236,7 +270,6 @@ const StyledPost = styled.div(({ theme }) => `
     } 
     
     & article {
-        margin: 12px 0;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -245,7 +278,6 @@ const StyledPost = styled.div(({ theme }) => `
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 12px;
         }
 
         .post-description {
@@ -253,7 +285,8 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         & p {
-            margin-bottom: 0;
+            margin: 8px 0;
+            color: ${theme.colors.text(80)};
         }   
     }
 
@@ -307,7 +340,6 @@ const StyledPost = styled.div(({ theme }) => `
     }
 
     & .page-numbers {
-
         & button {
             margin: 0 6px;
             padding: 12px 17px;
@@ -316,6 +348,25 @@ const StyledPost = styled.div(({ theme }) => `
             cursor: pointer;
             font-weight: normal;
         }
+    }
+
+    & .article-container {
+        border: 1px solid ${theme.colors.text(10)};
+        border-radius: 12px;
+        margin: 6px 0;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    & .category-state {
+        display: inline-block;
+        font-weight: bold;
+        background-color: ${theme.colors.blue(80)};
+        border-radius: 10px;
+        padding: 8px;
+        font-size: 11px;
+        margin: 0 0 12px 0;
+        color: ${theme.colors.white()};
     }
 `);
 
@@ -329,9 +380,9 @@ const StyledCategory = styled.div(({ theme }) => `
         font-size: 14px;
         color: ${theme.colors.text()};
         border: none;
-        background-color: ${theme.colors.background(100)};
         transition: all .1s;
         cursor: pointer;
+        background-color: ${theme.colors.background(100)};
     }
 
     & .active {
@@ -344,11 +395,11 @@ const StyledCategory = styled.div(({ theme }) => `
 
 const StyledInput = styled.input(({ theme }) => `
     width: 100%;
-    font-size: 15px;
-    padding: 15px;
-    border: 1px solid ${theme.colors.text(10)};
+    font-size: 13px;
+    padding: 10px;
+    border: none;
     border-radius: 12px;
-    background-color: ${theme.colors.background(10)};
+    background-color: ${theme.colors.gray(10)};
 
     @media (max-width: 572px) {
         width: 100%;
@@ -385,8 +436,6 @@ const SortCategory = styled.div(({ theme }) => `
         transition: background-color 0.3s ease;
     }
 
-    
-
     & .option-name {
         font-size: 14px;
         background-color: ${theme.colors.background(100)};
@@ -407,29 +456,6 @@ const SortCategory = styled.div(({ theme }) => `
     }
 `);
 
-const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => `
-    background-color: ${copied ? theme.colors.copiedButtonBackground(90) : theme.colors.white()};
-    color: ${copied ? theme.colors.buttonText() : theme.colors.black()};
-    border: 1px solid #ccc;
-    font-size: 12px;
-    padding: 5px 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    border-radius: 12px;
-
-    & span {
-        color: ${copied ? theme.colors.white() : theme.colors.black()};
-    }
-
-    & path {
-        width: 100%;
-        fill: ${copied ? theme.colors.white() : theme.colors.black()};
-        transform: ;msFilter:;
-        stroke: ${copied ? theme.colors.white() : theme.colors.black()};
-    }
-`);
-
 export interface Post {
     _id: any;
     url: string;
@@ -438,10 +464,6 @@ export interface Post {
     category: string;
     description: string;
     date: string;
-}
-
-interface CopyUrlButtonProps {
-    url: string;
 }
 
 const PostList = ({ allPosts }: { allPosts: any }) => {
@@ -477,7 +499,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     };
 
     const categories: { title: string; keyword: string }[] = [
-        { title: "📄전체", keyword: "" },
+        { title: "📄 전체", keyword: "" },
         { title: "💻 개발 일기", keyword: "💻 개발 일기" },
         { title: "✅ 이것저것 리뷰", keyword: "✅ 이것저것 리뷰" },
         { title: "😄 나의 일상", keyword: "😄 나의 일상" },
@@ -528,7 +550,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                 <StyledCategory>
                     <StyledInput
                         type="search"
-                        placeholder="검색"
+                        placeholder="키워드 검색..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -599,7 +621,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
                     <div className="select-category">
-                        <p>{selectCategory === "" ? "전체" : `${selectCategory}`} ({Posts.length})</p>
+                        <p>{selectCategory === "" ? "📄 전체" : `${selectCategory}`} ({Posts.length})</p>
                         <SortCategory>
                             <button onClick={toggleViewMode}>{viewMode === 'grid' ? <svg xmlns="http://www.w3.org/2000/svg" width="33" height="34" viewBox="0 0 33 34" fill="none">
                                 <rect x="1" y="1" width="13" height="13" rx="3" stroke="black" strokeWidth="2" />
@@ -629,21 +651,21 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     </div>
                     <div className={`post-container ${viewMode === "list" ? "list-view" : "grid-view"}`}>
                         {paginatedPosts.map((post: Post) => (
-                            <>
-                                <article key={post._id}>
-                                    <Link href={post.url} key={post._id} prefetch={false}>
+                            <div className="article-container">
+                                <Link href={post.url} key={post._id} prefetch={false}>
+                                    <article key={post._id}>
                                         <div className="description-area">
                                             <img src={post.teaser} alt={post.title} />
-                                            <div>
+                                            <div className="article-info">
+                                                <p className="category-state">{post.category}</p>
                                                 <h1 className="post-main-title">{post.title}</h1>
-                                                <p>{post.date.slice(0, 10)} | {post.category}</p>
+                                                <p>{post.date.slice(0, 10)}</p>
+                                                <p className="post-description">{post.description}</p>
                                             </div>
                                         </div>
-                                        <p className="post-description">{post.description}</p>
-                                    </Link>
-                                </article>
-                                <hr className="post-divider" />
-                            </>
+                                    </article>
+                                </Link>
+                            </div>
                         ))}
                     </div>
                     <div className="pagination-controls">

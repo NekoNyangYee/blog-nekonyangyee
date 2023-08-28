@@ -9,7 +9,7 @@ const global = (theme: Theme) => css`
     font-size: 14px;
     background-color: ${theme.colors.background(100)};
     ${theme.isChanging &&
-    `
+  `
       transition: background-color 0.3s, color 0.3s;
       will-change: background-color, color;
     `}
@@ -25,7 +25,7 @@ const global = (theme: Theme) => css`
     font-family: var(--font);
     box-sizing: border-box;
     &:focus-visible {
-      outline: 1px dashed ${theme.colors.text(10)};
+      outline: none;
       outline-offset: 4px;
     }
   }
