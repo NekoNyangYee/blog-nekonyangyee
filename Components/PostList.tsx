@@ -132,7 +132,7 @@ const StyledPost = styled.div(({ theme }) => `
 
         & img {
             width: 120px;
-            height: 120px;
+            height: auto;
             object-fit: cover;
             display: flex;
             align-items: center;
@@ -313,6 +313,7 @@ const StyledPost = styled.div(({ theme }) => `
         gap: 14px;
         margin: 20px 0 20px 0;
         overflow-x: auto;
+        
         @media (min-width: 672px) {
             display: none;
         }
