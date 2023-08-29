@@ -65,10 +65,21 @@ export const StyledPost = styled.main(({ theme }) => `
       }
     
       & .post-title {
-        margin-bottom: 15px;
+        margin: 10px 0;
         font-size: 30px;
         font-weight: bold; 
       }
+
+      & .category-state {
+        display: inline-block;
+        font-weight: bold;
+        background-color: ${theme.colors.blue(80)};
+        border-radius: 10px;
+        padding: 8px;
+        font-size: 11px;
+        margin: 0;
+        color: ${theme.colors.white()};
+    }
 
       & hr {
         border-color: ${theme.colors.text(10)};
@@ -92,27 +103,18 @@ export const StyledPost = styled.main(({ theme }) => `
         border-radius: 4px;
         padding: 2px 4px;
         background-color: ${theme.colors.text(10)};
-        transition: background-color 0.3s
+        transition: background-color 0.3s;
       }
 
-      & div[data-rehype-pretty-code-fragment] {
-        font-family: var(--font);
-        width: 100%;
-        vertical-align: baseline;
-        border-radius: 8px;
-        background-color: ${theme.colors.text(10)};
-        word-break: break-all;
+      & pre {
+        padding: 1rem;
+        overflow: auto;
+        border-radius: 12px;
 
-        & pre {
-          margin: 1.5rem;
-          padding: 1rem;
-          overflow: auto;
-
-          & code {
-            border-radius: none;
-            padding: 0;
-            background-color: transparent;
-          }
+        & code {
+          border-radius: none;
+          padding: 0;
+          background-color: transparent;
         }
       }
     }

@@ -33,6 +33,7 @@ const NavContainer = styled.div(({ theme }) => `
     flex-direction: column;
     gap: 10px;
     padding: 0 15px 0 0;
+    background-color: ${theme.colors.background(100)};
     
 
     & svg {
@@ -107,7 +108,7 @@ const StyledPost = styled.div(({ theme }) => `
             }
             
             @media (max-width: 672px) {
-                font-size: 17px;
+                font-size: 20px;
             }
         }
 
@@ -164,7 +165,7 @@ const StyledPost = styled.div(({ theme }) => `
 
             @media (max-width: 1572px) {
                 font-size: 15px;
-                max-width: 400px;
+                max-width: 500px;
             }
 
             @media (max-width: 1372px) {
@@ -174,6 +175,11 @@ const StyledPost = styled.div(({ theme }) => `
             
             @media (max-width: 932px) {
                 font-size: 17px;
+                max-width: 250px;
+            }
+
+            @media (max-width: 932px) {
+                font-size: 17px;
                 max-width: 200px;
             }
         }
@@ -181,7 +187,7 @@ const StyledPost = styled.div(({ theme }) => `
         & .article-container {
 
             & .article-info {
-                padding: 8px 0;
+                padding: 10px 0;
             }
         }
     }
@@ -192,11 +198,12 @@ const StyledPost = styled.div(({ theme }) => `
     } 
     
     & input {
-            font-size: 15px;
-            padding: 15px;
-            border: 1px solid ${theme.colors.text(10)};
-            border-radius: 12px;
-            background-color: ${theme.colors.background(10)};
+        width: 100%;
+        font-size: 13px;
+        padding: 14px;
+        border: none;
+        border-radius: 12px;
+        background-color: ${theme.colors.gray(10)};
 
             @media (max-width: 972px) {
                 width: 50%;
@@ -249,6 +256,7 @@ const StyledPost = styled.div(({ theme }) => `
             font-weight: bold;
             color: ${theme.colors.buttonText()};
             background-color: ${theme.colors.buttonBackground(100)};
+            cursor: pointer;
         }
 
         & .active {
@@ -260,7 +268,7 @@ const StyledPost = styled.div(({ theme }) => `
         & button[disabled] {
             font-weight: normal;
             background-color: ${theme.colors.buttonBackground(60)};
-            display: none;
+            visibility: hidden;
         }
 
         & span {
@@ -305,11 +313,6 @@ const StyledPost = styled.div(({ theme }) => `
         gap: 14px;
         margin: 20px 0 20px 0;
         overflow-x: auto;
-        
-        & .category-container::-webkit-scrollbar {
-            display: none; 
-        }
-
         @media (min-width: 672px) {
             display: none;
         }
@@ -339,11 +342,16 @@ const StyledPost = styled.div(({ theme }) => `
         }
     }
 
+    & .category-container::-webkit-scrollbar {
+        display: none; 
+    }
+
     & .page-numbers {
         & button {
             margin: 0 6px;
             padding: 12px 17px;
             background: none;
+            border: 1px solid ${theme.colors.text(10)};
             color: ${theme.colors.text()};
             cursor: pointer;
             font-weight: normal;
@@ -365,7 +373,7 @@ const StyledPost = styled.div(({ theme }) => `
         border-radius: 10px;
         padding: 8px;
         font-size: 11px;
-        margin: 0 0 12px 0;
+        margin: 8px 0;
         color: ${theme.colors.white()};
     }
 `);
@@ -396,7 +404,7 @@ const StyledCategory = styled.div(({ theme }) => `
 const StyledInput = styled.input(({ theme }) => `
     width: 100%;
     font-size: 13px;
-    padding: 10px;
+    padding: 14px;
     border: none;
     border-radius: 12px;
     background-color: ${theme.colors.gray(10)};
@@ -501,6 +509,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     const categories: { title: string; keyword: string }[] = [
         { title: "📄 전체", keyword: "" },
         { title: "💻 개발 일기", keyword: "💻 개발 일기" },
+        { title: "⌨️ 프로그래머스", keyword: "⌨️ 프로그래머스" },
         { title: "✅ 이것저것 리뷰", keyword: "✅ 이것저것 리뷰" },
         { title: "😄 나의 일상", keyword: "😄 나의 일상" },
         { title: "✏️ 기타", keyword: "✏️ 기타" }
@@ -603,7 +612,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     <Introduce />
                     <h1 className="page-title-mobile">카테고리</h1>
                     <div className="category-container-moblie">
-                        {categories.map(category => (
+                        {categories.map((category) => (
                             <button
                                 type="button"
                                 onClick={() => setSelectCategory(category.keyword)}
@@ -616,7 +625,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     </div>
                     <input
                         type="search"
-                        placeholder="검색"
+                        placeholder="키워드 검색..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />

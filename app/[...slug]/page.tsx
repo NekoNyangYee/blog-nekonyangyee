@@ -54,9 +54,9 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
             <ScrollProgressBar />
             <div className="post-container">
                 <article>
+                    <p className="category-state">{post.category}</p>
                     <h1 className="post-title">{post.title}</h1>
-                    <time dateTime={post.date}>{format(new Date(post.date), "yyyy-MM-dd")}</time>
-                    <span> | {post.category}</span>
+                    <time dateTime={post.date}>게시 날짜: {format(new Date(post.date), "yyyy-MM-dd")}</time>
                     <hr />
                     <Content />
                     <CopiedUrl url={post} />
