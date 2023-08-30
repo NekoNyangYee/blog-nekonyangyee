@@ -131,8 +131,8 @@ const StyledPost = styled.div(({ theme }) => `
         gap: 0;
 
         & img {
-            width: 120px;
-            height: auto;
+            width: 130px;
+            height: 130px;
             object-fit: cover;
             display: flex;
             align-items: center;
@@ -423,33 +423,6 @@ const SortCategory = styled.div(({ theme }) => `
     & .select-container {
         position: relative;
     }
-        
-    & .select-options {
-        font-size: 14px;
-        padding: 10px 15px;
-        border-radius: 12px;
-        -webkit-border-radius: 12px;
-        background-color: ${theme.colors.background(100)};
-        -webkit-background-color: ${theme.colors.background(100)};
-        color: ${theme.colors.text(80)};
-        -webkit-color: ${theme.colors.text(80)};
-        border: 1px solid ${theme.colors.text(10)};
-        -webkit-border: 1px solid ${theme.colors.text(10)};
-        font-weight: bold;
-        appearance: none; 
-        -webkit-appearance: none;
-        cursor: pointer;
-        background-size: 15px 15px;
-        text-align: center;
-        margin: 0 0 0 10px;
-        transition: background-color 0.3s ease;
-    }
-
-    & .option-name {
-        font-size: 14px;
-        background-color: ${theme.colors.background(100)};
-        color: ${theme.colors.text(80)};
-    }
 
     & svg {
         position: relative;
@@ -479,8 +452,8 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     const [selectCategory, setSelectCategory] = useState<string>("");
     const [sortBy, setSortBy] = useState<string>("newest");
     const [searchTerm, setSearchTerm] = useState<string>("");
-    const [page, setPage] = useState(1);
-    const [viewMode, setViewMode] = useState('grid');
+    const [page, setPage] = useState<number>(1);
+    const [viewMode, setViewMode] = useState<string>('grid');
 
     useEffect(() => {
         const pageToTop = () => {
@@ -646,17 +619,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                 <rect x="0.5" y="29.5" width="32" height="1" rx="0.5" stroke="black" strokeLinejoin="round" />
                             </svg>}
                             </button>
-                            <select
-                                value={sortBy}
-                                onChange={(e) => setSortBy(e.target.value)}
-                                className="select-options"
-                            >
-                                {sortOptions.map((option) => (
-                                    <option key={option.value} value={option.value} className="option-name">
-                                        {option.label}
-                                    </option>
-                                ))}
-                            </select>
                         </SortCategory>
                     </div>
                     <div className={`post-container ${viewMode === "list" ? "list-view" : "grid-view"}`}>

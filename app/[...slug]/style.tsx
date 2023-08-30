@@ -81,6 +81,49 @@ export const StyledPost = styled.main(({ theme }) => `
         color: ${theme.colors.white()};
     }
 
+    & .next-prev-container {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      border: 1px solid ${theme.colors.text(10)};
+      border-radius: 12px;
+      font-size: 12px;
+      color: ${theme.colors.gray()};
+      gap: 20px;
+      font-weight: normal;
+
+      @media (max-width: 672px) {
+        padding: 16px;
+      }
+
+      & img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+
+        @media (max-width: 672px) {
+          display: none;
+        }
+      }
+
+      & p {
+        margin: 0;
+        color: ${theme.colors.text()};
+        word-break: break-all;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  
+  & a {
+    text-decoration: none;
+    color: ${theme.colors.text()};
+    font-size: 18px;
+    font-weight: bold;
+  }
+    }
+
       & hr {
         border-color: ${theme.colors.text(10)};
         margin: 15px 0;
@@ -120,3 +163,45 @@ export const StyledPost = styled.main(({ theme }) => `
     }
   }
 `)
+
+export const PreviousPostContainer = styled.div(({ theme }) => `
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  & img {
+    width: 100px; /* 이미지 너비 조정 */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  & a {
+    text-decoration: none;
+    color: ${theme.colors.text()};
+    font-size: 18px;
+    font-weight: bold;
+  }
+`);
+
+export const NextPostContainer = styled.div(({ theme }) => `
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+  & img {
+    width: 100px; /* 이미지 너비 조정 */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: 20px;
+  }
+  
+  & a {
+    text-decoration: none;
+    color: ${theme.colors.text()};
+    font-size: 18px;
+    font-weight: bold;
+  }
+`);
