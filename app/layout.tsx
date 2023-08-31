@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: "NekoNyangYee Blog",
-  description: "새로운 것을 즐기고, 변화를 만들고",
+  description: "나만의 작은 일기",
   openGraph: {
     type: "website",
     url: "https://blog-nekonyangyee.vercel.app",
