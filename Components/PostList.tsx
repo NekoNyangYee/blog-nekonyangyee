@@ -450,7 +450,6 @@ export interface Post {
 
 const PostList = ({ allPosts }: { allPosts: any }) => {
     const [selectCategory, setSelectCategory] = useState<string>("");
-    const [sortBy, setSortBy] = useState<string>("newest");
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [page, setPage] = useState<number>(1);
     const [viewMode, setViewMode] = useState<string>('grid');
@@ -495,11 +494,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     ];
 
     const Posts = allPosts
-        .sort((a: { date: Date }, b: { date: Date }) =>
-            sortBy === "newest"
-                ? Number(new Date(b.date)) - Number(new Date(a.date))
-                : Number(new Date(a.date)) - Number(new Date(b.date))
-        )
+        .sort((a: { date: Date }, b: { date: Date }) => Number(new Date(b.date)) - Number(new Date(a.date)))
         .filter((post: { category: string | string[] }) =>
             selectCategory ? post.category.includes(selectCategory) : true
         )
