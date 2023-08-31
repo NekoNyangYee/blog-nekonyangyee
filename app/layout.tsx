@@ -1,9 +1,12 @@
-import { Inter } from 'next/font/google'
+import { Noto_Sans_KR } from "next/font/google";
 import ThemeProvider from '../theme/theme';
 import GotoTop from '@/Components/GotoTop';
 import Footer from '@/Components/Footer';
 
-const inter = Inter({ subsets: ['latin'] })
+const noto_sans_kr = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+})
 
 export const metadata = {
   title: "NekoNyangYee Blog",
@@ -37,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <ThemeProvider>
-        <body className={inter.className}>
+        <body className={noto_sans_kr.className}>
           {children}
           <GotoTop />
           <Footer />
