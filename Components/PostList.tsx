@@ -15,11 +15,11 @@ const StyledFlexContainer = styled.div(() => `
 const StyledArticleContainer = styled.div(() => `
     width: 100%;
     margin: 0 40px 0 40px;
-    margin-left: 320px; /* 네비게이션의 너비 + 간격 만큼 떨어진 오른쪽 */
+    margin-left: 320px;
     max-width: calc(100% - 320px);
     
     @media (max-width: 672px) {
-        margin: 0; /* 컨테이너의 좌우 마진 제거 */
+        margin: 0;
         max-width: 100%;
     }
 `);
@@ -115,7 +115,6 @@ const StyledPost = styled.div(({ theme }) => `
         & .article-container {
             border: 1px solid ${theme.colors.text(10)};
             border-radius: 12px;
-            margin: 6px 0;
             overflow: hidden;
             padding: 0;
 
@@ -131,11 +130,14 @@ const StyledPost = styled.div(({ theme }) => `
         gap: 0;
 
         & img {
-            width: 130px;
-            height: 130px;
+            display: block;
+            width: 110px;
+            height: 110px;
             object-fit: cover;
             display: flex;
             align-items: center;
+            margin: 20px 10px;
+            border-radius: 12px;
         }
 
         & article {
@@ -165,7 +167,7 @@ const StyledPost = styled.div(({ theme }) => `
 
             @media (max-width: 1572px) {
                 font-size: 15px;
-                max-width: 500px;
+                max-width: 100%;
             }
 
             @media (max-width: 1372px) {
@@ -185,7 +187,7 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         & .article-container {
-
+            margin: 6px 0;
             & .article-info {
                 padding: 10px 0;
             }
@@ -319,7 +321,6 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         & button {
-            width: auto;
             padding: 12px;
             display: flex;
             border-radius: 12px;
@@ -362,7 +363,6 @@ const StyledPost = styled.div(({ theme }) => `
     & .article-container {
         border: 1px solid ${theme.colors.text(10)};
         border-radius: 12px;
-        margin: 6px 0;
         overflow: hidden;
         padding: 0;
     }
@@ -395,10 +395,9 @@ const StyledCategory = styled.div(({ theme }) => `
     }
 
     & .active {
-        border: none;
         font-weight: bold;
         color: ${theme.colors.buttonText()};
-        background-color: ${theme.colors.buttonBackground(100)};
+        background-color: ${theme.colors.buttonBackground(90)};
     }
 `);
 
@@ -486,11 +485,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         { title: "✅ 이것저것 리뷰", keyword: "✅ 이것저것 리뷰" },
         { title: "😄 나의 일상", keyword: "😄 나의 일상" },
         { title: "✏️ 기타", keyword: "✏️ 기타" }
-    ];
-
-    const sortOptions = [
-        { value: "newest", label: "최신순" },
-        { value: "oldest", label: "오래된순" }
     ];
 
     const Posts = allPosts

@@ -9,14 +9,14 @@ const noto_sans_kr = Noto_Sans_KR({
 })
 
 export const metadata = {
-  title: "NekoNyangYee Blog",
+  title: "Neko Blog",
   description: "나만의 작은 일기",
   openGraph: {
     type: "website",
     url: "https://blog-nekonyangyee.vercel.app",
-    title: "NekoNyangYee Blog",
+    title: "Neko Blog",
     description: "나만의 작은 일기",
-    siteName: "NekoNyangYee Blog",
+    siteName: "Neko Blog",
     images: [{
       url: "/opengraph.png",
     }],
@@ -24,7 +24,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "https://blog-nekonyangyee.vercel.app",
-    title: "NekoNyangYee Blog",
+    title: "Neko Blog",
     description: "나만의 작은 일기",
     images: [{
       url: "/opengraph.png",

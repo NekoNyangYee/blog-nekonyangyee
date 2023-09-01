@@ -91,6 +91,7 @@ export const StyledPost = styled.main(({ theme }) => `
       color: ${theme.colors.gray()};
       gap: 20px;
       font-weight: normal;
+      overflow: hidden;
 
       @media (max-width: 672px) {
         padding: 16px;
@@ -118,7 +119,7 @@ export const StyledPost = styled.main(({ theme }) => `
   
   & a {
     text-decoration: none;
-    color: ${theme.colors.text()};
+    color: ${theme.colors.blue(80)};
     font-size: 18px;
     font-weight: bold;
   }
@@ -163,45 +164,3 @@ export const StyledPost = styled.main(({ theme }) => `
     }
   }
 `)
-
-export const PreviousPostContainer = styled.div(({ theme }) => `
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-
-  & img {
-    width: 100px; /* 이미지 너비 조정 */
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
-  }
-  
-  & a {
-    text-decoration: none;
-    color: ${theme.colors.text()};
-    font-size: 18px;
-    font-weight: bold;
-  }
-`);
-
-export const NextPostContainer = styled.div(({ theme }) => `
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-
-  & img {
-    width: 100px; /* 이미지 너비 조정 */
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-left: 20px;
-  }
-  
-  & a {
-    text-decoration: none;
-    color: ${theme.colors.text()};
-    font-size: 18px;
-    font-weight: bold;
-  }
-`);

@@ -10,7 +10,6 @@ import ScrollProgressBar from "@/Components/ScrollProgressBar";
 import ContentHeader from "@/Components/ContentHeader";
 import CopiedUrl from "@/Components/CopiedURL";
 
-
 export const generateStaticParams = async () => allPosts.map((post) => ({ params: { slug: post._raw.flattenedPath.split('/') } }))
 
 export const generateMetadata = ({ params }: { params: { slug: string[] } }) => {

@@ -10,5 +10,6 @@ import myBlogErrorMd from './my-blog-error.md.json' assert { type: 'json' }
 import myFirstBlogMd from './my-first-blog.md.json' assert { type: 'json' }
 import myTravelGangneungMd from './my-travel-gangneung.md.json' assert { type: 'json' }
 import reactUseeffectHookMd from './react-useeffect-hook.md.json' assert { type: 'json' }
+import myBlogWithContentlayerMd from './my-blog-with-contentlayer.md.json' assert { type: 'json' }
 
-export const allPosts = [appleStoreReviewMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myFirstBlogMd, myTravelGangneungMd, reactUseeffectHookMd]
+export const allPosts = [appleStoreReviewMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myFirstBlogMd, myTravelGangneungMd, reactUseeffectHookMd, myBlogWithContentlayerMd]
