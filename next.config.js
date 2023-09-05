@@ -1,3 +1,5 @@
+import { colors } from "./theme/colors";
+
 const { withContentlayer } = require("next-contentlayer");
 const withPlugins = require("next-compose-plugins");
 const withPWA = require("next-pwa");
@@ -8,6 +10,9 @@ const nextConfig = {
     swcMinify: true,
     pwa: {
         dest: "public",
+        manifest: {
+            theme_color: colors.common.background(),
+        },
     },
     typescriptLoaderOptions: {
         transpileOnly: false,
