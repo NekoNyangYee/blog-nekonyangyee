@@ -7,9 +7,9 @@ import lv0DegreeMd from './lv0-degree.md.json' assert { type: 'json' }
 import lv0PrintOutWithAStringMd from './lv0-print-out-with-a-string.md.json' assert { type: 'json' }
 import lv1InnerMd from './lv1-inner.md.json' assert { type: 'json' }
 import myBlogErrorMd from './my-blog-error.md.json' assert { type: 'json' }
+import myBlogWithContentlayerMd from './my-blog-with-contentlayer.md.json' assert { type: 'json' }
 import myFirstBlogMd from './my-first-blog.md.json' assert { type: 'json' }
 import myTravelGangneungMd from './my-travel-gangneung.md.json' assert { type: 'json' }
 import reactUseeffectHookMd from './react-useeffect-hook.md.json' assert { type: 'json' }
-import myBlogWithContentlayerMd from './my-blog-with-contentlayer.md.json' assert { type: 'json' }
 
-export const allPosts = [appleStoreReviewMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myFirstBlogMd, myTravelGangneungMd, reactUseeffectHookMd, myBlogWithContentlayerMd]
+export const allPosts = [appleStoreReviewMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, reactUseeffectHookMd]

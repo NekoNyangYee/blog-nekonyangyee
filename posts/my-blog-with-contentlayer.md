@@ -1,7 +1,7 @@
 ---
 teaser: /My-project-with-Contentlayer/thumbnail.png
 category: ✏️ 기타
-title: 나의 블로그가 만들어지기 까지의 과정... (코드 포함)
+title: ContentLayer로 나의 블로그가 만들어지기 까지의 과정...
 date: 2023-09-02
 description: 이 블로그가 탄생하기까지의 과정을 쭉 나열하는 글입니다.
 ---

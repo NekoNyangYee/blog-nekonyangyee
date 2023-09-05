@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { Noto_Sans_KR } from "next/font/google";
 import ThemeProvider from '../theme/theme';
 import GotoTop from '@/Components/GotoTop';
@@ -8,7 +10,7 @@ const noto_sans_kr = Noto_Sans_KR({
   weight: ['100', '300', '400', '500', '700', '900'],
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Neko Blog",
   description: "나만의 작은 일기",
   openGraph: {
@@ -18,7 +20,7 @@ export const metadata = {
     description: "나만의 작은 일기",
     siteName: "Neko Blog",
     images: [{
-      url: "/opengraph.png",
+      url: "/icons/icon-152x152.png",
     }],
   },
   twitter: {
@@ -27,7 +29,7 @@ export const metadata = {
     title: "Neko Blog",
     description: "나만의 작은 일기",
     images: [{
-      url: "/opengraph.png",
+      url: "/icons/icon-152x152.png",
     }],
   },
 }
@@ -39,6 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <link rel="manifest" href="/manifest.json" />
       <ThemeProvider>
         <body className={noto_sans_kr.className}>
           {children}
