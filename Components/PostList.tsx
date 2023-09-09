@@ -205,7 +205,8 @@ const StyledPost = styled.div(({ theme }) => `
         padding: 14px;
         border: none;
         border-radius: 12px;
-        background-color: ${theme.colors.gray(10)};
+        background-color: none;
+        border: 1px solid ${theme.colors.text(10)};
 
             @media (max-width: 972px) {
                 width: 50%;
@@ -407,7 +408,8 @@ const StyledInput = styled.input(({ theme }) => `
     padding: 14px;
     border: none;
     border-radius: 12px;
-    background-color: ${theme.colors.gray(10)};
+    background-color: none;
+    border: 1px solid ${theme.colors.text(10)};
 
     @media (max-width: 572px) {
         width: 100%;
@@ -613,7 +615,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     <div className={`post-container ${viewMode === "list" ? "list-view" : "grid-view"}`}>
                         {paginatedPosts.map((post: Post) => (
                             <div className="article-container">
-                                <Link href={post.url} key={post._id} prefetch={false}>
+                                <Link href={post.url} key={post._id}>
                                     <article key={post._id}>
                                         <div className="description-area">
                                             <img src={post.teaser} alt={post.title} />
