@@ -31,13 +31,25 @@ const MainContentHeader = styled.header<{ scrolled: boolean, infoscrolled: boole
         display: ${infoscrolled ? "block" : "none"};
         text-align: center;
         flex: 1;
-        margin-left: auto;
-        padding: 0 52px 0 32px;
+        margin: 0 auto;
+        justify-content: center;
+        max-width: 100%;
+
+        @media (max-width: 672px) {
+            max-width: 250px;
+        }
     }
 
     & h2 {
         font-size: 14px;
         margin: 0 0 8px 0;
+        word-break: break-all;
+
+        @media (max-width: 672px) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 
     & p {

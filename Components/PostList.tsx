@@ -435,7 +435,7 @@ const SortCategory = styled.div(({ theme }) => `
     & rect {
         background-color: ${theme.colors.background(100)};
         fill: none;
-        stroke: ${theme.colors.text(100)};
+        stroke: ${theme.colors.gray()};
     }
 `);
 
