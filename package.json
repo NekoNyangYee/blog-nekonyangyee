@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "node sitemap.js"
   },
   "dependencies": {
     "@emotion/css": "^11.11.2",
