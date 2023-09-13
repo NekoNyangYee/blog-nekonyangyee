@@ -73,12 +73,13 @@ export const StyledPost = styled.main(({ theme }) => `
       & .category-state {
         display: inline-block;
         font-weight: bold;
-        background-color: ${theme.colors.blue(80)};
+        background-color: ${theme.colors.background(100)};
+        border: 1px solid ${theme.colors.text(10)};
         border-radius: 10px;
         padding: 8px;
         font-size: 11px;
         margin: 0;
-        color: ${theme.colors.white()};
+        color: ${theme.colors.text()};
     }
 
     & .next-prev-container {

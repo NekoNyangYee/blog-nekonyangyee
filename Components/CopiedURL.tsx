@@ -2,14 +2,14 @@
 
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { Post } from "./PostList";
 
 const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => `
     width: 100%;
     position: sticky;
     bottom: 20px;
-    background-color: ${copied ? theme.colors.copiedButtonBackground(70) : theme.colors.buttonBackground(80)};
-    color: ${copied ? theme.colors.buttonText() : theme.colors.black()};
+    background-color: ${copied ? theme.colors.copiedButtonBackground(100) : theme.colors.black()};
+    color: ${theme.colors.background(100)};
+    border: 1px solid ${theme.colors.gray(40)};
     font-size: 14px;
     padding: 15px 10px;
     cursor: pointer;
@@ -21,7 +21,6 @@ const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => 
     gap: 8px;
     justify-content: center; /* 세로 가운데 정렬 */
     align-items: center; /* 가로 가운데 정렬 */
-    border: none;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 

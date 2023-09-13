@@ -23,7 +23,7 @@ const StyledGoToTop = styled.div<{ topscrolled: boolean }>(({ theme, topscrolled
         border-radius: 33px;
         padding: 18px;
         border: none;
-        background-color: ${theme.colors.buttonBackground(100)};
+        background-color: ${theme.colors.gray()};
     }
 
     & svg {

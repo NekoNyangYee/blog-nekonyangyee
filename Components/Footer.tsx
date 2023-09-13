@@ -38,6 +38,13 @@ const StyleFooter = styled.footer(({ theme }) => `
         padding: 0;
         margin: 0;
     }
+
+    & p {
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 12px;
+        color: ${theme.colors.text(60)};
+    }
 `);
 
 const Footer = () => {

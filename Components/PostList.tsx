@@ -131,8 +131,8 @@ const StyledPost = styled.div(({ theme }) => `
 
         & img {
             display: block;
-            width: 110px;
-            height: 110px;
+            width: 90px;
+            height: 90px;
             object-fit: cover;
             display: flex;
             align-items: center;
@@ -205,7 +205,7 @@ const StyledPost = styled.div(({ theme }) => `
         padding: 14px;
         border: none;
         border-radius: 12px;
-        background-color: none;
+        background-color: ${theme.colors.background(100)};
         border: 1px solid ${theme.colors.text(10)};
 
             @media (max-width: 972px) {
@@ -252,25 +252,26 @@ const StyledPost = styled.div(({ theme }) => `
         margin: 20px 0 20% 0;
 
         & button {
-            margin: 0 20px 0 20px;
+            margin: 0 16px 0 16px;
             padding: 8px 16px 8px 16px;
             border: none;
             border-radius: 12px;
             font-weight: bold;
-            color: ${theme.colors.buttonText()};
-            background-color: ${theme.colors.buttonBackground(100)};
+            color: ${theme.colors.background()};
+            background-color: ${theme.colors.text()};
             cursor: pointer;
+            font-size: 16px;
         }
 
         & .active {
-            background: ${theme.colors.buttonBackground(100)};
-            color: ${theme.colors.buttonText()};
+            background-color: ${theme.colors.text()};
+            color: ${theme.colors.background()};
             font-weight: bold;
         }
 
         & button[disabled] {
             font-weight: normal;
-            background-color: ${theme.colors.buttonBackground(60)};
+            background-color: ${theme.colors.background()};
             visibility: hidden;
         }
 
@@ -340,8 +341,8 @@ const StyledPost = styled.div(({ theme }) => `
             opacity: 1;
             border: none;
             font-weight: bold;
-            color: ${theme.colors.buttonText()};
-            background-color: ${theme.colors.buttonBackground(100)};
+            color: ${theme.colors.text()};
+            background-color: ${theme.colors.gray(30)};
         }
     }
 
@@ -371,12 +372,13 @@ const StyledPost = styled.div(({ theme }) => `
     & .category-state {
         display: inline-block;
         font-weight: bold;
-        background-color: ${theme.colors.blue(80)};
+        background-color: ${theme.colors.background(100)};
+        border: 1px solid ${theme.colors.text(10)};
         border-radius: 10px;
         padding: 8px;
         font-size: 11px;
         margin: 8px 0;
-        color: ${theme.colors.white()};
+        color: ${theme.colors.text()};
     }
 `);
 
@@ -397,8 +399,8 @@ const StyledCategory = styled.div(({ theme }) => `
 
     & .active {
         font-weight: bold;
-        color: ${theme.colors.buttonText()};
-        background-color: ${theme.colors.buttonBackground(90)};
+        color: ${theme.colors.text(100)};
+        background-color: ${theme.colors.gray(20)};
     }
 `);
 
@@ -408,7 +410,7 @@ const StyledInput = styled.input(({ theme }) => `
     padding: 14px;
     border: none;
     border-radius: 12px;
-    background-color: none;
+    background-color: ${theme.colors.background(100)};
     border: 1px solid ${theme.colors.text(10)};
 
     @media (max-width: 572px) {
