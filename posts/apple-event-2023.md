@@ -47,7 +47,7 @@ description: 애플 이벤트 2023에서 공개한 제품들을 간략하게 소
 
 ---
 
-![apple-watch-series9](/Apple-Events-2023/apple-watch-Ultra2.jpg)
+![apple-watch-Ultra2](/Apple-Events-2023/apple-watch-Ultra2.jpg)
 
 그 다음은 애플워치 울트라 2입니다.
 
