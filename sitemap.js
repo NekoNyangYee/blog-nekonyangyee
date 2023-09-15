@@ -38,6 +38,7 @@ const main = () => {
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
           <loc>https://blog-nekonyangyee.vercel.app/</loc>
+          <changefreq>always</changefreq>
           <priority>1.00</priority>
         </url>
         ${urls
@@ -46,7 +47,8 @@ const main = () => {
               <url>
                 <loc>${url}</loc>
                 <lastmod>${lastmod}</lastmod>
-                <priority>1.00</priority>
+                <changefreq>always</changefreq>
+                <priority>0.80</priority>
               </url>
             `;
       })
