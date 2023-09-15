@@ -2,7 +2,7 @@
 teaser: /JavascriptReduce/my-blog-thumbnail.jpg
 category: 💻 개발 일기
 title: JavaScript | reduce메서드에 대해 이해하기
-date: 2023-08-04
+date: 2023-08-04T00:00:00+00:00
 description: 자바스크립트의 reduce메서드에 대해 설명합니다.
 ---
 

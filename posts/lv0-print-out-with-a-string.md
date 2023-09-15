@@ -2,7 +2,7 @@
 teaser: /programmers-logo-lv0.png
 category: ⌨️ 프로그래머스
 title: Lv.0 문자열 붙여서 출력하기 (JavaScript)
-date: 2023-08-30
+date: 2023-08-30T00:00:00+00:00
 description: 문자열 붙여서 출력하기 문제에 대한 풀이입니다.
 ---
 

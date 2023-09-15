@@ -2,7 +2,7 @@
 teaser: /programmers-logo-lv0.png
 category: ⌨️ 프로그래머스
 title: Lv.0 배열의 평균값 (JavaScript)
-date: 2023-08-29
+date: 2023-08-29T00:00:00+00:00
 description: 배열의 평균값 문제에 대한 풀이입니다.
 ---
 
