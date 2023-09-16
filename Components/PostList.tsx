@@ -588,6 +588,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                             <button
                                 type="button"
                                 onClick={() => setSelectCategory(category.keyword)}
+                                onTouchStart={() => handleCategoryChange(category.keyword)} // 모바일 디바이스에서 터치 이벤트 처리
                                 key={category.keyword}
                                 className={selectCategory === category.keyword ? "active" : ""}
                             >
