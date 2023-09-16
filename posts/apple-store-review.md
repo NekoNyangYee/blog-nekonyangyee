@@ -2,7 +2,7 @@
 teaser: /AppleStore01/Apple-Store-Front.jpg
 category: ✅ 이것저것 리뷰
 title: Apple Store 명동 다녀온 후기 (2022/07/17)
-date: 2023-08-20T00:00:00+00:00
+date: 2023-08-20T19:27:00+00:00
 description: 작년에 다녀왔지만 블로그 만든 기념으로 올려보아요ㅎㅎ
 ---
 

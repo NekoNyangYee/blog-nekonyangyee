@@ -54,6 +54,8 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
     const previousPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
     const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
 
+    const date = new Date();
+
     return (
         <StyledPost>
             <ContentHeader {...post} />
@@ -62,7 +64,7 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
                 <article>
                     <p className="category-state">{post.category}</p>
                     <h1 className="post-title">{post.title}</h1>
-                    <time dateTime={post.date}>게시 날짜: {format(new Date(post.date), "yyyy-MM-dd")}</time>
+                    <time dateTime={post.date}>게시 날짜: {format(new Date(post.date), "yyyy-MM-dd")} {post.date.slice(11, 16)}</time>
                     <hr />
                     <Content />
                     <CopiedUrl />

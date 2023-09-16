@@ -508,6 +508,11 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
 
     const paginatedPosts = Posts.slice(startIndex, endIndex);
 
+    const handleCategoryChange = (category: string) => {
+        setSelectCategory(category);
+        setPage(1); // 카테고리가 변경될 때 페이지를 1로 설정
+    };
+
     return (
         <StyledFlexContainer>
             <NavContainer>
@@ -535,7 +540,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         {categories.map(category => (
                             <button
                                 type="button"
-                                onClick={() => setSelectCategory(category.keyword)}
+                                onClick={() => handleCategoryChange(category.keyword)}
                                 key={category.keyword}
                                 className={selectCategory === category.keyword ? "active" : ""}
                             >

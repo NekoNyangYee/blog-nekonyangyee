@@ -2,7 +2,7 @@
 teaser: /BlogError/blog-error-thumbnail.jpg
 category: ✏️ 기타
 title: 블로그 오류에 대해 공지사항입니다...
-date: 2023-08-27T00:00:00+00:00
+date: 2023-08-27T22:12:00+00:00
 description: 블로그 에러로 인해 주소를 불가피하게 이전했습니다...
 ---
 

@@ -1,9 +1,9 @@
 ---
 teaser: /My-project-with-Contentlayer/thumbnail.png
 category: ✏️ 기타
-title: ContentLayer로 나의 블로그가 만들어지기 까지의 과정...
+title: ContentLayer로 적적인 블로그 만들기!!
 date: 2023-09-02T00:00:00+00:00
-description: 이 블로그가 탄생하기까지의 과정을 쭉 나열하는 글입니다.
+description: nextjs로 이 블로그가 탄생하기까지의 과정을 쭉 나열하는 글입니다.
 ---
 
 안녕하세요! NekoNyangYee입니다!! <br />
