@@ -10,7 +10,7 @@ const StyledProgressBar = styled.div(({ theme }) => `
     height: 4px;
     background-color: ${theme.colors.buttonBackground(100)};
     z-index: 20;
-`)
+`);
 
 const ScrollProgressBar = () => {
     const [scrollProgress, setScrollProgress] = useState<number>(0);

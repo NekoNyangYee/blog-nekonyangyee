@@ -253,14 +253,14 @@ const StyledPost = styled.div(({ theme }) => `
 
         & button {
             margin: 0 16px 0 16px;
-            padding: 8px 16px 8px 16px;
+            padding: 2px 15px 2px 15px;
             border: none;
             border-radius: 12px;
             font-weight: bold;
             color: ${theme.colors.background()};
             background-color: ${theme.colors.text()};
             cursor: pointer;
-            font-size: 16px;
+            font-size: 12px;
         }
 
         & .active {
@@ -278,6 +278,14 @@ const StyledPost = styled.div(({ theme }) => `
         & span {
             color: ${theme.colors.text(80)};
             font-size: 18px;
+        }
+
+        & svg {
+            width: 10px;
+        }
+
+        & rect {
+            fill: ${theme.colors.buttonText(100)};
         }
     } 
     
@@ -588,7 +596,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                             <button
                                 type="button"
                                 onClick={() => setSelectCategory(category.keyword)}
-                                onTouchStart={() => handleCategoryChange(category.keyword)} // 모바일 디바이스에서 터치 이벤트 처리
+                                onMouseDown={() => handleCategoryChange(category.keyword)} // 모바일 디바이스에서 터치 이벤트 처리
                                 key={category.keyword}
                                 className={selectCategory === category.keyword ? "active" : ""}
                             >
@@ -644,7 +652,10 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                             disabled={page === 1}
                             onClick={() => setPage(page - 1)}
                         >
-                            이전
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32" fill="none">
+                                <rect x="2.82842" y="13.0659" width="21.8165" height="4" transform="rotate(45 2.82842 13.0659)" fill="black" />
+                                <rect x="18.7332" y="2.83157" width="22.4849" height="4.00443" transform="rotate(135 18.7332 2.83157)" fill="black" />
+                            </svg>
                         </button>
                         <div className="page-numbers">
                             {Array.from({ length: Math.ceil(Posts.length / postsPerPage) }, (_, index) => index + 1).map((pageNum) => (
@@ -661,7 +672,10 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                             disabled={endIndex >= Posts.length}
                             onClick={() => setPage(page + 1)}
                         >
-                            다음
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32">
+                                <rect x="15.9048" y="18.255" width="21.8165" height="4" transform="rotate(-135 15.9048 18.255)" />
+                                <rect y="28.4894" width="22.4849" height="4.00443" transform="rotate(-45 0 28.4894)" />
+                            </svg>
                         </button>
 
                     </div>
