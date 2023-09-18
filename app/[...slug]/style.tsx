@@ -118,12 +118,11 @@ export const StyledPost = styled.main(({ theme }) => `
       }
     }
   
-  & a {
-    text-decoration: none;
-    color: ${theme.colors.blue(80)};
-    font-size: 18px;
-    font-weight: bold;
-  }
+    & a {
+      text-decoration: none;
+      color: ${theme.colors.blue(80)};
+      font-size: 18px;
+      font-weight: bold;
     }
 
       & hr {
@@ -161,6 +160,22 @@ export const StyledPost = styled.main(({ theme }) => `
           padding: 0;
           background-color: transparent;
         }
+      }
+
+      & svg {
+        position: relative;
+        top: 3px;
+        width: 16px;
+        height: 16px;
+      }
+
+      & rect {
+        fill: none;
+        stroke: ${theme.colors.text()};
+      }
+
+      & time {
+        margin-right: 10px;
       }
     }
   }

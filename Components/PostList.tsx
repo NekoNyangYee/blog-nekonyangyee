@@ -260,7 +260,7 @@ const StyledPost = styled.div(({ theme }) => `
             color: ${theme.colors.background()};
             background-color: ${theme.colors.text()};
             cursor: pointer;
-            font-size: 12px;
+            font-size: 13px;
         }
 
         & .active {
@@ -281,6 +281,8 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         & svg {
+            position: relative;
+            top: 2px;
             width: 10px;
         }
 
