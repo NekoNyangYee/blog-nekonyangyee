@@ -12,6 +12,7 @@ const SnackBar = styled.div<{ visible: boolean }>(({ theme, visible }) => `
     color: ${theme.colors.background(90)};
     padding: 10px 30px;
     border-radius: 12px;
+    transition: top 0.5s;
 
     @media (max-width: 872px) {
         width: 74%;
@@ -23,34 +24,36 @@ const ThemeSnackBar = () => {
     const [systemTheme, setSystemTheme] = useState<string | null>(null);
     const [isVisible, setIsVisible] = useState(false);
 
+    const showSnackbar = (theme: string) => {
+        setSystemTheme(theme);
+        setIsVisible(true);
+
+        setTimeout(() => {
+            setIsVisible(false);
+        }, 3000);
+    };
+
     useEffect(() => {
-        const showSnackbar = (theme: string) => {
-            setSystemTheme(theme);
-            setIsVisible(true);
+        const isThemeChanged = localStorage.getItem("isThemeChanged");
 
-            setTimeout(() => {
-                setIsVisible(false);
-            }, 3000);
-        };
-
-        const checkSystemTheme = () => {
-            if (window.matchMedia) {
-                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                    showSnackbar("다크");
-                } else {
-                    showSnackbar("라이트");
+        if (isThemeChanged === null) {
+            const checkSystemTheme = () => {
+                if (window.matchMedia) {
+                    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                        showSnackbar("다크");
+                    } else {
+                        showSnackbar("라이트");
+                    }
                 }
-            }
-        };
+            };
 
-        const isSnackbarHidden = localStorage.getItem("isSnackbarHidden");
-
-        if (isSnackbarHidden === null) {
             checkSystemTheme();
+            localStorage.setItem("isThemeChanged", "true");
         }
 
         const systemThemeChangeHandler = (e: MediaQueryListEvent) => {
             const theme = e.matches ? "다크" : "라이트";
+            localStorage.setItem("isThemeChanged", "true");
             showSnackbar(theme);
         };
 
@@ -63,17 +66,24 @@ const ThemeSnackBar = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const isThemeChanged = localStorage.getItem("isThemeChanged");
+
+        if (isThemeChanged === "true") {
+            setIsVisible(true);
+
+            setTimeout(() => {
+                setIsVisible(false);
+            }, 3000);
+        }
+    }, []);
+
     const hideSnackbar = () => {
         setIsVisible(false);
-        localStorage.setItem("isSnackbarHidden", "true");
     };
 
     return (
-        <SnackBar visible={isVisible} onClick={hideSnackbar}
-            style={{
-                transition: "top 0.5s",
-            }}
-        >
+        <SnackBar visible={isVisible} onClick={hideSnackbar}>
             {isVisible && (
                 <p>
                     시스템 설정에 따라 테마가 {systemTheme} 모드로 변경되었습니다.
