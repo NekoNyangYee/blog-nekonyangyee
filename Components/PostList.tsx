@@ -287,7 +287,7 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         & rect {
-            fill: ${theme.colors.buttonText(100)};
+            fill: ${theme.colors.background(100)};
         }
     } 
     
@@ -520,7 +520,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
 
     const handleCategoryChange = (category: string) => {
         setSelectCategory(category);
-        setPage(1); // 카테고리가 변경될 때 페이지를 1로 설정
+        setPage(1);
     };
 
     return (
