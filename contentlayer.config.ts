@@ -13,6 +13,7 @@ const Post = defineDocumentType(() => ({
         date: { type: "date", required: true },
         teaser: { type: "string", required: true },
         description: { type: "string", required: true },
+        time: { type: "string", required: true },
     },
     computedFields: {
         url: {

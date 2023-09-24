@@ -18,6 +18,7 @@ export type Post = {
   date: IsoDateTimeString
   teaser: string
   description: string
+  time: string
   /** MDX file body */
   body: MDX
   url: string

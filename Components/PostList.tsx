@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Introduce } from "./Intoduce";
+import { format } from "date-fns";
 
 const StyledFlexContainer = styled.div(() => `
     &.nav-container {
@@ -117,9 +118,14 @@ const StyledPost = styled.div(({ theme }) => `
             border-radius: 12px;
             overflow: hidden;
             padding: 0;
+            transition: all .3s;
 
             & .article-info {
                 padding: 16px;
+            }
+
+            &:active {
+                transform: scale(0.9);
             }
         }
     }
@@ -471,7 +477,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         const pageToTop = () => {
             window.scrollTo({
                 top: 0,
-                behavior: "smooth"
             });
         };
         pageToTop();
@@ -640,7 +645,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                             <div className="article-info">
                                                 <p className="category-state">{post.category}</p>
                                                 <h1 className="post-main-title">{post.title}</h1>
-                                                <p>{post.date.slice(0, 10)}</p>
+                                                <time dateTime={post.date}>{format(new Date(post.date), "yyyy년 MM월 dd일")}</time>
                                                 <p className="post-description">{post.description}</p>
                                             </div>
                                         </div>
