@@ -1,6 +1,5 @@
 
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import highlight from "rehype-highlight";
 import rehypePrettyCode from "rehype-pretty-code";
 
 const Post = defineDocumentType(() => ({
@@ -13,6 +12,7 @@ const Post = defineDocumentType(() => ({
         date: { type: "date", required: true },
         teaser: { type: "string", required: true },
         description: { type: "string", required: true },
+        time: { type: "string", required: true },
     },
     computedFields: {
         url: {
@@ -34,7 +34,6 @@ const contentSource = makeSource({
                     theme: "github-dark"
                 },
             ],
-            highlight,
         ],
     },
 });
