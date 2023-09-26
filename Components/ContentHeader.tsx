@@ -102,16 +102,20 @@ const ContentHeader = ({ title, date, category }: Post) => {
         };
     }, []);
 
+    const backButton = () => {
+        return window.history.back();
+    }
+
     return (
         <MainContentHeader scrolled={isScrolled} infoscrolled={isInfoScrolled}>
             <div className="header-container">
                 <div className="history-back">
-                    <Link href="/">
+                    <button onClick={backButton}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32" fill="none">
                             <rect x="2.82842" y="13.0659" width="21.8165" height="4" transform="rotate(45 2.82842 13.0659)" fill="black" />
                             <rect x="18.7332" y="2.83154" width="22.4849" height="4.00443" transform="rotate(135 18.7332 2.83154)" fill="black" />
                         </svg>
-                    </Link>
+                    </button>
                 </div>
                 <div className="post-info">
                     <h2>{title}</h2>

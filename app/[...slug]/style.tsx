@@ -174,6 +174,10 @@ export const StyledPost = styled.main(({ theme }) => `
         stroke: ${theme.colors.text()};
       }
 
+      & circle {
+        stroke: ${theme.colors.text()};
+      }
+
       & time {
         margin-right: 10px;
       }

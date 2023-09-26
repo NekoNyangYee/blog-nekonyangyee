@@ -125,7 +125,7 @@ const StyledPost = styled.div(({ theme }) => `
             }
 
             &:active {
-                transform: scale(0.9);
+                transform: scale(0.95);
             }
         }
     }
@@ -134,6 +134,13 @@ const StyledPost = styled.div(({ theme }) => `
         display: flex;
         flex-direction: column;
         gap: 0;
+
+        & .article-container {
+            transition: all .3s;
+            &:active {
+                transform: scale(0.95);
+            }
+        }
 
         & img {
             display: block;
@@ -501,7 +508,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         { title: "📄 전체", keyword: "" },
         { title: "💻 개발 일기", keyword: "💻 개발 일기" },
         { title: "⌨️ 프로그래머스", keyword: "⌨️ 프로그래머스" },
-        { title: "✅ 이것저것 리뷰", keyword: "✅ 이것저것 리뷰" },
+        { title: "✅ 방문 후기 & 리뷰", keyword: "✅ 방문 후기 & 리뷰" },
         { title: "😄 나의 일상", keyword: "😄 나의 일상" },
         { title: "✏️ 기타", keyword: "✏️ 기타" }
     ];

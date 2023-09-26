@@ -1,6 +1,6 @@
 ---
 teaser: /Apple-Events-2023/thumbnail.png
-category: ✅ 이것저것 리뷰
+category: ✅ 방문 후기 & 리뷰
 title: Apple Events 2023 간단 요약
 date: 2023-09-13T00:00:00+00:00
 time: 01:08

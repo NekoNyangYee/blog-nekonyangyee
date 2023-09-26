@@ -14,6 +14,7 @@ import myFirstBlogMd from './my-first-blog.md.json' assert { type: 'json' }
 import myTravelGangneungMd from './my-travel-gangneung.md.json' assert { type: 'json' }
 import popupStoresReviewMd from './popup-stores-review.md.json' assert { type: 'json' }
 import reactUseeffectHookMd from './react-useeffect-hook.md.json' assert { type: 'json' }
+import samsungGangnamMd from './samsung-gangnam.md.json' assert { type: 'json' }
 import staticWebAndDynamicWebMd from './static-web-and-dynamic-web.md.json' assert { type: 'json' }
 
-export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, cookieAndSessionMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, popupStoresReviewMd, reactUseeffectHookMd, staticWebAndDynamicWebMd]
+export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, cookieAndSessionMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, popupStoresReviewMd, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd]
