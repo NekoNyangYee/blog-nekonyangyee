@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Introduce } from "./Intoduce";
+import { format } from "date-fns";
 
 const StyledFlexContainer = styled.div(() => `
     &.nav-container {
@@ -117,9 +118,14 @@ const StyledPost = styled.div(({ theme }) => `
             border-radius: 12px;
             overflow: hidden;
             padding: 0;
+            transition: all .3s;
 
             & .article-info {
                 padding: 16px;
+            }
+
+            &:active {
+                transform: scale(0.95);
             }
         }
     }
@@ -128,6 +134,13 @@ const StyledPost = styled.div(({ theme }) => `
         display: flex;
         flex-direction: column;
         gap: 0;
+
+        & .article-container {
+            transition: all .3s;
+            &:active {
+                transform: scale(0.95);
+            }
+        }
 
         & img {
             display: block;
@@ -260,7 +273,7 @@ const StyledPost = styled.div(({ theme }) => `
             color: ${theme.colors.background()};
             background-color: ${theme.colors.text()};
             cursor: pointer;
-            font-size: 12px;
+            font-size: 13px;
         }
 
         & .active {
@@ -281,11 +294,13 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         & svg {
+            position: relative;
+            top: 2px;
             width: 10px;
         }
 
         & rect {
-            fill: ${theme.colors.buttonText(100)};
+            fill: ${theme.colors.background(100)};
         }
     } 
     
@@ -469,7 +484,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         const pageToTop = () => {
             window.scrollTo({
                 top: 0,
-                behavior: "smooth"
             });
         };
         pageToTop();
@@ -494,7 +508,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         { title: "📄 전체", keyword: "" },
         { title: "💻 개발 일기", keyword: "💻 개발 일기" },
         { title: "⌨️ 프로그래머스", keyword: "⌨️ 프로그래머스" },
-        { title: "✅ 이것저것 리뷰", keyword: "✅ 이것저것 리뷰" },
+        { title: "✅ 방문 후기 & 리뷰", keyword: "✅ 방문 후기 & 리뷰" },
         { title: "😄 나의 일상", keyword: "😄 나의 일상" },
         { title: "✏️ 기타", keyword: "✏️ 기타" }
     ];
@@ -518,7 +532,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
 
     const handleCategoryChange = (category: string) => {
         setSelectCategory(category);
-        setPage(1); // 카테고리가 변경될 때 페이지를 1로 설정
+        setPage(1);
     };
 
     return (
@@ -638,7 +652,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                             <div className="article-info">
                                                 <p className="category-state">{post.category}</p>
                                                 <h1 className="post-main-title">{post.title}</h1>
-                                                <p>{post.date.slice(0, 10)}</p>
+                                                <time dateTime={post.date}>{format(new Date(post.date), "yyyy년 MM월 dd일")}</time>
                                                 <p className="post-description">{post.description}</p>
                                             </div>
                                         </div>

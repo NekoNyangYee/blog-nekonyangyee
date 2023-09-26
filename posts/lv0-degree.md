@@ -2,7 +2,8 @@
 teaser: /programmers-logo-lv0.png
 category: ⌨️ 프로그래머스
 title: Lv.0 각도기 (JavaScript)
-date: 2023-08-29T19:12:00+00:00
+date: 2023-08-29T00:00:00+00:00
+time: 19:12
 description: 각도기 문제에 대한 풀이입니다.
 ---
 

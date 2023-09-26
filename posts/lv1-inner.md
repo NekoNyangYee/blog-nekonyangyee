@@ -2,7 +2,8 @@
 teaser: /programmers-logo-lv1.jpeg
 category: ⌨️ 프로그래머스
 title: Lv.1 내적 (JavaScript)
-date: 2023-08-31T21:37:00+00:00
+date: 2023-08-31T00:00:00+00:00
+time: 21:37
 description: 내적 문제에 대한 풀이입니다.
 ---
 
