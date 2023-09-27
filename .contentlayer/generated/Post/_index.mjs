@@ -16,5 +16,6 @@ import popupStoresReviewMd from './popup-stores-review.md.json' assert { type: '
 import reactUseeffectHookMd from './react-useeffect-hook.md.json' assert { type: 'json' }
 import samsungGangnamMd from './samsung-gangnam.md.json' assert { type: 'json' }
 import staticWebAndDynamicWebMd from './static-web-and-dynamic-web.md.json' assert { type: 'json' }
+import happyChuseokMd from './happy-chuseok.md.json' assert { type: 'json' }
 
-export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, cookieAndSessionMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, popupStoresReviewMd, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd]
+export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, cookieAndSessionMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, popupStoresReviewMd, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd, happyChuseokMd]
