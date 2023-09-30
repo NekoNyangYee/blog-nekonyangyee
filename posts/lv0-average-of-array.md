@@ -39,7 +39,7 @@ description: 배열의 평균값 문제에 대한 풀이입니다.
 
 ### 나의 풀이
 
-```JavaScript
+```javaScript
 function solution(numbers) {
     let answer = 0;
     let sum = 0;
@@ -53,7 +53,7 @@ function solution(numbers) {
 
 ### 다른 사람 풀이
 
-```JavaScript
+```javaScript
 function solution(numbers) {
     var answer = numbers.reduce((a,b) => a+b, 0) / numbers.length;
     return answer;

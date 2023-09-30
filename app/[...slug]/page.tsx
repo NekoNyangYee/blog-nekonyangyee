@@ -28,7 +28,7 @@ export const generateMetadata = ({ params }: { params: { slug: string[] } }) => 
             url: "https://blog-nekonyangyee.vercel.app",
             title: post.title,
             description: post.description,
-            siteName: "nekonyangyee-blog",
+            siteName: "neko-blog",
         },
         twitter: {
             card: "summary_large_image",

@@ -38,7 +38,7 @@ description: 문자열 붙여서 출력하기 문제에 대한 풀이입니다.
 
 ### 나의 풀이
 
-```JavaScript
+```javaScript
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -58,7 +58,7 @@ rl.on('line', function (line) {
 
 ### 다른 사람 풀이
 
-```JavaScript
+```javaScript
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,

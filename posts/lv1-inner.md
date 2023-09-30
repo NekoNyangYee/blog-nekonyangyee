@@ -39,7 +39,7 @@ description: 내적 문제에 대한 풀이입니다.
 
 ### 나의 풀이
 
-```JavaScript
+```javaScript
 function solution(a, b) {
     var answer = 0;
     for (let i = 0; i < a.length; i++) {

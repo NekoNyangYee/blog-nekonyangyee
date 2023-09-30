@@ -2,7 +2,9 @@
 
 import appleEvent_2023Md from './apple-event-2023.md.json' assert { type: 'json' }
 import appleStoreReviewMd from './apple-store-review.md.json' assert { type: 'json' }
+import bringCenterStringMd from './bring-center-string.md.json' assert { type: 'json' }
 import cookieAndSessionMd from './cookie-and-session.md.json' assert { type: 'json' }
+import happyChuseokMd from './happy-chuseok.md.json' assert { type: 'json' }
 import javascriptReduceMd from './javascript-reduce.md.json' assert { type: 'json' }
 import lv0AverageOfArrayMd from './lv0-average-of-array.md.json' assert { type: 'json' }
 import lv0DegreeMd from './lv0-degree.md.json' assert { type: 'json' }
@@ -16,6 +18,5 @@ import popupStoresReviewMd from './popup-stores-review.md.json' assert { type: '
 import reactUseeffectHookMd from './react-useeffect-hook.md.json' assert { type: 'json' }
 import samsungGangnamMd from './samsung-gangnam.md.json' assert { type: 'json' }
 import staticWebAndDynamicWebMd from './static-web-and-dynamic-web.md.json' assert { type: 'json' }
-import happyChuseokMd from './happy-chuseok.md.json' assert { type: 'json' }
 
-export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, cookieAndSessionMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, popupStoresReviewMd, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd, happyChuseokMd]
+export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, bringCenterStringMd, cookieAndSessionMd, happyChuseokMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, popupStoresReviewMd, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd]

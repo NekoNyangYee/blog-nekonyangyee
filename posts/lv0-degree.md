@@ -51,7 +51,7 @@ description: 각도기 문제에 대한 풀이입니다.
 
 ### 나의 풀이
 
-```JavaScript
+```javaScript
 function solution(angle) {
    if (angle === 180) {
        return 4
@@ -67,7 +67,7 @@ function solution(angle) {
 
 ### 다른 사람 풀이
 
-```JavaScript
+```javaScript
 function solution(angle) {
     return [0, 90, 91, 180].filter(x => angle>=x).length;
 }
