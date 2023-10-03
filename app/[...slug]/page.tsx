@@ -28,7 +28,7 @@ export const generateMetadata = ({ params }: { params: { slug: string[] } }) => 
             url: "https://blog-nekonyangyee.vercel.app",
             title: post.title,
             description: post.description,
-            siteName: "neko-blog",
+            siteName: "neko blog",
         },
         twitter: {
             card: "summary_large_image",
@@ -65,12 +65,9 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
                     <time dateTime={post.date}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" viewBox="0 0 30 32" fill="none">
                             <rect x="0.5" y="5.5" width="29" height="26" rx="3.5" stroke="black" />
-                            <rect x="4.5" y="9.5" width="9" height="4" rx="0.5" stroke="black" />
-                            <rect x="4.5" y="16.5" width="9" height="4" rx="0.5" stroke="black" />
-                            <rect x="4.5" y="23.5" width="9" height="4" rx="0.5" stroke="black" />
-                            <rect x="16.5" y="9.5" width="9" height="4" rx="0.5" stroke="black" />
-                            <rect x="16.5" y="16.5" width="9" height="4" rx="0.5" stroke="black" />
-                            <rect x="16.5" y="23.5" width="9" height="4" rx="0.5" stroke="black" />
+                            <rect x="0.25" y="11.25" width="29.5" height="0.5" rx="0.25" stroke="black" stroke-width="0.5" />
+                            <rect x="4.5" y="16.5" width="21" height="4" rx="1.5" stroke="black" />
+                            <rect x="4.5" y="23.5" width="21" height="4" rx="1.5" stroke="black" />
                             <rect x="14.5" y="0.5" width="1" height="7" rx="0.5" stroke="black" />
                             <rect x="6.5" y="0.5" width="1" height="7" rx="0.5" stroke="black" />
                             <rect x="22.5" y="0.5" width="1" height="7" rx="0.5" stroke="black" />

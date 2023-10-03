@@ -6,10 +6,10 @@ import styled from "@emotion/styled";
 const StyledProgressBar = styled.div(({ theme }) => `
     position: fixed;
     left: 0;
-    top: 66px;
+    top: 0;
     height: 4px;
     background-color: ${theme.colors.buttonBackground(100)};
-    z-index: 20;
+    z-index: 21;
 `);
 
 const ScrollProgressBar = () => {

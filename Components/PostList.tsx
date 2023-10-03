@@ -245,11 +245,19 @@ const StyledPost = styled.div(({ theme }) => `
         & button {
             background-color: ${theme.colors.background(100)};
             color: ${theme.colors.buttonText()};
-            border: 1px solid ${theme.colors.text(10)};
+            border: none;
             border-radius: 12px;
             margin: 0;
             padding: 0 11px;
             cursor: pointer;
+        }
+        
+        & .active {
+            background-color: ${theme.colors.text()};
+            
+            & rect {
+                stroke: ${theme.colors.background(100)};
+            }
         }
 
         & p {
@@ -364,14 +372,16 @@ const StyledPost = styled.div(({ theme }) => `
             opacity: 1;
             border: none;
             font-weight: bold;
-            color: ${theme.colors.text()};
-            background-color: ${theme.colors.gray(30)};
+            color: ${theme.colors.white()};
+            background-color: ${theme.colors.categoryButtonBackground()};
+        }
+        
+        &::-webkit-scrollbar {
+            display: none; 
         }
     }
 
-    & .category-container::-webkit-scrollbar {
-        display: none; 
-    }
+    
 
     & .page-numbers {
         & button {
@@ -422,8 +432,8 @@ const StyledCategory = styled.div(({ theme }) => `
 
     & .active {
         font-weight: bold;
-        color: ${theme.colors.text(100)};
-        background-color: ${theme.colors.gray(20)};
+        color: ${theme.colors.white()};
+        background-color: ${theme.colors.categoryButtonBackground()};
     }
 `);
 
@@ -445,6 +455,8 @@ const SortCategory = styled.div(({ theme }) => `
     padding: 0;
     display: flex;
     justify-content: space-between;
+    border: 1px solid ${theme.colors.text(10)};
+    border-radius: 12px;
 
     & .select-container {
         position: relative;
@@ -500,9 +512,14 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         localStorage.setItem('viewMode', viewMode);
     }, [viewMode]);
 
-    const toggleViewMode = () => {
-        setViewMode(prevViewMode => prevViewMode === 'grid' ? 'list' : 'grid');
+    const toggleGridView = () => {
+        setViewMode('grid');
     };
+
+    const toggleListView = () => {
+        setViewMode('list');
+    };
+
 
     const categories: { title: string; keyword: string }[] = [
         { title: "📄 전체", keyword: "" },
@@ -627,18 +644,22 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     <div className="select-category">
                         <p>{selectCategory === "" ? "📄 전체" : `${selectCategory}`} ({Posts.length})</p>
                         <SortCategory>
-                            <button onClick={toggleViewMode}>{viewMode === 'grid' ? <svg xmlns="http://www.w3.org/2000/svg" width="33" height="34" viewBox="0 0 33 34" fill="none">
-                                <rect x="1" y="1" width="13" height="13" rx="3" stroke="black" strokeWidth="2" />
-                                <rect x="1" y="20" width="13" height="13" rx="3" stroke="black" strokeWidth="2" />
-                                <rect x="19" y="20" width="13" height="13" rx="3" stroke="black" strokeWidth="2" />
-                                <rect x="19" y="1" width="13" height="13" rx="3" stroke="black" strokeWidth="2" />
-                            </svg> : <svg xmlns="http://www.w3.org/2000/svg" width="33" height="31" viewBox="0 0 33 31" fill="none">
-                                <rect x="1" y="1" width="13" height="13" rx="3" stroke="black" stroke-width="2" />
-                                <rect x="18.5" y="2.5" width="14" height="1" rx="0.5" stroke="black" strokeLinejoin="round" />
-                                <rect x="18.5" y="11.5" width="14" height="1" rx="0.5" stroke="black" strokeLinejoin="round" />
-                                <rect x="0.5" y="20.5" width="32" height="1" rx="0.5" stroke="black" strokeLinejoin="round" />
-                                <rect x="0.5" y="29.5" width="32" height="1" rx="0.5" stroke="black" strokeLinejoin="round" />
-                            </svg>}
+                            <button onClick={toggleGridView} className={viewMode === 'grid' ? 'active' : ''}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="31" viewBox="0 0 33 31" fill="none">
+                                    <rect x="1" y="1" width="31" height="13" rx="3" stroke="black" stroke-width="2" />
+                                    <rect x="0.5" y="21.5" width="32" height="1" rx="0.5" stroke="black" />
+                                    <rect x="0.5" y="29.5" width="32" height="1" rx="0.5" stroke="black" />
+                                </svg>
+                            </button>
+                            <button onClick={toggleListView} className={viewMode === 'list' ? 'active' : ''}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+                                    <rect x="1" y="1" width="13" height="13" rx="3" stroke="black" stroke-width="2" />
+                                    <rect x="1" y="19" width="13" height="13" rx="3" stroke="black" stroke-width="2" />
+                                    <rect x="18.5" y="2.5" width="14" height="1" rx="0.5" stroke="black" stroke-linejoin="round" />
+                                    <rect x="18.5" y="11.5" width="14" height="1" rx="0.5" stroke="black" stroke-linejoin="round" />
+                                    <rect x="18.5" y="20.5" width="14" height="1" rx="0.5" stroke="black" stroke-linejoin="round" />
+                                    <rect x="18.5" y="29.5" width="14" height="1" rx="0.5" stroke="black" stroke-linejoin="round" />
+                                </svg>
                             </button>
                         </SortCategory>
                     </div>

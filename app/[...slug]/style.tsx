@@ -134,6 +134,7 @@ export const StyledPost = styled.main(({ theme }) => `
         margin: 24px 0;
         padding: 10px;
         border-left: 8px solid ${theme.colors.blue(80)};
+        background-color: ${theme.colors.text(10)};
         border-left-width: 5px;
 
         & p {

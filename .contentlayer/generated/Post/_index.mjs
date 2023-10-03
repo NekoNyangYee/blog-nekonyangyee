@@ -14,9 +14,10 @@ import myBlogErrorMd from './my-blog-error.md.json' assert { type: 'json' }
 import myBlogWithContentlayerMd from './my-blog-with-contentlayer.md.json' assert { type: 'json' }
 import myFirstBlogMd from './my-first-blog.md.json' assert { type: 'json' }
 import myTravelGangneungMd from './my-travel-gangneung.md.json' assert { type: 'json' }
+import nextjs_13ServerComponentsMd from './nextjs-13-server-components.md.json' assert { type: 'json' }
 import popupStoresReviewMd from './popup-stores-review.md.json' assert { type: 'json' }
 import reactUseeffectHookMd from './react-useeffect-hook.md.json' assert { type: 'json' }
 import samsungGangnamMd from './samsung-gangnam.md.json' assert { type: 'json' }
 import staticWebAndDynamicWebMd from './static-web-and-dynamic-web.md.json' assert { type: 'json' }
 
-export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, bringCenterStringMd, cookieAndSessionMd, happyChuseokMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, popupStoresReviewMd, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd]
+export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, bringCenterStringMd, cookieAndSessionMd, happyChuseokMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, nextjs_13ServerComponentsMd, popupStoresReviewMd, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd]
