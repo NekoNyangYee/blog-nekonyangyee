@@ -29,7 +29,7 @@ const main = () => {
     const fileContent = fs.readFileSync(filePath, "utf8");
     const frontmatter = extractFrontmatter(fileContent);
 
-    const url = `https://blog-nekonyangyee.vercel.app/${filename.replace(".md", "")}`;
+    const url = `https://taehyun-blog.vercel.app/${filename.replace(".md", "")}`;
     const lastmod = frontmatter.date || "";
     return { url, lastmod };
   });
@@ -37,7 +37,7 @@ const main = () => {
   const sitemap = `
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
-          <loc>https://blog-nekonyangyee.vercel.app/</loc>
+          <loc>https://taehyun-blog.vercel.app/</loc>
           <changefreq>always</changefreq>
           <priority>1.00</priority>
         </url>
