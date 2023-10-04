@@ -3,8 +3,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "NekoBlog",
-  "short_name": "Neko Blog",
+  "name": "Taehyun Blog",
+  "short_name": "나만의 작은 일기",
   "description": "\ub098\ub9cc\uc758 \uc791\uc740 \uc77c\uae30",
   "icons": [
     {
