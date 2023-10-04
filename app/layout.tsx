@@ -11,22 +11,22 @@ const noto_sans_kr = Noto_Sans_KR({
 })
 
 export const metadata: Metadata = {
-  title: "Neko Blog",
+  title: "taehyun blog",
   description: "나만의 작은 일기",
   openGraph: {
     type: "website",
-    url: "https://blog-nekonyangyee.vercel.app",
+    url: "https://taehyun-blog.vercel.app",
     title: "Neko Blog",
     description: "나만의 작은 일기",
-    siteName: "Neko Blog",
+    siteName: "Taehyun Blog",
     images: [{
       url: "/icons/icon-152x152.png",
     }],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://blog-nekonyangyee.vercel.app",
-    title: "Neko Blog",
+    site: "https://taehyun-blog.vercel.app",
+    title: "Taehyun Blog",
     description: "나만의 작은 일기",
     images: [{
       url: "/icons/icon-152x152.png",

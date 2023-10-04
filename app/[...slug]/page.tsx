@@ -25,14 +25,14 @@ export const generateMetadata = ({ params }: { params: { slug: string[] } }) => 
         description: post.description,
         openGraph: {
             type: "website",
-            url: "https://blog-nekonyangyee.vercel.app",
+            url: "https://taehyun-blog.vercel.app",
             title: post.title,
             description: post.description,
             siteName: "neko blog",
         },
         twitter: {
             card: "summary_large_image",
-            site: "https://blog-nekonyangyee.vercel.app",
+            site: "https://taehyun-blog.vercel.app",
             title: post.title,
             description: post.description,
         },
