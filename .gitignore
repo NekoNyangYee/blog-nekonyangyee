@@ -38,5 +38,3 @@ public/sw.js
 public/workbox-*.js
 workbox-*.js
 public/sitemap.xml
-
-*.html
