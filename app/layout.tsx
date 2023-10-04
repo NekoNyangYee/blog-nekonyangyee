@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://taehyun-blog.vercel.app",
-    title: "Neko Blog",
+    title: "Taehyun Blog",
     description: "나만의 작은 일기",
     siteName: "Taehyun Blog",
     images: [{
