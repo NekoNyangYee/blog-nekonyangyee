@@ -1,6 +1,6 @@
 ---
 teaser: /Cookie-and-Seesion/cookie-Thumbnail.png
-category: 💻 개발 일기
+category: 기타 개발
 title: 쿠키와 세션 개념과 차이
 date: 2023-09-09T00:00:00+00:00
 time: 11:07

@@ -1,6 +1,6 @@
 ---
 teaser: /my-blog-preview.jpg
-category: ✏️ 기타
+category: 공지 & 잡담
 title: 나의 일상과 개발 관련 포스트를 올리는 곳
 date: 2023-08-02T00:00:00+00:00
 time: 19:18

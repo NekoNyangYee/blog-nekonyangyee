@@ -1,6 +1,6 @@
 ---
 teaser: /Nextjs-ServerComponents/thumbnail.png
-category: 💻 개발 일기
+category: Next.js
 title: Next.js 13 Server Components가 무엇일까? 1편
 date: 2023-10-03T00:00:00+00:00
 time: 21:34

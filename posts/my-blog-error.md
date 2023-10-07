@@ -1,6 +1,6 @@
 ---
 teaser: /BlogError/blog-error-thumbnail.jpg
-category: ✏️ 기타
+category: 공지 & 잡담
 title: 블로그 오류에 대해 공지사항입니다...
 date: 2023-08-27T00:00:00+00:00
 time: 13:32

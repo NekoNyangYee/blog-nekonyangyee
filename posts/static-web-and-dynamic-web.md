@@ -1,6 +1,6 @@
 ---
 teaser: /Static-Web-and-Dynamic-Web/compare-web.png
-category: 💻 개발 일기
+category: 기타 개발
 title: 정적 페이지랑 동적 페이지는 어떤 차이가 있을까?
 date: 2023-09-18T00:00:00+00:00
 time: 16:15

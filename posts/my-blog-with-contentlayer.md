@@ -1,6 +1,6 @@
 ---
 teaser: /My-project-with-Contentlayer/thumbnail.png
-category: ✏️ 기타
+category: Next.js
 title: Contentlayer로 정적인 블로그 만들기!! (with NextJS)
 date: 2023-09-02T00:00:00+00:00
 time: 00:15

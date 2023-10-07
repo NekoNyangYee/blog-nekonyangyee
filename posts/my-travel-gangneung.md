@@ -1,6 +1,6 @@
 ---
 teaser: /GangneungIntroduction/Map-in-DongHae.jpg
-category: 😄 나의 일상
+category: 나의 일상
 title: 강릉 여행 일기 - 준비 (05/11~14)
 date: 2023-08-26T00:00:00+00:00
 time: 09:22

@@ -1,6 +1,6 @@
 ---
 teaser: /SamsungGangnam/thumbnail.jpg
-category: ✅ 방문 후기 & 리뷰
+category: 방문 후기 & 리뷰
 title: 삼성 스토어 강남 가보았습니다.
 date: 2023-09-26T00:00:00+00:00
 time: 22:19

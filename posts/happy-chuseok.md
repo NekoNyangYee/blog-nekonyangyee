@@ -1,6 +1,6 @@
 ---
 teaser: /chuseok.jpg
-category: ✏️ 기타
+category: 공지 & 잡담
 title: 행복한 추석명절 되세요!!
 date: 2023-09-28T00:00:00+00:00
 time: 08:35

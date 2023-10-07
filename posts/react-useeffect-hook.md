@@ -1,6 +1,6 @@
 ---
 teaser: /ReactuseEffect/react-useEffect-hook.png
-category: 💻 개발 일기
+category: React
 title: React | React Hooks => useEffect()에 대해 알아보기
 date: 2023-08-05T00:00:00+00:00
 time: 20:12

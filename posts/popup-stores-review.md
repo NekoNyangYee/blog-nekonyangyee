@@ -1,6 +1,6 @@
 ---
 teaser: /popupStores/Thumbnail.jpg
-category: 😄 나의 일상
+category: 나의 일상
 title: 우주먼지, 토심이 팝업스토어 다녀오기!!
 date: 2023-09-24T00:00:00+00:00
 time: 19:38

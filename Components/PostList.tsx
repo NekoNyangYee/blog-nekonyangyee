@@ -367,15 +367,39 @@ const StyledPost = styled.div(({ theme }) => `
             white-space: nowrap; /* 추가 */
             text-overflow: ellipsis; /* 추가 */
         }
-    
+
+        & svg {
+            width: 22px;
+            height: 22px;
+            margin-right: 6px;
+        }
+
+        & path {
+            fill: none;
+            stroke: ${theme.colors.text()};
+        }
+
+        & circle {
+            stroke: ${theme.colors.text()};
+        }
+        
         & .active {
             opacity: 1;
             border: none;
             font-weight: bold;
             color: ${theme.colors.white()};
             background-color: ${theme.colors.categoryButtonBackground()};
+
+            & path {
+                fill: ${theme.colors.white()};
+                stroke: none;
+            }
+
+            & circle {
+                fill: ${theme.colors.categoryButtonBackground()};
+            }
         }
-        
+
         &::-webkit-scrollbar {
             display: none; 
         }
@@ -434,6 +458,58 @@ const StyledCategory = styled.div(({ theme }) => `
         font-weight: bold;
         color: ${theme.colors.white()};
         background-color: ${theme.colors.categoryButtonBackground()};
+    }
+
+    & .category-container {
+        width: 100%;
+        gap: 14px;
+        margin: 20px 0 20px 0;
+
+        & button {
+            padding: 12px;
+            display: flex;
+            border-radius: 12px;
+            font-size: 14px;
+            opacity: 0.5;
+            color: ${theme.colors.text()};
+            background-color: ${theme.colors.background(100)};
+            transition: all .1s;
+            cursor: pointer;
+            white-space: nowrap; /* 추가 */
+            text-overflow: ellipsis; /* 추가 */
+        }
+
+        & svg {
+            width: 22px;
+            height: 22px;
+            margin-right: 6px;
+        }
+
+        & path {
+            fill: none;
+            stroke: ${theme.colors.text()};
+        }
+
+        & circle {
+            stroke: ${theme.colors.text()};
+        }
+        
+        & .active {
+            opacity: 1;
+            border: none;
+            font-weight: bold;
+            color: ${theme.colors.white()};
+            background-color: ${theme.colors.categoryButtonBackground()};
+
+            & path {
+                fill: ${theme.colors.white()};
+                stroke: none;
+            }
+
+            & circle {
+                fill: ${theme.colors.categoryButtonBackground()};
+            }
+        }
     }
 `);
 
@@ -522,12 +598,15 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
 
 
     const categories: { title: string; keyword: string }[] = [
-        { title: "📄 전체", keyword: "" },
-        { title: "💻 개발 일기", keyword: "💻 개발 일기" },
-        { title: "⌨️ 프로그래머스", keyword: "⌨️ 프로그래머스" },
-        { title: "✅ 방문 후기 & 리뷰", keyword: "✅ 방문 후기 & 리뷰" },
-        { title: "😄 나의 일상", keyword: "😄 나의 일상" },
-        { title: "✏️ 기타", keyword: "✏️ 기타" }
+        { title: "전체", keyword: "" },
+        { title: "JavaScript", keyword: "JavaScript" },
+        { title: "React", keyword: "React" },
+        { title: "Next.js", keyword: "Next.js" },
+        { title: "기타 개발", keyword: "기타 개발" },
+        { title: "프로그래머스", keyword: "프로그래머스" },
+        { title: "방문 후기 & 리뷰", keyword: "방문 후기 & 리뷰" },
+        { title: "나의 일상", keyword: "나의 일상" },
+        { title: "공지 & 잡담", keyword: "공지 & 잡담" }
     ];
 
     const Posts = allPosts
@@ -583,6 +662,10 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                 key={category.keyword}
                                 className={selectCategory === category.keyword ? "active" : ""}
                             >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+                                    <path d="M32.5772 12.7782L48.7904 28.9914C50.3525 30.5535 50.3525 33.0861 48.7904 34.6482L34.6482 48.7904C33.0861 50.3525 30.5535 50.3525 28.9914 48.7904L12.7782 32.5771C12.028 31.827 11.6066 30.8096 11.6066 29.7487L11.6066 15.6066C11.6066 13.3975 13.3975 11.6066 15.6066 11.6066L29.7487 11.6066C30.8096 11.6066 31.827 12.028 32.5772 12.7782Z" stroke-width="2" />
+                                    <circle cx="24" cy="23" r="5" fill="none" stroke-width="2" />
+                                </svg>
                                 {category.title}
                             </button>
                         ))}
@@ -631,6 +714,10 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                 key={category.keyword}
                                 className={selectCategory === category.keyword ? "active" : ""}
                             >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+                                    <path d="M32.5772 12.7782L48.7904 28.9914C50.3525 30.5535 50.3525 33.0861 48.7904 34.6482L34.6482 48.7904C33.0861 50.3525 30.5535 50.3525 28.9914 48.7904L12.7782 32.5771C12.028 31.827 11.6066 30.8096 11.6066 29.7487L11.6066 15.6066C11.6066 13.3975 13.3975 11.6066 15.6066 11.6066L29.7487 11.6066C30.8096 11.6066 31.827 12.028 32.5772 12.7782Z" stroke="black" stroke-width="2" />
+                                    <circle cx="24" cy="23" r="5" stroke="black" stroke-width="2" />
+                                </svg>
                                 {category.title}
                             </button>
                         ))}
@@ -642,7 +729,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
                     <div className="select-category">
-                        <p>{selectCategory === "" ? "📄 전체" : `${selectCategory}`} ({Posts.length})</p>
+                        <p>{selectCategory === "" ? "전체" : `${selectCategory}`} ({Posts.length})</p>
                         <SortCategory>
                             <button onClick={toggleGridView} className={viewMode === 'grid' ? 'active' : ''}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="31" viewBox="0 0 33 31" fill="none">

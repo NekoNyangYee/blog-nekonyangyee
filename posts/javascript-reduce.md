@@ -1,6 +1,6 @@
 ---
 teaser: /JavascriptReduce/my-blog-thumbnail.jpg
-category: 💻 개발 일기
+category: JavaScript
 title: JavaScript | reduce메서드에 대해 이해하기
 date: 2023-08-04T00:00:00+00:00
 time: 17:53

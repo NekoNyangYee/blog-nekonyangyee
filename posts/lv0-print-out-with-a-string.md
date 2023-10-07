@@ -1,6 +1,6 @@
 ---
 teaser: /programmers-logo-lv0.png
-category: ⌨️ 프로그래머스
+category: 프로그래머스
 title: Lv.0 문자열 붙여서 출력하기 (JavaScript)
 date: 2023-08-30T00:00:00+00:00
 time: 20:57

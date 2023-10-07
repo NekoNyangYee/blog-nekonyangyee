@@ -1,6 +1,6 @@
 ---
 teaser: /programmers-logo-lv1.jpeg
-category: ⌨️ 프로그래머스
+category: 프로그래머스
 title: Lv.1 가운데 글자 가져오기 (JavaScript)
 date: 2023-09-30T00:00:00+00:00
 time: 20:28

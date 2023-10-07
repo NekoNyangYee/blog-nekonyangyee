@@ -1,6 +1,6 @@
 ---
 teaser: /programmers-logo-lv1.jpeg
-category: ⌨️ 프로그래머스
+category: 프로그래머스
 title: Lv.1 내적 (JavaScript)
 date: 2023-08-31T00:00:00+00:00
 time: 21:37
