@@ -19,5 +19,6 @@ import popupStoresReviewMd from './popup-stores-review.md.json' assert { type: '
 import reactUseeffectHookMd from './react-useeffect-hook.md.json' assert { type: 'json' }
 import samsungGangnamMd from './samsung-gangnam.md.json' assert { type: 'json' }
 import staticWebAndDynamicWebMd from './static-web-and-dynamic-web.md.json' assert { type: 'json' }
+import typescriptGenericMd from './typescript-generic.md.json' assert { type: 'json' }
 
-export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, bringCenterStringMd, cookieAndSessionMd, happyChuseokMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, nextjs_13ServerComponentsMd, popupStoresReviewMd, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd]
+export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, bringCenterStringMd, cookieAndSessionMd, happyChuseokMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, nextjs_13ServerComponentsMd, popupStoresReviewMd, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd, typescriptGenericMd]

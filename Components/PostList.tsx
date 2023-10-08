@@ -58,6 +58,14 @@ const NavContainer = styled.div(({ theme }) => `
         align-items: flex-start;
         gap: 16px;
         justify-content: center;
+
+        & path {
+            stroke: none;
+        }
+    
+        & circle {
+            fill: ${theme.colors.text()};
+        }
     }
 
     & button {
@@ -602,6 +610,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         { title: "JavaScript", keyword: "JavaScript" },
         { title: "React", keyword: "React" },
         { title: "Next.js", keyword: "Next.js" },
+        { title: "TypeScript", keyword: "TypeScript" },
         { title: "기타 개발", keyword: "기타 개발" },
         { title: "프로그래머스", keyword: "프로그래머스" },
         { title: "방문 후기 & 리뷰", keyword: "방문 후기 & 리뷰" },

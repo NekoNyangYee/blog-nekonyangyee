@@ -39,6 +39,14 @@ const StyleFooter = styled.footer(({ theme }) => `
         margin: 0;
     }
 
+    & path {
+        stroke: none;
+    }
+
+    & circle {
+        fill: ${theme.colors.text()};
+    }
+
     & p {
         margin-bottom: 40px;
         text-align: center;
