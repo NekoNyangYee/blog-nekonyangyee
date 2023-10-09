@@ -63,6 +63,11 @@ export const StyledPost = styled.main(({ theme }) => `
         font-size: 13px;
         margin: 0;
       }
+
+      iframe {
+        border: none;
+        border-radius: 12px;
+      }
     
       & .post-title {
         margin: 10px 0;

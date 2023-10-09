@@ -19,7 +19,7 @@ const StyledArticleContainer = styled.div(() => `
     margin-left: 320px;
     max-width: calc(100% - 320px);
     
-    @media (max-width: 672px) {
+    @media (max-width: 872px) {
         margin: 0;
         max-width: 100%;
     }
@@ -37,8 +37,10 @@ const NavContainer = styled.div(({ theme }) => `
     background-color: ${theme.colors.background(100)};
     
 
-    & svg {
-        width: 48px;
+    & .main-logo {
+        & svg {
+            width: 48px;
+        }
     }
 
     & .page-title {
@@ -77,7 +79,7 @@ const NavContainer = styled.div(({ theme }) => `
         opacity: 1;
     }
 
-    @media (max-width: 672px) {
+    @media (max-width: 872px) {
         display: none;
     }
 `);
@@ -94,11 +96,11 @@ const StyledPost = styled.div(({ theme }) => `
         padding: 10px 0;
         transition: all 0.3s ease;
 
-        @media (max-width: 1472px) {
+        @media (max-width: 1672px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media (max-width: 872px) {
+        @media (max-width: 672px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }
@@ -201,8 +203,12 @@ const StyledPost = styled.div(({ theme }) => `
                 max-width: 250px;
             }
 
-            @media (max-width: 932px) {
-                font-size: 17px;
+            @media (max-width: 872px) {
+                font-size: 15px;
+                max-width: 290px;
+            }
+
+            @media (max-width: 672px) {
                 max-width: 200px;
             }
         }
@@ -357,7 +363,7 @@ const StyledPost = styled.div(({ theme }) => `
         margin: 20px 0 20px 0;
         overflow-x: auto;
         
-        @media (min-width: 672px) {
+        @media (min-width: 872px) {
             display: none;
         }
 
@@ -418,7 +424,7 @@ const StyledPost = styled.div(({ theme }) => `
     & .page-numbers {
         & button {
             margin: 0 6px;
-            padding: 12px 17px;
+            padding: 10px 15px;
             background: none;
             border: 1px solid ${theme.colors.text(10)};
             color: ${theme.colors.text()};
@@ -643,18 +649,19 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     return (
         <StyledFlexContainer>
             <NavContainer>
-                <svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68" fill="none">
-                    <path d="M34 68C43.0174 68 51.6654 64.4179 58.0416 58.0416C64.4179 51.6654 68 43.0174 68 34C68 24.9826 64.4179 16.3346 58.0416 9.95837C51.6654 3.58214 43.0174 1.75575e-06 34 0L34 9.0066C40.6287 9.0066 46.9858 11.6398 51.673 16.327C56.3602 21.0142 58.9934 27.3713 58.9934 34C58.9934 40.6287 56.3602 46.9858 51.673 51.673C46.9858 56.3602 40.6287 58.9934 34 58.9934L34 68Z" fill="black" />
-                    <rect x="22" y="9" width="12" height="12" fill="black" />
-                    <rect x="22" y="31" width="8" height="8" fill="black" />
-                    <rect x="12" y="21" width="10" height="10" fill="black" />
-                    <rect x="22" y="54" width="6" height="6" fill="black" />
-                    <rect x="12" y="40" width="6" height="6" fill="black" />
-                    <rect x="18" y="50" width="4" height="4" fill="black" />
-                    <rect x="10" y="56" width="4" height="4" fill="black" />
-                    <rect x="28" y="46" width="8" height="8" fill="black" />
-                </svg>
-
+                <div className="main-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68" fill="none">
+                        <path d="M34 68C43.0174 68 51.6654 64.4179 58.0416 58.0416C64.4179 51.6654 68 43.0174 68 34C68 24.9826 64.4179 16.3346 58.0416 9.95837C51.6654 3.58214 43.0174 1.75575e-06 34 0L34 9.0066C40.6287 9.0066 46.9858 11.6398 51.673 16.327C56.3602 21.0142 58.9934 27.3713 58.9934 34C58.9934 40.6287 56.3602 46.9858 51.673 51.673C46.9858 56.3602 40.6287 58.9934 34 58.9934L34 68Z" fill="black" />
+                        <rect x="22" y="9" width="12" height="12" fill="black" />
+                        <rect x="22" y="31" width="8" height="8" fill="black" />
+                        <rect x="12" y="21" width="10" height="10" fill="black" />
+                        <rect x="22" y="54" width="6" height="6" fill="black" />
+                        <rect x="12" y="40" width="6" height="6" fill="black" />
+                        <rect x="18" y="50" width="4" height="4" fill="black" />
+                        <rect x="10" y="56" width="4" height="4" fill="black" />
+                        <rect x="28" y="46" width="8" height="8" fill="black" />
+                    </svg>
+                </div>
                 <StyledCategory>
                     <StyledInput
                         type="search"

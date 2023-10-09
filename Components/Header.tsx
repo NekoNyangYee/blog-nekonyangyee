@@ -15,7 +15,7 @@ const MainHeader = styled.header<{ scrolled: boolean }>(({ theme, scrolled }) =>
   z-index: 20;
   display: none;
   
-  @media (max-width: 672px) {
+  @media (max-width: 872px) {
       display: block;
     }
   

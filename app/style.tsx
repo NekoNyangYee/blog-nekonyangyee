@@ -19,7 +19,7 @@ const StyledContent = styled.main(() => `
             max-width: 90%; 
         }
 
-        @media (max-width: 672px) {
+        @media (max-width: 872px) {
             padding-top: 70px;
         }
     }

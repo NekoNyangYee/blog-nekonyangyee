@@ -37,7 +37,7 @@ const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => 
 `);
 
 const CopiedUrl = () => {
-    const [copied, setCopied] = useState(false);
+    const [copied, setCopied] = useState<boolean>(false);
 
     const copyUrlToClipboard = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.stopPropagation();
