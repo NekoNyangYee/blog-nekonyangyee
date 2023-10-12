@@ -3,7 +3,7 @@ teaser: /Gangneung-Day-01/Door-Like-Suzume.jpg
 category: 나의 일상
 title: 강릉 여행 -  1일차 (05/21) 리포스트
 date: 2023-10-09T00:00:00+00:00
-time: 20:12
+time: 19:58
 description: 강릉 여행 -  1일차 (05/21) 리포스트 합니다.
 ---
 

@@ -4,6 +4,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import ThemeProvider from '../theme/theme';
 import GotoTop from '@/Components/GotoTop';
 import Footer from '@/Components/Footer';
+import Head from "next/head";
 
 const noto_sans_kr = Noto_Sans_KR({
   subsets: ['latin'],
@@ -43,6 +44,9 @@ export default function RootLayout({
     <html lang="ko">
       <link rel="manifest" href="/manifest.json" />
       <ThemeProvider>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        </Head>
         <body className={noto_sans_kr.className}>
           {children}
           <GotoTop />
