@@ -14,7 +14,7 @@ const StyleFooter = styled.footer(({ theme }) => `
     z-index: 20;
     display: none;
 
-    @media (max-width: 672px) {
+    @media (max-width: 872px) {
         display: block;
       }
 

@@ -235,16 +235,13 @@ const StyledPost = styled.div(({ theme }) => `
         background-color: ${theme.colors.background(100)};
         border: 1px solid ${theme.colors.text(10)};
 
-            @media (max-width: 972px) {
-                width: 50%;
-            }
-
             @media (max-width: 672px) {
                 width: 100%;
             }
 
-            @media (min-width: 672px) {
+            @media (min-width: 872px) {
                 display: none;
+                width: 100%;
             }
         }
 
@@ -351,7 +348,7 @@ const StyledPost = styled.div(({ theme }) => `
         font-size: 22px;
         display: block;
 
-        @media (min-width: 672px) {
+        @media (min-width: 872px) {
             display: none;
         }
     }
