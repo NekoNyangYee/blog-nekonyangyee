@@ -36,6 +36,30 @@ const NavContainer = styled.div(({ theme }) => `
     padding: 0 15px 0 0;
     background-color: ${theme.colors.background(100)};
     
+    & .category-container {
+        overflow-y: scroll;
+        height: 70%;
+        border: 1px solid ${theme.colors.text(10)};
+        border-radius: 12px;
+        
+        &::-webkit-scrollbar {
+            width: 8px;
+        } 
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            border-radius: 12px;
+            background-color: ${theme.colors.text(100)};
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 3px;
+            border-radius: 12px;
+            background-color: ${theme.colors.text(10)};
+        }
+    }
+
+    
 
     & .main-logo {
         & svg {
