@@ -13,7 +13,6 @@ const StyledContent = styled.main(() => `
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
-       
 
         @media(max-width: 1224px) {
             max-width: 90%; 

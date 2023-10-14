@@ -5,7 +5,6 @@ const StyledIntroduceHeader = styled.div(({ theme }) => `
     border: 1px solid ${theme.colors.text(10)};
     padding: 12px;
     border-radius: 12px;
-    margin: 30px 0;
 
     & p {
         text-align: center;

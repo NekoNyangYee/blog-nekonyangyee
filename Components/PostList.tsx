@@ -15,7 +15,7 @@ const StyledFlexContainer = styled.div(() => `
 
 const StyledArticleContainer = styled.div(() => `
     width: 100%;
-    margin: 0 40px 0 40px;
+    margin: 20px 40px 0 40px;
     margin-left: 320px;
     max-width: calc(100% - 320px);
     
@@ -28,7 +28,7 @@ const StyledArticleContainer = styled.div(() => `
 const NavContainer = styled.div(({ theme }) => `
     position: fixed;
     width: 250px;
-    height: 100vh;
+    max-height: calc(100vh - 20px);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -38,16 +38,14 @@ const NavContainer = styled.div(({ theme }) => `
     
     & .category-container {
         overflow-y: scroll;
-        height: 70%;
-        border: 1px solid ${theme.colors.text(10)};
-        border-radius: 12px;
+        height: 54%;
+        padding-right: 8px;
         
         &::-webkit-scrollbar {
-            width: 8px;
+            width: 8px;     
         } 
 
         &::-webkit-scrollbar-thumb {
-            border-radius: 3px;
             border-radius: 12px;
             background-color: ${theme.colors.text(100)};
         }
@@ -58,8 +56,6 @@ const NavContainer = styled.div(({ theme }) => `
             background-color: ${theme.colors.text(10)};
         }
     }
-
-    
 
     & .main-logo {
         & svg {
@@ -72,14 +68,13 @@ const NavContainer = styled.div(({ theme }) => `
     }
 
     & p {
-        margin-bottom: 40px;
+        margin: 0;
         text-align: center;
         font-size: 12px;
         color: ${theme.colors.text(60)};
     }
 
     & .social-container {
-        margin-top: 20%;
         display: flex;
         align-items: flex-start;
         gap: 16px;
@@ -475,6 +470,8 @@ const StyledPost = styled.div(({ theme }) => `
 `);
 
 const StyledCategory = styled.div(({ theme }) => `
+    height: 70vh;
+
     & button {
         width: 100%;
         height: 50px;
@@ -638,6 +635,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         { title: "React", keyword: "React" },
         { title: "Next.js", keyword: "Next.js" },
         { title: "TypeScript", keyword: "TypeScript" },
+        { title: "Python3", keyword: "Python3" },
         { title: "기타 개발", keyword: "기타 개발" },
         { title: "프로그래머스", keyword: "프로그래머스" },
         { title: "방문 후기 & 리뷰", keyword: "방문 후기 & 리뷰" },
