@@ -48,7 +48,7 @@ const global = (theme: Theme) => css`
   & path {
     stroke: ${theme.colors.text()};
     fill: ${theme.colors.text()};
-  }s
+  }
 `;
 
 export default global;

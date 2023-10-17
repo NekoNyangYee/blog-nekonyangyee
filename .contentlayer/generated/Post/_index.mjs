@@ -15,6 +15,7 @@ import myBlogErrorMd from './my-blog-error.md.json' assert { type: 'json' }
 import myBlogWithContentlayerMd from './my-blog-with-contentlayer.md.json' assert { type: 'json' }
 import myFirstBlogMd from './my-first-blog.md.json' assert { type: 'json' }
 import myTravelGangneungMd from './my-travel-gangneung.md.json' assert { type: 'json' }
+import nextjs_13ServerComponents_02Md from './nextjs-13-server-components-02.md.json' assert { type: 'json' }
 import nextjs_13ServerComponentsMd from './nextjs-13-server-components.md.json' assert { type: 'json' }
 import popupStoresReviewMd from './popup-stores-review.md.json' assert { type: 'json' }
 import pythonGrammers_01Md from './python-grammers-01.md.json' assert { type: 'json' }
@@ -23,4 +24,4 @@ import samsungGangnamMd from './samsung-gangnam.md.json' assert { type: 'json' }
 import staticWebAndDynamicWebMd from './static-web-and-dynamic-web.md.json' assert { type: 'json' }
 import typescriptGenericMd from './typescript-generic.md.json' assert { type: 'json' }
 
-export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, bringCenterStringMd, cookieAndSessionMd, ganeungDay_01Md, happyChuseokMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, nextjs_13ServerComponentsMd, popupStoresReviewMd, pythonGrammers_01Md, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd, typescriptGenericMd]
+export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, bringCenterStringMd, cookieAndSessionMd, ganeungDay_01Md, happyChuseokMd, javascriptReduceMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, nextjs_13ServerComponents_02Md, nextjs_13ServerComponentsMd, popupStoresReviewMd, pythonGrammers_01Md, reactUseeffectHookMd, samsungGangnamMd, staticWebAndDynamicWebMd, typescriptGenericMd]

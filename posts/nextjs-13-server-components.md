@@ -4,7 +4,7 @@ category: Next.js
 title: Next.js 13 Server Components가 무엇일까? 1편
 date: 2023-10-03T00:00:00+00:00
 time: 21:34
-description: Next.js 13버전에 추가된 Server Components에 관한 이야기입니다.
+description: Next.js 13 Server Components에 관한 이야기입니다.
 ---
 
 ![thumbnail](/Nextjs-ServerComponents/thumbnail.png)
