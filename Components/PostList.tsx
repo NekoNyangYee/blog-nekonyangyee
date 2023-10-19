@@ -654,9 +654,17 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                 post.description.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
-    const postsPerPage = 9;
-    const startIndex = (page - 1) * postsPerPage;
-    const endIndex = startIndex + postsPerPage;
+    const itemsPerPage = 9;
+    const pagesPerRange = 5;
+    const totalPosts = Posts.length;
+    const totalPages = Math.ceil(totalPosts / itemsPerPage);
+
+    const currentPageRange = Math.ceil(page / pagesPerRange);
+    const startPage = (currentPageRange - 1) * pagesPerRange + 1;
+    const endPage = Math.min(currentPageRange * pagesPerRange, totalPages);
+
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, totalPosts);
 
     const paginatedPosts = Posts.slice(startIndex, endIndex);
 
@@ -815,7 +823,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                             </svg>
                         </button>
                         <div className="page-numbers">
-                            {Array.from({ length: Math.ceil(Posts.length / postsPerPage) }, (_, index) => index + 1).map((pageNum) => (
+                            {Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index).map((pageNum) => (
                                 <button
                                     key={pageNum}
                                     className={page === pageNum ? "active" : ""}
@@ -826,7 +834,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                             ))}
                         </div>
                         <button
-                            disabled={endIndex >= Posts.length}
+                            disabled={endIndex >= totalPosts}
                             onClick={() => setPage(page + 1)}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32">
@@ -834,7 +842,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                 <rect y="28.4894" width="22.4849" height="4.00443" transform="rotate(-45 0 28.4894)" />
                             </svg>
                         </button>
-
                     </div>
                 </StyledPost>
             </StyledArticleContainer>
