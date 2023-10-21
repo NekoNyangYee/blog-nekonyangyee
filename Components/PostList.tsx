@@ -2,7 +2,7 @@
 
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Introduce } from "./Intoduce";
 import { format } from "date-fns";
 
@@ -247,6 +247,7 @@ const StyledPost = styled.div(({ theme }) => `
     
     & input {
         width: 100%;
+        margin: 20px 0 0 0;
         font-size: 13px;
         padding: 14px;
         border: none;
@@ -269,8 +270,7 @@ const StyledPost = styled.div(({ theme }) => `
         font-weight: bold;
         display: flex;
         justify-content: space-between;
-        margin: 20px 0 10px 0;
-        padding: 12px 0 12px 0;
+        margin: 10px 0 10px 0;
        
         & button {
             background-color: ${theme.colors.background(100)};
@@ -435,7 +435,37 @@ const StyledPost = styled.div(({ theme }) => `
         }
     }
 
-    
+    & .scroll-button {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0 20px 0;
+
+        & button {
+            margin: 0 6px;
+            padding: 6px 10px;
+            background: none;
+            border: 1px solid ${theme.colors.text(10)};
+            border-radius: 12px;
+            color: ${theme.colors.text()};
+            cursor: pointer;
+            font-weight: normal;
+            
+        }
+
+        & svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        & path {
+            fill: none;
+            stroke: ${theme.colors.text()};
+        }
+
+        @media (min-width: 872px) {
+            display: none;
+        }
+    }
 
     & .page-numbers {
         & button {
@@ -599,6 +629,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [page, setPage] = useState<number>(1);
     const [viewMode, setViewMode] = useState<string>('grid');
+    const categoryContainerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         const pageToTop = () => {
@@ -654,23 +685,33 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                 post.description.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
-    const itemsPerPage = 9;
-    const pagesPerRange = 5;
-    const totalPosts = Posts.length;
-    const totalPages = Math.ceil(totalPosts / itemsPerPage);
+    const itemsPerPage: number = 9;
+    const pagesPerRange: number = 5;
+    const totalPosts: number = Posts.length;
+    const totalPages: number = Math.ceil(totalPosts / itemsPerPage);
 
-    const currentPageRange = Math.ceil(page / pagesPerRange);
-    const startPage = (currentPageRange - 1) * pagesPerRange + 1;
-    const endPage = Math.min(currentPageRange * pagesPerRange, totalPages);
+    const currentPageRange: number = Math.ceil(page / pagesPerRange);
+    const startPage: number = (currentPageRange - 1) * pagesPerRange + 1;
+    const endPage: number = Math.min(currentPageRange * pagesPerRange, totalPages);
 
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = Math.min(startIndex + itemsPerPage, totalPosts);
+    const startIndex: number = (page - 1) * itemsPerPage;
+    const endIndex: number = Math.min(startIndex + itemsPerPage, totalPosts);
 
     const paginatedPosts = Posts.slice(startIndex, endIndex);
 
     const handleCategoryChange = (category: string) => {
         setSelectCategory(category);
         setPage(1);
+    };
+
+    const scrollCategories = (scrollOffset: number) => {
+        if (categoryContainerRef.current) {
+            const newScrollLeft = categoryContainerRef.current.scrollLeft + scrollOffset;
+            categoryContainerRef.current.scrollTo({
+                left: newScrollLeft,
+                behavior: 'smooth',
+            });
+        }
     };
 
     return (
@@ -692,7 +733,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                 <StyledCategory>
                     <StyledInput
                         type="search"
-                        placeholder="키워드 검색..."
+                        placeholder="검색 키워드를 입력해보세요."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -741,14 +782,19 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     </Link>
                 </div>
                 <p>Copyright ©2023 NekoNyangYee All rights reserved.</p>
-
             </NavContainer>
 
             <StyledArticleContainer>
                 <StyledPost>
                     <Introduce />
+                    <input
+                        type="search"
+                        placeholder="검색 키워드를 입력해보세요."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
                     <h1 className="page-title-mobile">카테고리</h1>
-                    <div className="category-container-moblie">
+                    <div className="category-container-moblie" ref={categoryContainerRef}>
                         {categories.map((category) => (
                             <button
                                 type="button"
@@ -765,12 +811,27 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                             </button>
                         ))}
                     </div>
-                    <input
-                        type="search"
-                        placeholder="키워드 검색..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
+                    <div className="scroll-button">
+                        <button
+                            type="button"
+                            onClick={() => scrollCategories(-150)} // 왼쪽으로 50 이동
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32" fill="none">
+                                <rect x="2.82842" y="13.0659" width="21.8165" height="4" transform="rotate(45 2.82842 13.0659)" fill="black" />
+                                <rect x="18.7332" y="2.83157" width="22.4849" height="4.00443" transform="rotate(135 18.7332 2.83157)" fill="black" />
+                            </svg>
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => scrollCategories(150)} // 오른쪽으로 50 이동
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32">
+                                <rect x="15.9048" y="18.255" width="21.8165" height="4" transform="rotate(-135 15.9048 18.255)" />
+                                <rect y="28.4894" width="22.4849" height="4.00443" transform="rotate(-45 0 28.4894)" />
+                            </svg>
+                        </button>
+                    </div>
+
                     <div className="select-category">
                         <p>{selectCategory === "" ? "전체" : `${selectCategory}`} ({Posts.length})</p>
                         <SortCategory>
