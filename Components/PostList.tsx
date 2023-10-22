@@ -52,7 +52,6 @@ const NavContainer = styled.div(({ theme }) => `
 
         &::-webkit-scrollbar-track {
             border-radius: 3px;
-            border-radius: 12px;
             background-color: ${theme.colors.text(10)};
         }
     }
@@ -377,6 +376,7 @@ const StyledPost = styled.div(({ theme }) => `
         display: flex;
         gap: 14px;
         margin: 20px 0 20px 0;
+        padding: 0 0 10px 0;
         overflow-x: auto;
         
         @media (min-width: 872px) {
@@ -431,7 +431,17 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         &::-webkit-scrollbar {
-            display: none; 
+            height: 4px;     
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 12px;
+            background-color: ${theme.colors.text(100)};
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 3px;
+            background-color: ${theme.colors.text(10)};
         }
     }
 
@@ -629,7 +639,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [page, setPage] = useState<number>(1);
     const [viewMode, setViewMode] = useState<string>('grid');
-    const categoryContainerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         const pageToTop = () => {
@@ -702,16 +711,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     const handleCategoryChange = (category: string) => {
         setSelectCategory(category);
         setPage(1);
-    };
-
-    const scrollCategories = (scrollOffset: number) => {
-        if (categoryContainerRef.current) {
-            const newScrollLeft = categoryContainerRef.current.scrollLeft + scrollOffset;
-            categoryContainerRef.current.scrollTo({
-                left: newScrollLeft,
-                behavior: 'smooth',
-            });
-        }
     };
 
     return (
@@ -794,7 +793,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
                     <h1 className="page-title-mobile">카테고리</h1>
-                    <div className="category-container-moblie" ref={categoryContainerRef}>
+                    <div className="category-container-moblie">
                         {categories.map((category) => (
                             <button
                                 type="button"
@@ -811,27 +810,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                             </button>
                         ))}
                     </div>
-                    <div className="scroll-button">
-                        <button
-                            type="button"
-                            onClick={() => scrollCategories(-150)} // 왼쪽으로 50 이동
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32" fill="none">
-                                <rect x="2.82842" y="13.0659" width="21.8165" height="4" transform="rotate(45 2.82842 13.0659)" fill="black" />
-                                <rect x="18.7332" y="2.83157" width="22.4849" height="4.00443" transform="rotate(135 18.7332 2.83157)" fill="black" />
-                            </svg>
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => scrollCategories(150)} // 오른쪽으로 50 이동
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32">
-                                <rect x="15.9048" y="18.255" width="21.8165" height="4" transform="rotate(-135 15.9048 18.255)" />
-                                <rect y="28.4894" width="22.4849" height="4.00443" transform="rotate(-45 0 28.4894)" />
-                            </svg>
-                        </button>
-                    </div>
-
                     <div className="select-category">
                         <p>{selectCategory === "" ? "전체" : `${selectCategory}`} ({Posts.length})</p>
                         <SortCategory>
