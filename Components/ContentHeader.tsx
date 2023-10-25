@@ -12,7 +12,8 @@ const MainContentHeader = styled.header<{ scrolled: boolean, infoscrolled: boole
   top: 0;
   left: 0;
   border-bottom: ${scrolled ? `1px solid ${theme.colors.text(10)}` : '#fffffff'};    
-  background-color: ${theme.colors.background(100)};
+  background-color: ${theme.colors.background(80)};
+  backdrop-filter: blur(20px);
   z-index: 20;
   
   & .header-container {
@@ -86,11 +87,11 @@ const ContentHeader = ({ title, date, category }: Post) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 140);
+            setIsScrolled(window.scrollY > 200);
         }
 
         const infoScroll = () => {
-            setIsInfoScrolled(window.scrollY > 140);
+            setIsInfoScrolled(window.scrollY > 200);
         }
 
         window.addEventListener('scroll', handleScroll);

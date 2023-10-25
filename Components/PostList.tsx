@@ -28,7 +28,6 @@ const StyledArticleContainer = styled.div(() => `
 const NavContainer = styled.div(({ theme }) => `
     position: fixed;
     width: 250px;
-    max-height: calc(100vh - 20px);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -142,14 +141,13 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         & .article-container {
-            border: 1px solid ${theme.colors.text(10)};
             border-radius: 12px;
             overflow: hidden;
             padding: 0;
             transition: all .3s;
 
             & .article-info {
-                padding: 16px;
+                padding: 16px 0;
             }
 
             &:active {
@@ -232,7 +230,6 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         & .article-container {
-            margin: 6px 0;
             & .article-info {
                 padding: 10px 0;
             }
@@ -246,23 +243,25 @@ const StyledPost = styled.div(({ theme }) => `
     
     & input {
         width: 100%;
-        margin: 20px 0 0 0;
-        font-size: 13px;
-        padding: 14px;
-        border: none;
-        border-radius: 12px;
         background-color: ${theme.colors.background(100)};
-        border: 1px solid ${theme.colors.text(10)};
+        margin: 0;
+        font-size: 16px;
+        padding: 14px 0;
+        border: none;
 
-            @media (max-width: 672px) {
-                width: 100%;
-            }
-
-            @media (min-width: 872px) {
-                display: none;
-                width: 100%;
-            }
+        &::placeholder {
+            font-weight: bold;
         }
+
+        @media (max-width: 672px) {
+            width: 100%;
+        }
+
+        @media (min-width: 872px) {
+            display: none;
+            width: 100%;
+        }
+    }
 
     & .select-category {
         font-size: 19px;
@@ -272,7 +271,7 @@ const StyledPost = styled.div(({ theme }) => `
         margin: 10px 0 10px 0;
        
         & button {
-            background-color: ${theme.colors.background(100)};
+            background-color: ${theme.colors.background(10)};
             color: ${theme.colors.buttonText()};
             border: none;
             border-radius: 12px;
@@ -285,6 +284,7 @@ const StyledPost = styled.div(({ theme }) => `
             background-color: ${theme.colors.text()};
             
             & rect {
+                fill: ${theme.colors.background(100)};
                 stroke: ${theme.colors.background(100)};
             }
         }
@@ -349,6 +349,7 @@ const StyledPost = styled.div(({ theme }) => `
         & img {
             width: 100%;
             height: 100%;
+            border-radius: 12px;
             object-fit: cover;
         }
 
@@ -490,7 +491,6 @@ const StyledPost = styled.div(({ theme }) => `
     }
 
     & .article-container {
-        border: 1px solid ${theme.colors.text(10)};
         border-radius: 12px;
         overflow: hidden;
         padding: 0;
@@ -500,12 +500,10 @@ const StyledPost = styled.div(({ theme }) => `
         display: inline-block;
         font-weight: bold;
         background-color: ${theme.colors.background(100)};
-        border: 1px solid ${theme.colors.text(10)};
         border-radius: 10px;
-        padding: 8px;
-        font-size: 11px;
+        font-size: 13px;
         margin: 8px 0;
-        color: ${theme.colors.text()};
+        color: ${theme.colors.text(70)};
     }
 `);
 
@@ -587,12 +585,16 @@ const StyledCategory = styled.div(({ theme }) => `
 
 const StyledInput = styled.input(({ theme }) => `
     width: 100%;
-    font-size: 13px;
-    padding: 14px;
     border: none;
     border-radius: 12px;
+    font-size: 16px;
+    padding: 14px 0;
+    border: none;
     background-color: ${theme.colors.background(100)};
-    border: 1px solid ${theme.colors.text(10)};
+
+        &::placeholder {
+            font-weight: bold;
+        }
 
     @media (max-width: 572px) {
         width: 100%;
@@ -603,7 +605,7 @@ const SortCategory = styled.div(({ theme }) => `
     padding: 0;
     display: flex;
     justify-content: space-between;
-    border: 1px solid ${theme.colors.text(10)};
+    background-color: ${theme.colors.gray(20)};
     border-radius: 12px;
 
     & .select-container {
@@ -814,10 +816,9 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         <p>{selectCategory === "" ? "전체" : `${selectCategory}`} ({Posts.length})</p>
                         <SortCategory>
                             <button onClick={toggleGridView} className={viewMode === 'grid' ? 'active' : ''}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="31" viewBox="0 0 33 31" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
                                     <rect x="1" y="1" width="31" height="13" rx="3" stroke="black" stroke-width="2" />
-                                    <rect x="0.5" y="21.5" width="32" height="1" rx="0.5" stroke="black" />
-                                    <rect x="0.5" y="29.5" width="32" height="1" rx="0.5" stroke="black" />
+                                    <rect x="1" y="19" width="31" height="13" rx="3" stroke="black" stroke-width="2" />
                                 </svg>
                             </button>
                             <button onClick={toggleListView} className={viewMode === 'list' ? 'active' : ''}>

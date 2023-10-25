@@ -11,7 +11,8 @@ const MainHeader = styled.header<{ scrolled: boolean }>(({ theme, scrolled }) =>
   top: 0;
   left: 0;
   border-bottom: ${scrolled ? `1px solid ${theme.colors.text(10)}` : '#fffffff'};    
-  background-color: ${theme.colors.background(100)};
+  background-color: ${theme.colors.background(80)};
+  backdrop-filter: blur(20px);
   z-index: 20;
   display: none;
   

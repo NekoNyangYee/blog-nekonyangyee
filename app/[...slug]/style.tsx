@@ -16,6 +16,11 @@ export const StyledPost = styled.main(({ theme }) => `
     box-sizing: border-box;
     padding: 0 16px;
 
+    & .time-info {
+      text-align: center;
+      margin: 0 0 20px 0;
+    }
+
     @media (max-width: 1224px) {
       column-gap: 48px;
     }
@@ -70,21 +75,24 @@ export const StyledPost = styled.main(({ theme }) => `
       }
     
       & .post-title {
-        margin: 10px 0;
+        margin: 20px 0;
         font-size: 30px;
-        font-weight: bold; 
+        font-weight: bold;
+        text-align: center; 
+
+        @media (max-width: 672px) {
+          font-size: 24px;
+        }
       }
 
       & .category-state {
-        display: inline-block;
         font-weight: bold;
         background-color: ${theme.colors.background(100)};
-        border: 1px solid ${theme.colors.text(10)};
         border-radius: 10px;
-        padding: 8px;
-        font-size: 11px;
-        margin: 0;
+        font-size: 14px;
+        margin: 20px 0;
         color: ${theme.colors.text()};
+        text-align: center;
     }
 
     & .next-prev-container {
