@@ -10,9 +10,9 @@ const StyleFooter = styled.footer(({ theme }) => `
     margin-top: 40px;
     height: 162px;
     text-align: center;
-    border-top: 1px solid ${theme.colors.text(10)};
     z-index: 20;
     display: none;
+    background-color: ${theme.colors.gray(10)};
 
     @media (max-width: 872px) {
         display: block;
@@ -41,10 +41,11 @@ const StyleFooter = styled.footer(({ theme }) => `
 
     & path {
         stroke: none;
+        fill: ${theme.colors.text(50)};
     }
 
     & circle {
-        fill: ${theme.colors.text()};
+        fill: ${theme.colors.text(50)};
     }
 
     & p {

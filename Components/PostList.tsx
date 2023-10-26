@@ -75,15 +75,16 @@ const NavContainer = styled.div(({ theme }) => `
     & .social-container {
         display: flex;
         align-items: flex-start;
-        gap: 16px;
+        gap: 22px;
         justify-content: center;
 
         & path {
             stroke: none;
+            fill: ${theme.colors.text(50)};
         }
     
         & circle {
-            fill: ${theme.colors.text()};
+            fill: ${theme.colors.text(50)};
         }
     }
 
@@ -129,7 +130,7 @@ const StyledPost = styled.div(({ theme }) => `
             display: block;
             font-size: 18px;
             word-break: break-all;
-            margin: 0;
+            margin: 0 0 8px 0;
 
             @media (max-width: 1272px) {
                 font-size: 15px;
@@ -138,6 +139,10 @@ const StyledPost = styled.div(({ theme }) => `
             @media (max-width: 672px) {
                 font-size: 20px;
             }
+        }
+
+        & time {
+            color: ${theme.colors.text(70)};
         }
 
         & .article-container {
@@ -170,8 +175,8 @@ const StyledPost = styled.div(({ theme }) => `
 
         & img {
             display: block;
-            width: 90px;
-            height: 90px;
+            width: 74px;
+            height: 74px;
             object-fit: cover;
             display: flex;
             align-items: center;
@@ -199,23 +204,21 @@ const StyledPost = styled.div(({ theme }) => `
             font-weight: bold;
             color: ${theme.colors.text()};
             word-break: break-all;
-            margin: 0;
+            margin: 0 0 8px 0;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
 
             @media (max-width: 1572px) {
-                font-size: 15px;
+                font-size: 16px;
                 max-width: 100%;
             }
 
             @media (max-width: 1372px) {
-                font-size: 15px;
                 max-width: 400px;
             }
             
             @media (max-width: 932px) {
-                font-size: 17px;
                 max-width: 250px;
             }
 
@@ -248,6 +251,7 @@ const StyledPost = styled.div(({ theme }) => `
         font-size: 16px;
         padding: 14px 0;
         border: none;
+        font-weight: bold;
 
         &::placeholder {
             font-weight: bold;
@@ -269,6 +273,7 @@ const StyledPost = styled.div(({ theme }) => `
         display: flex;
         justify-content: space-between;
         margin: 10px 0 10px 0;
+        letter-spacing: 1px;
        
         & button {
             background-color: ${theme.colors.background(10)};
@@ -278,6 +283,11 @@ const StyledPost = styled.div(({ theme }) => `
             margin: 0;
             padding: 0 11px;
             cursor: pointer;
+
+            & rect {
+                fill: ${theme.colors.gray(70)};
+                stroke: none;
+            }
         }
         
         & .active {
@@ -389,9 +399,8 @@ const StyledPost = styled.div(({ theme }) => `
             display: flex;
             border-radius: 12px;
             font-size: 14px;
-            opacity: 0.5;
-            color: ${theme.colors.text()};
-            border: 1px solid ${theme.colors.text(10)};
+            color: ${theme.colors.text(60)};
+            border: none;
             background-color: ${theme.colors.background(100)};
             transition: all .1s;
             cursor: pointer;
@@ -407,11 +416,11 @@ const StyledPost = styled.div(({ theme }) => `
 
         & path {
             fill: none;
-            stroke: ${theme.colors.text()};
+            stroke: ${theme.colors.text(60)};
         }
 
         & circle {
-            stroke: ${theme.colors.text()};
+            stroke: ${theme.colors.text(60)};
         }
         
         & .active {
@@ -419,7 +428,7 @@ const StyledPost = styled.div(({ theme }) => `
             border: none;
             font-weight: bold;
             color: ${theme.colors.white()};
-            background-color: ${theme.colors.categoryButtonBackground()};
+            background-color: ${theme.colors.categoryButtonBackground(90)};
 
             & path {
                 fill: ${theme.colors.white()};
@@ -427,7 +436,7 @@ const StyledPost = styled.div(({ theme }) => `
             }
 
             & circle {
-                fill: ${theme.colors.categoryButtonBackground()};
+                fill: ${theme.colors.categoryButtonBackground(90)};
             }
         }
 
@@ -483,10 +492,12 @@ const StyledPost = styled.div(({ theme }) => `
             margin: 0 6px;
             padding: 10px 15px;
             background: none;
-            border: 1px solid ${theme.colors.text(10)};
+            border: none;
+            background-color: ${theme.colors.gray(10)};
             color: ${theme.colors.text()};
             cursor: pointer;
             font-weight: normal;
+            font-size: 14px;
         }
     }
 
@@ -502,6 +513,7 @@ const StyledPost = styled.div(({ theme }) => `
         background-color: ${theme.colors.background(100)};
         border-radius: 10px;
         font-size: 13px;
+        letter-spacing: 1px;
         margin: 8px 0;
         color: ${theme.colors.text(70)};
     }
@@ -590,6 +602,7 @@ const StyledInput = styled.input(({ theme }) => `
     font-size: 16px;
     padding: 14px 0;
     border: none;
+    font-weight: bold;
     background-color: ${theme.colors.background(100)};
 
         &::placeholder {
@@ -825,10 +838,10 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
                                     <rect x="1" y="1" width="13" height="13" rx="3" stroke="black" stroke-width="2" />
                                     <rect x="1" y="19" width="13" height="13" rx="3" stroke="black" stroke-width="2" />
-                                    <rect x="18.5" y="2.5" width="14" height="1" rx="0.5" stroke="black" stroke-linejoin="round" />
-                                    <rect x="18.5" y="11.5" width="14" height="1" rx="0.5" stroke="black" stroke-linejoin="round" />
-                                    <rect x="18.5" y="20.5" width="14" height="1" rx="0.5" stroke="black" stroke-linejoin="round" />
-                                    <rect x="18.5" y="29.5" width="14" height="1" rx="0.5" stroke="black" stroke-linejoin="round" />
+                                    <rect x="19" y="2" width="13" height="2" rx="1" fill="black" stroke="black" stroke-width="2" stroke-linejoin="round" />
+                                    <rect x="19" y="11" width="13" height="2" rx="1" stroke="black" stroke-width="2" stroke-linejoin="round" />
+                                    <rect x="19" y="20" width="13" height="2" rx="1" stroke="black" stroke-width="2" stroke-linejoin="round" />
+                                    <rect x="19" y="29" width="13" height="2" rx="1" stroke="black" stroke-width="2" stroke-linejoin="round" />
                                 </svg>
                             </button>
                         </SortCategory>

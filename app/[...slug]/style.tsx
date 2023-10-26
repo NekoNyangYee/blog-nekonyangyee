@@ -18,7 +18,7 @@ export const StyledPost = styled.main(({ theme }) => `
 
     & .time-info {
       text-align: center;
-      margin: 0 0 20px 0;
+      padding: 0 0 40px 0;
     }
 
     @media (max-width: 1224px) {
