@@ -34,6 +34,7 @@ const StyledGoToTop = styled.div<{ topscrolled: boolean }>(({ theme, topscrolled
     & path {
         padding: 10px;
         fill: ${theme.colors.buttonText(100)};
+        stroke: none;
     }
 `);
 
