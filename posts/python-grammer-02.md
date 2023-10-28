@@ -13,7 +13,7 @@ description: 파이썬 입문 기념 기본 문법들을 정리해보았습니�
 
 아직 지난 편을 못 보신 분들은 아래 링크로 가셔서 1편 먼저 보고 오시는 것을 추천드립니다.
 
-<a href="http://localhost:3000/python-grammers-01">👉👉👉파이썬 문법 1편 보러가기</a>
+<a href="https://taehyun-blog.vercel.app/python-grammers-01">👉👉👉파이썬 문법 1편 보러가기</a>
 
 ## 3. 조건문 (`if`, `else`, `elif`)
 

@@ -180,7 +180,7 @@ const StyledPost = styled.div(({ theme }) => `
             object-fit: cover;
             display: flex;
             align-items: center;
-            margin: 20px 10px;
+            margin: auto 0;
             border-radius: 12px;
         }
 
@@ -219,16 +219,16 @@ const StyledPost = styled.div(({ theme }) => `
             }
             
             @media (max-width: 932px) {
-                max-width: 250px;
+                max-width: 350px;
             }
 
             @media (max-width: 872px) {
                 font-size: 15px;
-                max-width: 290px;
+                max-width: 310px;
             }
 
             @media (max-width: 672px) {
-                max-width: 200px;
+                max-width: 250px;
             }
         }
 
@@ -236,6 +236,10 @@ const StyledPost = styled.div(({ theme }) => `
             & .article-info {
                 padding: 10px 0;
             }
+        }
+
+        & time {
+            color: ${theme.colors.text(70)};
         }
     }
 
@@ -581,7 +585,7 @@ const StyledCategory = styled.div(({ theme }) => `
             border: none;
             font-weight: bold;
             color: ${theme.colors.white()};
-            background-color: ${theme.colors.categoryButtonBackground()};
+            background-color: ${theme.colors.categoryButtonBackground(90)};
 
             & path {
                 fill: ${theme.colors.white()};
