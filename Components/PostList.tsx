@@ -709,8 +709,8 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                 post.description.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
-    const itemsPerPage: number = 9;
-    const pagesPerRange: number = 5;
+    const itemsPerPage: number = 8;
+    const pagesPerRange: number = 4;
     const totalPosts: number = Posts.length;
     const totalPages: number = Math.ceil(totalPosts / itemsPerPage);
 
@@ -726,6 +726,16 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     const handleCategoryChange = (category: string) => {
         setSelectCategory(category);
         setPage(1);
+    };
+
+    const handleSearch = (searchTerm: string) => {
+        setSearchTerm(searchTerm);
+        setPage(1); // 새로운 검색어를 입력할 때 현재 페이지를 첫 번째 페이지로 재설정
+    };
+
+    const clearSearch = () => {
+        setSearchTerm('');
+        setPage(1); // 검색 입력을 지울 때 현재 페이지를 첫 번째 페이지로 재설정
     };
 
     return (
@@ -749,7 +759,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         type="search"
                         placeholder="검색 키워드를 입력해보세요."
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={(e) => handleSearch(e.target.value)}
                     />
                     <h1 className="page-title">카테고리</h1>
                     <div className="category-container">
@@ -805,7 +815,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         type="search"
                         placeholder="검색 키워드를 입력해보세요."
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={(e) => handleSearch(e.target.value)}
                     />
                     <h1 className="page-title-mobile">카테고리</h1>
                     <div className="category-container-moblie">
