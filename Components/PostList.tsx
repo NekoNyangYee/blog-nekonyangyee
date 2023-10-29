@@ -2,7 +2,7 @@
 
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Introduce } from "./Intoduce";
 import { format } from "date-fns";
 
@@ -313,7 +313,7 @@ const StyledPost = styled.div(({ theme }) => `
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 20px 0 20% 0;
+        margin: 20px 0 20px 0;
 
         & button {
             margin: 0 16px 0 16px;
@@ -518,7 +518,7 @@ const StyledPost = styled.div(({ theme }) => `
         border-radius: 10px;
         font-size: 13px;
         letter-spacing: 1px;
-        margin: 8px 0;
+        margin: 0 0 8px 0;
         color: ${theme.colors.text(70)};
     }
 `);
@@ -702,7 +702,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         { title: "공지 & 잡담", keyword: "공지 & 잡담" }
     ];
 
-    const Posts = allPosts
+    const Posts: [] = allPosts
         .sort((a: { date: Date }, b: { date: Date }) => Number(new Date(b.date)) - Number(new Date(a.date)))
         .filter((post: { category: string | string[] }) =>
             selectCategory ? post.category.includes(selectCategory) : true
@@ -734,12 +734,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
 
     const handleSearch = (searchTerm: string) => {
         setSearchTerm(searchTerm);
-        setPage(1); // 새로운 검색어를 입력할 때 현재 페이지를 첫 번째 페이지로 재설정
-    };
-
-    const clearSearch = () => {
-        setSearchTerm('');
-        setPage(1); // 검색 입력을 지울 때 현재 페이지를 첫 번째 페이지로 재설정
+        setPage(1);
     };
 
     return (
@@ -861,7 +856,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         </SortCategory>
                     </div>
                     <div className={`post-container ${viewMode === "list" ? "list-view" : "grid-view"}`}>
-                        {paginatedPosts.map((post: Post) => (
+                        {(paginatedPosts.map((post: Post) => (
                             <div className="article-container">
                                 <Link href={post.url} key={post._id}>
                                     <article key={post._id}>
@@ -877,7 +872,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                     </article>
                                 </Link>
                             </div>
-                        ))}
+                        )))}
                     </div>
                     <div className="pagination-controls">
                         <button
@@ -911,6 +906,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         </button>
                     </div>
                 </StyledPost>
+
             </StyledArticleContainer>
         </StyledFlexContainer>
     );

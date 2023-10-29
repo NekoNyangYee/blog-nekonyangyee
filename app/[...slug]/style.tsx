@@ -99,9 +99,9 @@ export const StyledPost = styled.main(({ theme }) => `
       display: flex;
       align-items: center;
       margin: 20px 0;
-      border: 1px solid ${theme.colors.text(10)};
       border-radius: 12px;
       font-size: 12px;
+      background-color: ${theme.colors.gray(10)};
       color: ${theme.colors.gray()};
       gap: 20px;
       font-weight: normal;
