@@ -770,8 +770,8 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                 className={selectCategory === category.keyword ? "active" : ""}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
-                                    <path d="M32.5772 12.7782L48.7904 28.9914C50.3525 30.5535 50.3525 33.0861 48.7904 34.6482L34.6482 48.7904C33.0861 50.3525 30.5535 50.3525 28.9914 48.7904L12.7782 32.5771C12.028 31.827 11.6066 30.8096 11.6066 29.7487L11.6066 15.6066C11.6066 13.3975 13.3975 11.6066 15.6066 11.6066L29.7487 11.6066C30.8096 11.6066 31.827 12.028 32.5772 12.7782Z" stroke-width="2" />
-                                    <circle cx="24" cy="23" r="5" fill="none" stroke-width="2" />
+                                    <path d="M32.5772 12.7782L48.7904 28.9914C50.3525 30.5535 50.3525 33.0861 48.7904 34.6482L34.6482 48.7904C33.0861 50.3525 30.5535 50.3525 28.9914 48.7904L12.7782 32.5771C12.028 31.827 11.6066 30.8096 11.6066 29.7487L11.6066 15.6066C11.6066 13.3975 13.3975 11.6066 15.6066 11.6066L29.7487 11.6066C30.8096 11.6066 31.827 12.028 32.5772 12.7782Z" strokeWidth="2" />
+                                    <circle cx="24" cy="23" r="5" fill="none" strokeWidth="2" />
                                 </svg>
                                 {category.title}
                             </button>
@@ -827,8 +827,8 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                 className={selectCategory === category.keyword ? "active" : ""}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
-                                    <path d="M32.5772 12.7782L48.7904 28.9914C50.3525 30.5535 50.3525 33.0861 48.7904 34.6482L34.6482 48.7904C33.0861 50.3525 30.5535 50.3525 28.9914 48.7904L12.7782 32.5771C12.028 31.827 11.6066 30.8096 11.6066 29.7487L11.6066 15.6066C11.6066 13.3975 13.3975 11.6066 15.6066 11.6066L29.7487 11.6066C30.8096 11.6066 31.827 12.028 32.5772 12.7782Z" stroke="black" stroke-width="2" />
-                                    <circle cx="24" cy="23" r="5" stroke="black" stroke-width="2" />
+                                    <path d="M32.5772 12.7782L48.7904 28.9914C50.3525 30.5535 50.3525 33.0861 48.7904 34.6482L34.6482 48.7904C33.0861 50.3525 30.5535 50.3525 28.9914 48.7904L12.7782 32.5771C12.028 31.827 11.6066 30.8096 11.6066 29.7487L11.6066 15.6066C11.6066 13.3975 13.3975 11.6066 15.6066 11.6066L29.7487 11.6066C30.8096 11.6066 31.827 12.028 32.5772 12.7782Z" stroke="black" strokeWidth="2" />
+                                    <circle cx="24" cy="23" r="5" stroke="black" strokeWidth="2" />
                                 </svg>
                                 {category.title}
                             </button>
@@ -839,18 +839,18 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         <SortCategory>
                             <button onClick={toggleGridView} className={viewMode === 'grid' ? 'active' : ''}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
-                                    <rect x="1" y="1" width="31" height="13" rx="3" stroke="black" stroke-width="2" />
-                                    <rect x="1" y="19" width="31" height="13" rx="3" stroke="black" stroke-width="2" />
+                                    <rect x="1" y="1" width="31" height="13" rx="3" stroke="black" strokeWidth="2" />
+                                    <rect x="1" y="19" width="31" height="13" rx="3" stroke="black" strokeWidth="2" />
                                 </svg>
                             </button>
                             <button onClick={toggleListView} className={viewMode === 'list' ? 'active' : ''}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
-                                    <rect x="1" y="1" width="13" height="13" rx="3" stroke="black" stroke-width="2" />
-                                    <rect x="1" y="19" width="13" height="13" rx="3" stroke="black" stroke-width="2" />
-                                    <rect x="19" y="2" width="13" height="2" rx="1" fill="black" stroke="black" stroke-width="2" stroke-linejoin="round" />
-                                    <rect x="19" y="11" width="13" height="2" rx="1" stroke="black" stroke-width="2" stroke-linejoin="round" />
-                                    <rect x="19" y="20" width="13" height="2" rx="1" stroke="black" stroke-width="2" stroke-linejoin="round" />
-                                    <rect x="19" y="29" width="13" height="2" rx="1" stroke="black" stroke-width="2" stroke-linejoin="round" />
+                                    <rect x="1" y="1" width="13" height="13" rx="3" stroke="black" strokeWidth="2" />
+                                    <rect x="1" y="19" width="13" height="13" rx="3" stroke="black" strokeWidth="2" />
+                                    <rect x="19" y="2" width="13" height="2" rx="1" fill="black" stroke="black" strokeWidth="2" strokeLinejoin="round" />
+                                    <rect x="19" y="11" width="13" height="2" rx="1" stroke="black" strokeWidth="2" strokeLinejoin="round" />
+                                    <rect x="19" y="20" width="13" height="2" rx="1" stroke="black" strokeWidth="2" strokeLinejoin="round" />
+                                    <rect x="19" y="29" width="13" height="2" rx="1" stroke="black" strokeWidth="2" strokeLinejoin="round" />
                                 </svg>
                             </button>
                         </SortCategory>

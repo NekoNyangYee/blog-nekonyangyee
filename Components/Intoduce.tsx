@@ -4,8 +4,6 @@ import Link from "next/link";
 const StyledIntroduceHeader = styled.div(({ theme }) => `
     padding: 40px 0 20px 0;
 
-    
-
     & p {
         margin: 0;
         font-weight: bold;
@@ -42,17 +40,12 @@ const StyledIntroduceHeader = styled.div(({ theme }) => `
             fill: ${theme.colors.background(100)};
         }
     }
-
-    
-
-    
 `);
 
 const FirstSlogunSection = styled.div(({ theme }) => `
     & p {
         color: ${theme.colors.text(40)};
     }
-    
 `);
 
 export const Introduce = () => {
