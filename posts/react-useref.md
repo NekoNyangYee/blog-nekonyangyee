@@ -15,7 +15,7 @@ description: useRef() Hooks 기초와 간단한 응용을 알아봅니다.
 
 제 설명에 좀 더 보충해서 알고 싶다 하시면 아래 공식문서 링크로 가셔서 보시면 될 거 같습니다.
 
-<a href="https://ko.reactjs.org/docs/hooks-reference.html#useref">https://ko.reactjs.org/docs/hooks-reference.html#useref</a>
+<a href="https://ko.reactjs.org/docs/hooks-reference.html#useref">`useRef` 공식문서</a>
 
 ## 1. useRef()
 
@@ -54,7 +54,7 @@ description: useRef() Hooks 기초와 간단한 응용을 알아봅니다.
 
 언뜻보면 둘이 같은 기능을 하는것처럼 보이지만 `useState`는 컴포넌트의 상태를 변경해주는 훅스이고 `useRef`는 위에서도 언급했지만, **컴포넌트의 상태를 변경하지 않고 DOM 요소에 접근하여 참조하는거에 포커스되어 있습니다.**
 
-`useState`를 아직 모른다면? <a href="https://taehyun-blog.vercel.app/react-usestate">https://taehyun-blog.vercel.app/react-usestate</a>
+`useState`를 아직 모른다면? <a href="https://taehyun-blog.vercel.app/react-usestate">`useState` 기본편 보러가기</a>
 
 참고하고 오시면 도움 될 것입니다.
 
