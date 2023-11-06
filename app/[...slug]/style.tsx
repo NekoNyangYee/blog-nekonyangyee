@@ -201,6 +201,11 @@ export const StyledPost = styled.main(({ theme }) => `
     & .home-btn {
       position: relative;
       left: 30px;
+
+      @media (max-width: 1224px) {
+        left: 10px;
+      }
+
       & svg {
         min-width: 24px;
         width: 14px;
