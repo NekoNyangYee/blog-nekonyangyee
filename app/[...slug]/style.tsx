@@ -3,7 +3,7 @@
 import styled from "@emotion/styled";
 
 export const StyledPost = styled.main(({ theme }) => `
-  padding-top: 92px;
+  padding-top: 22px;
 
   & .post-container {
     margin: 0 auto;
@@ -91,7 +91,8 @@ export const StyledPost = styled.main(({ theme }) => `
         border-radius: 10px;
         font-size: 14px;
         margin: 20px 0;
-        color: ${theme.colors.text()};
+        letter-spacing: 1px;
+        color: ${theme.colors.text(70)};
         text-align: center;
     }
 
@@ -194,6 +195,20 @@ export const StyledPost = styled.main(({ theme }) => `
 
       & time {
         margin-right: 10px;
+      }
+    }
+
+    & .home-btn {
+      position: relative;
+      left: 30px;
+      & svg {
+        min-width: 24px;
+        width: 14px;
+        height: auto;
+  
+        & rect {
+          fill: ${theme.colors.text()};
+        }
       }
     }
   }

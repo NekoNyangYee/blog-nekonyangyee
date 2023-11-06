@@ -11,10 +11,12 @@ const MainContentHeader = styled.header<{ scrolled: boolean, infoscrolled: boole
   height: 66px;
   top: 0;
   left: 0;
-  border-bottom: ${scrolled ? `1px solid ${theme.colors.text(10)}` : '#fffffff'};    
+  border-bottom: 1px solid ${theme.colors.text(10)};
+  top: ${scrolled ? 0 : '-70px'};    
   background-color: ${theme.colors.background(80)};
   backdrop-filter: blur(20px);
   z-index: 20;
+  transition: .2s ease-out;
   
   & .header-container {
     margin: 0 auto;
@@ -29,7 +31,6 @@ const MainContentHeader = styled.header<{ scrolled: boolean, infoscrolled: boole
     box-sizing: border-box;
 
     & .post-info {
-        display: ${infoscrolled ? "block" : "none"};
         text-align: center;
         flex: 1;
         margin: 0 auto;
@@ -69,7 +70,7 @@ const MainContentHeader = styled.header<{ scrolled: boolean, infoscrolled: boole
     }
 
     & svg {
-      min-width: 14px;
+      min-width: 24px;
       width: 14px;
       height: auto;
 
@@ -108,9 +109,10 @@ const ContentHeader = ({ title, date, category }: Post) => {
             <div className="header-container">
                 <div className="history-back">
                     <Link href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32" fill="none">
-                            <rect x="2.82842" y="13.0659" width="21.8165" height="4" transform="rotate(45 2.82842 13.0659)" fill="black" />
-                            <rect x="18.7332" y="2.83154" width="22.4849" height="4.00443" transform="rotate(135 18.7332 2.83154)" fill="black" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                            <rect x="22" y="2" width="3" height="15" rx="1" fill="black" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 15C6.89543 15 6 15.8954 6 17V30C6 31.1046 6.89543 32 8 32H12V23C12 22.4477 12.4477 22 13 22H20C20.5523 22 21 22.4477 21 23V32H25C26.1046 32 27 31.1046 27 30V17C27 15.8954 26.1046 15 25 15H8Z" fill="black" />
+                            <path d="M15.0648 1.47865C15.8504 0.669251 17.1496 0.669252 17.9352 1.47865L29.7068 13.6071C30.9378 14.8753 30.0391 17 28.2717 17H4.72832C2.96087 17 2.06217 14.8753 3.29316 13.607L15.0648 1.47865Z" fill="black" />
                         </svg>
                     </Link>
                 </div>
