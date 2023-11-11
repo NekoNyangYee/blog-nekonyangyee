@@ -441,6 +441,7 @@ const StyledPost = styled.div(({ theme }) => `
 
             & circle {
                 fill: ${theme.colors.categoryButtonBackground(90)};
+                stroke: none;
             }
         }
 
@@ -695,6 +696,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         { title: "Next.js", keyword: "Next.js" },
         { title: "TypeScript", keyword: "TypeScript" },
         { title: "Python3", keyword: "Python3" },
+        { title: "NodeJS", keyword: "NodeJS" },
         { title: "기타 개발", keyword: "기타 개발" },
         { title: "프로그래머스", keyword: "프로그래머스" },
         { title: "방문 후기 & 리뷰", keyword: "방문 후기 & 리뷰" },
