@@ -20,7 +20,7 @@ const StyledIntroduceHeader = styled.div(({ theme }) => `
         margin: 20px 0;
         
         & a {
-            padding: 8px 16px;;
+            padding: 12px 16px;
             border-radius: 12px;
             font-size: 14px;
             font-weight: bold;
