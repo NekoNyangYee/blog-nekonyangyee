@@ -8,7 +8,7 @@ const StyledGoToTop = styled.div<{ topscrolled: boolean }>(({ theme, topscrolled
     position: fixed;
     bottom: 16%;
     right: ${topscrolled ? "80px" : "-50%"};
-    transition: all .5s;
+    transition: all .3s;
     transform: translate(${topscrolled ? "50%" : 0}, 0);
     transform-origin: center;
     z-index: 30;

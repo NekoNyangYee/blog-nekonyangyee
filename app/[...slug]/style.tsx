@@ -177,13 +177,6 @@ export const StyledPost = styled.main(({ theme }) => `
         }
       }
 
-      & svg {
-        position: relative;
-        top: 3px;
-        width: 20px;
-        height: 20px;
-      }
-
       & rect {
         fill: none;
         stroke: ${theme.colors.text()};
