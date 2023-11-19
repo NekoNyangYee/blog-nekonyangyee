@@ -210,4 +210,10 @@ export const StyledPost = styled.main(({ theme }) => `
       }
     }
   }
-`)
+`);
+
+export const SvgBlogInfo = styled.svg(({ theme }) => `
+  position: relative;
+  width: 16px;
+  top: 10px;
+`);
