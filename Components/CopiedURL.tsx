@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => `
     width: ${copied ? "120px" : "60px"};
     height: 60px;
-    top: ${copied ? "20%" : "20%"};
     background-color: ${theme.colors.black()};
     color: ${theme.colors.background(100)};
     border: 1px solid ${theme.colors.gray(40)};
@@ -19,8 +18,6 @@ const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => 
     display: flex;
     justify-content: center;
     align-items: center; 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     overflow: hidden;
     transition: width 0.3s ease, left 0.3s ease, right 0.3s ease;
 
@@ -47,7 +44,7 @@ const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => 
 
 const StyledCoppiedBtn = styled.div<{ copied: boolean, scrolled: boolean }>(({ theme, scrolled, copied }) => `
     position: fixed;
-    bottom: 16%;
+    bottom: ${scrolled ? "16%" : "8%"};
     color: ${theme.colors.background(100)};
     border: none;
     display: flex;
