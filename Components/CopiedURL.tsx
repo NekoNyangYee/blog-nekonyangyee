@@ -44,7 +44,7 @@ const StyledCoppiedBtn = styled.div<{ copied: boolean, scrolled: boolean }>(({ t
     transition: all .3s;
     transform: translate(${scrolled ? "50%" : 0}, 0);
     transform-origin: center;
-    z-index: 30;
+    z-index: 40;
 `);
 
 const Snackbar = styled.div<{ show: boolean }>(({ theme, show }) => `

@@ -11,7 +11,7 @@ const StyledGoToTop = styled.div<{ topscrolled: boolean }>(({ theme, topscrolled
     transition: all .5s;
     transform: translate(${topscrolled ? "50%" : 0}, 0);
     transform-origin: center;
-    z-index: 20;
+    z-index: 30;
 
     & button {
         position: fixed;
