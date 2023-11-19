@@ -180,8 +180,8 @@ export const StyledPost = styled.main(({ theme }) => `
       & svg {
         position: relative;
         top: 3px;
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
       }
 
       & rect {
