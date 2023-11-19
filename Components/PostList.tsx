@@ -114,11 +114,11 @@ const StyledPost = styled.div(({ theme }) => `
         padding: 10px 0;
         transition: all 0.3s ease;
 
-        @media (max-width: 1672px) {
+        @media (max-width: 1772px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media (max-width: 672px) {
+        @media (max-width: 772px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }
