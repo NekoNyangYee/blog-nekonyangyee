@@ -118,7 +118,7 @@ const StyledPost = styled.div(({ theme }) => `
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media (max-width: 772px) {
+        @media (max-width: 672px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }

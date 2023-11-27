@@ -64,6 +64,14 @@ export const StyledPost = styled.main(({ theme }) => `
         line-height: 2;
       }
 
+      & ul {
+        padding-left: 20px;
+      }
+
+      & li {
+        font-size: 15px;
+      }
+
       em {
         font-size: 13px;
         margin: 0;
