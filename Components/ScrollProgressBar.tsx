@@ -2,18 +2,6 @@
 
 import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
-import _debounce from 'lodash';
-
-const StyledProgressBar = styled.div<{ width: number, scrolled: boolean }>(({ theme, scrolled, width }) => `
-    position: fixed;
-    left: 0;
-    top: 66px;
-    height: 5px;
-    top: 67px;
-    background-color: ${width >= 100 ? theme.colors.green(100) : theme.colors.buttonBackground(100)};
-    z-index: 21;
-    transform: translate3d(0, 0, 0);
-`);
 
 const StyledMovingText = styled.div<{ width: number }>(({ width }) => `
     position: fixed;
@@ -25,18 +13,16 @@ const StyledMovingText = styled.div<{ width: number }>(({ width }) => `
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translate3d(0, 0, 0);
 
     & img {
         position: relative;
-        top: 38px;
-        width: 40px;
+        top: 44px;
+        width: 48px;
     }
 `);
 
 const ScrollProgressBar = () => {
     const [scrollProgress, setScrollProgress] = useState<number>(0);
-    const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -44,7 +30,6 @@ const ScrollProgressBar = () => {
             const scrolledHeight = window.scrollY;
             const progress = (scrolledHeight / totalHeight) * 100;
             setScrollProgress(progress);
-            setIsScrolled(window.scrollY > 150);
         };
         window.addEventListener('scroll', handleScroll);
 
@@ -55,7 +40,7 @@ const ScrollProgressBar = () => {
 
     return (
         <>
-            <StyledProgressBar style={{ width: `${scrollProgress}%` }} scrolled={isScrolled} width={scrollProgress} />
+
             <StyledMovingText width={scrollProgress} >
                 <img src="./cat-nyan-cat.gif" />
             </StyledMovingText>
