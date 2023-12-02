@@ -9,11 +9,11 @@ const StyledProgressBar = styled.div<{ width: number, scrolled: boolean }>(({ th
     top: 66px;
     height: 5px;
     top: 67px;
-    background-color: ${width == 100 ? theme.colors.green(100) : theme.colors.buttonBackground(100)};
+    background-color: ${width >= 100 ? theme.colors.green(100) : theme.colors.buttonBackground(100)};
     z-index: 21;
 `);
 
-const StyledMovingText = styled.div<{ width: number, scrolled: boolean }>(({ scrolled, width }) => `
+const StyledMovingText = styled.div<{ width: number }>(({ width }) => `
     position: fixed;
     left: ${width}%;
     transform: translateX(-${width}%);
@@ -23,7 +23,6 @@ const StyledMovingText = styled.div<{ width: number, scrolled: boolean }>(({ scr
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateX(-98%);
 
     & img {
         position: relative;
@@ -38,9 +37,12 @@ const ScrollProgressBar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
+            const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolledHeight = window.scrollY;
+            const progress = (scrolledHeight / totalHeight) * 100;
+            setScrollProgress(progress);
             setIsScrolled(window.scrollY > 150);
-        }
-
+        };
         window.addEventListener('scroll', handleScroll);
 
         return () => {
@@ -48,22 +50,10 @@ const ScrollProgressBar = () => {
         };
     }, []);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolledHeight = window.scrollY;
-            const progress = (scrolledHeight / totalHeight) * 100;
-            setScrollProgress(progress);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     return (
         <>
             <StyledProgressBar style={{ width: `${scrollProgress}%` }} scrolled={isScrolled} width={scrollProgress} />
-            <StyledMovingText width={scrollProgress} scrolled={isScrolled}>
+            <StyledMovingText width={scrollProgress} >
                 <img src="./cat-nyan-cat.gif" />
             </StyledMovingText>
         </>
