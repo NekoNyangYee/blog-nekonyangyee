@@ -30,6 +30,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.202",
     "next-compose-plugins": "^2.2.1"
   }
 }
