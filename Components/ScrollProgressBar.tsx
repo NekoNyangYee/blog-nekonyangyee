@@ -17,7 +17,7 @@ const StyledMovingText = styled.div<{ width: number }>(({ width }) => `
     & img {
         position: relative;
         top: 44px;
-        width: 48px;
+        width: 68px;
     }
 `);
 
@@ -42,7 +42,7 @@ const ScrollProgressBar = () => {
         <>
 
             <StyledMovingText width={scrollProgress} >
-                <img src="./cat-nyan-cat.gif" />
+                <img src="./cat-nyan-cat.png" />
             </StyledMovingText>
         </>
     );
