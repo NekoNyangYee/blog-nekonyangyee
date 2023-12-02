@@ -7,6 +7,7 @@ import cookieAndSessionMd from './cookie-and-session.md.json' assert { type: 'js
 import ganeungDay_01Md from './ganeung-day-01.md.json' assert { type: 'json' }
 import gangneungDay_02Md from './gangneung-day-02.md.json' assert { type: 'json' }
 import happyChuseokMd from './happy-chuseok.md.json' assert { type: 'json' }
+import howJavascriptWorks_02Md from './how-javascript-works-02.md.json' assert { type: 'json' }
 import howJavascriptWorksMd from './how-javascript-works.md.json' assert { type: 'json' }
 import javascriptMapFilterMd from './javascript-map-filter.md.json' assert { type: 'json' }
 import javascriptReduceMd from './javascript-reduce.md.json' assert { type: 'json' }
@@ -34,4 +35,4 @@ import samsungGangnamMd from './samsung-gangnam.md.json' assert { type: 'json' }
 import staticWebAndDynamicWebMd from './static-web-and-dynamic-web.md.json' assert { type: 'json' }
 import typescriptGenericMd from './typescript-generic.md.json' assert { type: 'json' }
 
-export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, bringCenterStringMd, cookieAndSessionMd, ganeungDay_01Md, gangneungDay_02Md, happyChuseokMd, howJavascriptWorksMd, javascriptMapFilterMd, javascriptReduceMd, javascriptSettimeoutSetintervalMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, lv2JadencaseMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, nextjs_13ServerComponents_02Md, nextjs_13ServerComponentsMd, nodeJsExpressionMd, nodeJsWebServerMd, popupStoresReviewMd, pythonGrammer_02Md, pythonGrammers_01Md, reactUseeffectHookMd, reactUserefMd, reactUsestateMd, samsungGangnamMd, staticWebAndDynamicWebMd, typescriptGenericMd]
+export const allPosts = [appleEvent_2023Md, appleStoreReviewMd, bringCenterStringMd, cookieAndSessionMd, ganeungDay_01Md, gangneungDay_02Md, happyChuseokMd, howJavascriptWorks_02Md, howJavascriptWorksMd, javascriptMapFilterMd, javascriptReduceMd, javascriptSettimeoutSetintervalMd, lv0AverageOfArrayMd, lv0DegreeMd, lv0PrintOutWithAStringMd, lv1InnerMd, lv2JadencaseMd, myBlogErrorMd, myBlogWithContentlayerMd, myFirstBlogMd, myTravelGangneungMd, nextjs_13ServerComponents_02Md, nextjs_13ServerComponentsMd, nodeJsExpressionMd, nodeJsWebServerMd, popupStoresReviewMd, pythonGrammer_02Md, pythonGrammers_01Md, reactUseeffectHookMd, reactUserefMd, reactUsestateMd, samsungGangnamMd, staticWebAndDynamicWebMd, typescriptGenericMd]

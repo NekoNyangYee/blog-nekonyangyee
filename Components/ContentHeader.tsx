@@ -5,18 +5,16 @@ import { useEffect, useState } from "react";
 import { Post } from "./PostList";
 import Link from "next/link";
 
-const MainContentHeader = styled.header<{ scrolled: boolean, infoscrolled: boolean }>(({ theme, scrolled, infoscrolled }) => `
+const MainContentHeader = styled.header<{ scrolled: boolean }>(({ theme, scrolled }) => `
   position: fixed;
   width: 100%;
   height: 66px;
   top: 0;
   left: 0;
-  border-bottom: 1px solid ${theme.colors.text(10)};
-  top: ${scrolled ? 0 : '-70px'};    
+  border-bottom:  ${scrolled ? `1px solid ${theme.colors.text(10)}` : "none"};    
   background-color: ${theme.colors.background(80)};
   backdrop-filter: blur(20px);
   z-index: 20;
-  transition: .2s ease-out;
   
   & .header-container {
     margin: 0 auto;
@@ -34,6 +32,7 @@ const MainContentHeader = styled.header<{ scrolled: boolean, infoscrolled: boole
         text-align: center;
         flex: 1;
         margin: 0 auto;
+        display: ${scrolled ? "block" : "none"};
         justify-content: center;
         max-width: 100%;
 
@@ -84,28 +83,21 @@ const MainContentHeader = styled.header<{ scrolled: boolean, infoscrolled: boole
 
 const ContentHeader = ({ title, date, category }: Post) => {
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
-    const [isInfoScrolled, setIsInfoScrolled] = useState<boolean>(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 200);
-        }
-
-        const infoScroll = () => {
-            setIsInfoScrolled(window.scrollY > 200);
+            setIsScrolled(window.scrollY > 150);
         }
 
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('scroll', infoScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('scroll', infoScroll);
         };
     }, []);
 
     return (
-        <MainContentHeader scrolled={isScrolled} infoscrolled={isInfoScrolled}>
+        <MainContentHeader scrolled={isScrolled}>
             <div className="header-container">
                 <div className="history-back">
                     <Link href="/">

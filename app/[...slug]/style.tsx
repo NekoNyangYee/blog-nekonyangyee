@@ -14,7 +14,7 @@ export const StyledPost = styled.main(({ theme }) => `
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 0 16px;
+    padding: 66px 16px;
 
     & .time-info {
       text-align: center;
@@ -158,6 +158,7 @@ export const StyledPost = styled.main(({ theme }) => `
         border-left: 8px solid ${theme.colors.blue(80)};
         background-color: ${theme.colors.text(10)};
         border-left-width: 5px;
+        border-radius: 0 12px 12px 0;
 
         & p {
           margin: 0;

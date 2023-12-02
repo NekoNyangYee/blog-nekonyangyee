@@ -22,7 +22,6 @@ const light = {
     background: common.white,
     buttonText: common.white,
     buttonBackground: common.blue,
-    copiedButtonBackground: common.green,
     categoryButtonBackground: common.black
 };
 
@@ -31,7 +30,6 @@ const dark = {
     background: common.black,
     buttonText: common.white,
     buttonBackground: common.blue,
-    copiedButtonBackground: common.green,
     categoryButtonBackground: common.gray
 };
 
