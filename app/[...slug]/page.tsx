@@ -179,7 +179,7 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
               <div className="next-prev-container">
                 <img src={previousPost.teaser} alt={previousPost.title} />
                 <span>
-                  이전글
+                  이전 포스트
                   <p>{previousPost.title}</p>
                   {previousPost.description}
                 </span>
@@ -191,7 +191,7 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
               <div className="next-prev-container">
                 <img src={nextPost.teaser} alt={nextPost.title} />
                 <span>
-                  다음글
+                  다음 포스트
                   <p>{nextPost.title}</p>
                   {nextPost.description}
                 </span>
