@@ -1,0 +1,65 @@
+const fs = require("fs");
+const path = require("path");
+
+const getFileNames = () => {
+  const postsDirectory = path.join(process.cwd(), "posts");
+  return fs.readdirSync(postsDirectory);
+};
+
+const extractFrontmatter = (filecontent) => {
+  const frontmatter = {};
+  const lines = filecontent.split("\n");
+  for (const line of lines) {
+    const match = line.match(/^(\w+):\s?(.+)/);
+    if (match) {
+      const key = match[1].toLowerCase();
+      if (!frontmatter.hasOwnProperty(key)) {
+        frontmatter[key] = match[2];
+      }
+    }
+  }
+  return frontmatter;
+};
+
+const main = () => {
+  const filenames = getFileNames();
+
+  const urls = filenames.map((filename) => {
+    const filePath = path.join(process.cwd(), "posts", filename);
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    const frontmatter = extractFrontmatter(fileContent);
+
+    const url = `https://taehyun-blog.vercel.app/${filename.replace(".md", "")}`;
+    const lastmod = frontmatter.date || "";
+    return { url, lastmod };
+  });
+
+  const sitemap = `
+      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+          <loc>https://taehyun-blog.vercel.app/</loc>
+          <changefreq>always</changefreq>
+          <priority>1.00</priority>
+        </url>
+        ${urls
+      .map(({ url, lastmod }) => {
+        return `
+              <url>
+                <loc>${url}</loc>
+                <lastmod>${lastmod}</lastmod>
+                <changefreq>always</changefreq>
+                <priority>0.80</priority>
+              </url>
+            `;
+      })
+      .join("")}
+      </urlset>
+    `;
+
+  fs.writeFileSync("public/sitemap.xml", sitemap);
+};
+
+main();
+
+
+
