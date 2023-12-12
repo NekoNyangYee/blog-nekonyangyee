@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Post, allPosts } from "contentlayer/generated";
 import { format } from "date-fns";
-import { StyledSelectCategoryPost } from "./style";
+import { StyledSelectCategoryPost } from "./styleSelectCategoryPost";
 
 interface SelectCategoryPostProps {
   category: string;
