@@ -54,20 +54,26 @@ const ScrollProgressBar = () => {
     const [count, setCount] = useState<number>(0);
 
     useEffect(() => {
-        const handleScroll = () => {
+        const handleScrollAndResize = () => {
             const { documentElement } = document;
             const { scrollHeight, clientHeight, clientWidth } = documentElement;
 
-            const totalHeight = scrollHeight - clientHeight;
-            const scrolledHeight = window.scrollY;
-            const progress = (scrolledHeight / totalHeight) * clientWidth;
+            const totalHeight: number = scrollHeight - clientHeight;
+            const scrolledHeight: number = window.scrollY;
+            const progress: number = (scrolledHeight / totalHeight) * clientWidth;
             setScrollProgress(progress);
         };
 
-        window.addEventListener("scroll", handleScroll);
+        // 초기 계산
+        handleScrollAndResize();
+
+        // 스크롤 및 크기 조정 이벤트에 대한 리스너
+        window.addEventListener("scroll", handleScrollAndResize);
+        window.addEventListener("resize", handleScrollAndResize);
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("scroll", handleScrollAndResize);
+            window.removeEventListener("resize", handleScrollAndResize);
         };
     }, []);
 

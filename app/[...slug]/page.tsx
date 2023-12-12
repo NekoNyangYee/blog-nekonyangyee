@@ -8,6 +8,7 @@ import { StyledPost, SvgBlogInfo } from "./style";
 import Giscus from "@/Components/Giscus";
 import ContentHeader from "@/Components/ContentHeader";
 import CopiedUrl from "@/Components/CopiedURL";
+import SelectCategoryPost from "@/Components/SelectCategoryPost";
 
 export const generateStaticParams = async () =>
   allPosts.map((post) => ({
@@ -200,7 +201,9 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
           )}
           <Giscus />
         </article>
+        <SelectCategoryPost category={post.category} />
       </div>
+
     </StyledPost>
   );
 };

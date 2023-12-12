@@ -26,7 +26,7 @@ export const StyledPost = styled.main(({ theme }) => `
     }
 
     & article {
-      max-width: 652px;
+      max-width: 752px;
       width: 100%;
       margin: 0 auto;
       margin-bottom: 10px;
