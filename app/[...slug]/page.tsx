@@ -175,18 +175,6 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
           </div>
           <Content />
           <CopiedUrl />
-          {previousPost && (
-            <Link href={`/${previousPost._raw.flattenedPath}`}>
-              <div className="next-prev-container">
-                <img src={previousPost.teaser} alt={previousPost.title} />
-                <span>
-                  이전 포스트
-                  <p>{previousPost.title}</p>
-                  {previousPost.description}
-                </span>
-              </div>
-            </Link>
-          )}
           {nextPost && (
             <Link href={`/${nextPost._raw.flattenedPath}`}>
               <div className="next-prev-container">
@@ -199,6 +187,19 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
               </div>
             </Link>
           )}
+          {previousPost && (
+            <Link href={`/${previousPost._raw.flattenedPath}`}>
+              <div className="next-prev-container">
+                <img src={previousPost.teaser} alt={previousPost.title} />
+                <span>
+                  이전 포스트
+                  <p>{previousPost.title}</p>
+                  {previousPost.description}
+                </span>
+              </div>
+            </Link>
+          )}
+
           <Giscus />
         </article>
         <SelectCategoryPost category={post.category} />

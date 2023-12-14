@@ -7,6 +7,8 @@ import { Introduce } from "./Intoduce";
 import { format } from "date-fns";
 
 const StyledFlexContainer = styled.div(() => `
+    max-width: 1672px;
+
     &.nav-container {
         position: fixed;
         top: 20px;
