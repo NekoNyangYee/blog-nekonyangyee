@@ -13,7 +13,7 @@ const global = (theme: Theme) => css`
       transition: background-color 0.3s, color 0.3s;
       will-change: background-color, color;
     `}
-    color: ${theme.colors.text()};
+    color: ${theme.colors.text(100)};
     color-scheme: ${theme.mode};
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;

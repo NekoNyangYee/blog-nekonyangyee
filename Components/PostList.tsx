@@ -9,7 +9,7 @@ import { format } from "date-fns";
 const StyledFlexContainer = styled.div(() => `
     max-width: 1672px;
 
-    &.nav-container {
+    & .nav-container {
         position: fixed;
         top: 20px;
     }
@@ -48,12 +48,12 @@ const NavContainer = styled.div(({ theme }) => `
 
         &::-webkit-scrollbar-thumb {
             border-radius: 12px;
-            background-color: ${theme.colors.text(100)};
+            background-color: ${theme.colors.gotoTopBtnText(100)};
         }
 
         &::-webkit-scrollbar-track {
             border-radius: 3px;
-            background-color: ${theme.colors.text(10)};
+            background-color: ${theme.colors.gotoTopBtnBackground(100)};
         }
     }
 
@@ -252,15 +252,16 @@ const StyledPost = styled.div(({ theme }) => `
     
     & input {
         width: 100%;
-        background-color: ${theme.colors.background(100)};
-        margin: 0;
-        font-size: 16px;
-        padding: 14px 0;
         border: none;
-        font-weight: bold;
+        border-radius: 8px 8px 0 0;
+        border-bottom: 1px solid ${theme.colors.inputBorder(100)};
+        font-size: 14px;
+        padding: 14px;
+        font-weight: normal;
+        background-color: ${theme.colors.inputBackground(100)};
 
         &::placeholder {
-            font-weight: bold;
+            font-weight: normal;
         }
 
         @media (max-width: 672px) {
@@ -283,7 +284,6 @@ const StyledPost = styled.div(({ theme }) => `
        
         & button {
             background-color: ${theme.colors.background(10)};
-            color: ${theme.colors.buttonText()};
             border: none;
             border-radius: 12px;
             margin: 0;
@@ -297,10 +297,10 @@ const StyledPost = styled.div(({ theme }) => `
         }
         
         & .active {
-            background-color: ${theme.colors.text()};
+            background-color: ${theme.colors.buttonBackground(100)};
             
             & rect {
-                fill: ${theme.colors.background(100)};
+                fill: ${theme.colors.buttonText(100)};
                 stroke: ${theme.colors.background(100)};
             }
         }
@@ -323,21 +323,21 @@ const StyledPost = styled.div(({ theme }) => `
             border: none;
             border-radius: 12px;
             font-weight: bold;
-            color: ${theme.colors.background()};
-            background-color: ${theme.colors.text()};
+            color: ${theme.colors.gotoTopBtnText(100)};
+            background-color: ${theme.colors.gotoTopBtnBackground(100)};
             cursor: pointer;
             font-size: 13px;
         }
 
         & .active {
-            background-color: ${theme.colors.text()};
-            color: ${theme.colors.background()};
+            background-color: ${theme.colors.buttonBackground(100)};
+            color: ${theme.colors.buttonText(100)};
             font-weight: bold;
         }
 
         & button[disabled] {
             font-weight: normal;
-            background-color: ${theme.colors.background()};
+            background-color: ${theme.colors.background(100)};
             visibility: hidden;
         }
 
@@ -353,7 +353,7 @@ const StyledPost = styled.div(({ theme }) => `
         }
 
         & rect {
-            fill: ${theme.colors.background(100)};
+            fill: ${theme.colors.gotoTopBtnText(100)};
         }
     } 
     
@@ -433,16 +433,16 @@ const StyledPost = styled.div(({ theme }) => `
             opacity: 1;
             border: none;
             font-weight: bold;
-            color: ${theme.colors.white()};
-            background-color: ${theme.colors.categoryButtonBackground(90)};
+            color: ${theme.colors.buttonText(100)};
+            background-color: ${theme.colors.buttonBackground(90)};
 
             & path {
-                fill: ${theme.colors.white()};
+                fill: ${theme.colors.buttonText(100)};
                 stroke: none;
             }
 
             & circle {
-                fill: ${theme.colors.categoryButtonBackground(90)};
+                fill: ${theme.colors.buttonBackground(100)};
                 stroke: none;
             }
         }
@@ -517,7 +517,7 @@ const StyledPost = styled.div(({ theme }) => `
     & .category-state {
         display: inline-block;
         font-weight: bold;
-        background-color: ${theme.colors.background(100)};
+        background-color: none;
         border-radius: 10px;
         font-size: 13px;
         letter-spacing: 1px;
@@ -587,16 +587,17 @@ const StyledCategory = styled.div(({ theme }) => `
             opacity: 1;
             border: none;
             font-weight: bold;
-            color: ${theme.colors.white()};
-            background-color: ${theme.colors.categoryButtonBackground(90)};
+            color: ${theme.colors.buttonText(100)};
+            background-color: ${theme.colors.buttonBackground(90)};
 
             & path {
-                fill: ${theme.colors.white()};
+                fill: ${theme.colors.buttonText(100)};
                 stroke: none;
             }
 
             & circle {
-                fill: ${theme.colors.categoryButtonBackground()};
+                fill: ${theme.colors.buttonBackground(100)};
+                stroke: none;
             }
         }
     }
@@ -605,15 +606,15 @@ const StyledCategory = styled.div(({ theme }) => `
 const StyledInput = styled.input(({ theme }) => `
     width: 100%;
     border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    padding: 14px 0;
-    border: none;
-    font-weight: bold;
-    background-color: ${theme.colors.background(100)};
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid ${theme.colors.inputBorder(100)};
+    font-size: 14px;
+    padding: 14px;
+    font-weight: normal;
+    background-color: ${theme.colors.inputBackground(100)};
 
         &::placeholder {
-            font-weight: bold;
+            font-weight: normal;
         }
 
     @media (max-width: 572px) {
@@ -760,7 +761,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                 <StyledCategory>
                     <StyledInput
                         type="search"
-                        placeholder="검색 키워드를 입력해보세요."
+                        placeholder="검색"
                         value={searchTerm}
                         onChange={(e) => handleSearch(e.target.value)}
                     />
@@ -816,7 +817,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     <Introduce />
                     <input
                         type="search"
-                        placeholder="검색 키워드를 입력해보세요."
+                        placeholder="검색"
                         value={searchTerm}
                         onChange={(e) => handleSearch(e.target.value)}
                     />

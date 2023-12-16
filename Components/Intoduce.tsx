@@ -24,8 +24,9 @@ const StyledIntroduceHeader = styled.div(({ theme }) => `
             border-radius: 12px;
             font-size: 14px;
             font-weight: bold;
-            color: ${theme.colors.background()};
-            background-color: ${theme.colors.text()};
+            color: ${theme.colors.white(100)};
+            background-color: ${theme.colors.black(100)};
+            border: 1px solid ${theme.colors.gray(20)};
         }
         
         & svg {
@@ -37,14 +38,20 @@ const StyledIntroduceHeader = styled.div(({ theme }) => `
         }
 
         & path {
-            fill: ${theme.colors.background(100)};
+            fill: ${theme.colors.white(100)};
         }
     }
 `);
 
 const FirstSlogunSection = styled.div(({ theme }) => `
-    & p {
-        color: ${theme.colors.text(40)};
+    & p:first-child {
+        color: ${theme.colors.buttonBackground(30)};
+    }
+    & p:nth-child(2) {
+        color: ${theme.colors.buttonBackground(60)};
+    }
+    & p:nth-child(3) {
+        color: ${theme.colors.buttonBackground(100)};
     }
 `);
 
@@ -54,8 +61,8 @@ export const Introduce = () => {
             <FirstSlogunSection>
                 <p>DESIGN과</p>
                 <p>DEVELOPMENT로</p>
+                <p>나의 아이디어를 CREATE.</p>
             </FirstSlogunSection>
-            <p>나의 아이디어를 CREATE.</p>
             <div className="slogun-links">
                 <Link href="https://github.com/NekoNyangYee">
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">

@@ -16,20 +16,24 @@ const StyledGoToTop = styled.div<{ topscrolled: boolean }>(({ theme, topscrolled
     & button {
         position: fixed;
         cursor: pointer;
-        border-radius: 33px;
-        padding: 18px;
+        border-radius: 18px;
+        padding: 12px 14px;
         border: none;
-        background-color: ${theme.colors.gray()};
+        background-color: ${theme.colors.gotoTopBtnBackground(100)};
+        box-shadow: 0 3px 8px rgba(0,0,0,0.24);
     }
 
     & svg {
+        width: 30px;
+        height: 30px;
         fill: ${theme.colors.buttonText(100)};
         transform: ;msFilter;
     }
 
     & path {
+        
         padding: 10px;
-        fill: ${theme.colors.buttonText(100)};
+        fill: ${theme.colors.gotoTopBtnText(100)};
         stroke: none;
     }
 `);
@@ -60,8 +64,8 @@ const GotoTop = () => {
     return (
         <StyledGoToTop topscrolled={isTopScrolled}>
             <button onClick={scrollToTop}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="24" viewBox="0 0 24 24">
-                    <path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="m6.293 13.293 1.414 1.414L12 10.414l4.293 4.293 1.414-1.414L12 7.586z"></path>
                 </svg>
             </button>
         </StyledGoToTop>

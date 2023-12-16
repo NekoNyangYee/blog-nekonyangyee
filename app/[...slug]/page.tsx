@@ -199,7 +199,6 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
               </div>
             </Link>
           )}
-
           <Giscus />
         </article>
         <SelectCategoryPost category={post.category} />

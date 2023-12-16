@@ -95,10 +95,8 @@ export const StyledPost = styled.main(({ theme }) => `
 
       & .category-state {
         font-weight: bold;
-        background-color: ${theme.colors.background(100)};
         border-radius: 10px;
         font-size: 14px;
-        margin: 20px 0;
         letter-spacing: 1px;
         color: ${theme.colors.text(70)};
         text-align: center;
@@ -142,7 +140,7 @@ export const StyledPost = styled.main(({ theme }) => `
   
     & a {
       text-decoration: none;
-      color: ${theme.colors.blue(80)};
+      color: ${theme.colors.buttonBackground(80)};
       font-size: 18px;
       font-weight: bold;
     }
@@ -155,7 +153,7 @@ export const StyledPost = styled.main(({ theme }) => `
       & blockquote {
         margin: 24px 0;
         padding: 10px;
-        border-left: 8px solid ${theme.colors.blue(80)};
+        border-left: 8px solid ${theme.colors.buttonBackground(80)};
         background-color: ${theme.colors.text(10)};
         border-left-width: 5px;
         border-radius: 0 12px 12px 0;
@@ -221,7 +219,7 @@ export const StyledPost = styled.main(({ theme }) => `
   }
 `);
 
-export const SvgBlogInfo = styled.svg(({ theme }) => `
+export const SvgBlogInfo = styled.svg(() => `
   position: relative;
   width: 16px;
   top: 10px;
