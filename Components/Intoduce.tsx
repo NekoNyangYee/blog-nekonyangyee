@@ -45,13 +45,13 @@ const StyledIntroduceHeader = styled.div(({ theme }) => `
 
 const FirstSlogunSection = styled.div(({ theme }) => `
     & p:first-child {
-        color: ${theme.colors.buttonBackground(30)};
+        color: ${theme.colors.sortBtnBackground(30)};
     }
     & p:nth-child(2) {
-        color: ${theme.colors.buttonBackground(60)};
+        color: ${theme.colors.sortBtnBackground(60)};
     }
     & p:nth-child(3) {
-        color: ${theme.colors.buttonBackground(100)};
+        color: ${theme.colors.sortBtnBackground(100)};
     }
 `);
 

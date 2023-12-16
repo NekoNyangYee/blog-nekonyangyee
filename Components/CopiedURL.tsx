@@ -20,6 +20,7 @@ const StyledCopyURL = styled.button<{ copied: boolean }>(({ theme, copied }) => 
     align-items: center; 
     overflow: hidden;
     transition: width 0.3s ease, left 0.3s ease, right 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.24);
 
     & path {
         width: 100%;

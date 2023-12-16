@@ -39,8 +39,10 @@ const NavContainer = styled.div(({ theme }) => `
     
     & .category-container {
         overflow-y: scroll;
-        height: 54%;
-        padding-right: 8px;
+        height: 64%;
+        padding: 0 8px;
+        border-radius: 16px;
+        background-color: ${theme.colors.navBackground(100)};
         
         &::-webkit-scrollbar {
             width: 8px;     
@@ -253,15 +255,16 @@ const StyledPost = styled.div(({ theme }) => `
     & input {
         width: 100%;
         border: none;
-        border-radius: 8px 8px 0 0;
-        border-bottom: 1px solid ${theme.colors.inputBorder(100)};
-        font-size: 14px;
-        padding: 14px;
+        border-radius: 28px;
+        font-size: 16px;
+        padding: 12px;
         font-weight: normal;
         background-color: ${theme.colors.inputBackground(100)};
+        transition: all .2s ease;
 
-        &::placeholder {
-            font-weight: normal;
+        &:focus {
+            border-radius: 12px 12px 0 0;
+            border-bottom: 2px solid ${theme.colors.inputBorder(100)};
         }
 
         @media (max-width: 672px) {
@@ -297,11 +300,11 @@ const StyledPost = styled.div(({ theme }) => `
         }
         
         & .active {
-            background-color: ${theme.colors.buttonBackground(100)};
+            background-color: ${theme.colors.sortBtnBackground(100)};
             
             & rect {
-                fill: ${theme.colors.buttonText(100)};
-                stroke: ${theme.colors.background(100)};
+                fill: ${theme.colors.sortBtnText(100)};
+                stroke: ${theme.colors.sortBtnText(100)};
             }
         }
 
@@ -391,23 +394,22 @@ const StyledPost = styled.div(({ theme }) => `
     & .category-container-moblie {
         width: 100%;
         display: flex;
-        gap: 14px;
-        margin: 20px 0 20px 0;
-        padding: 0 0 10px 0;
+        border-radius: 30px;
         overflow-x: auto;
+        background-color: ${theme.colors.navBackground(100)};
         
         @media (min-width: 872px) {
             display: none;
         }
 
         & button {
-            padding: 12px;
+            padding: 18px;
             display: flex;
-            border-radius: 12px;
+            border-radius: 30px;
             font-size: 14px;
             color: ${theme.colors.text(60)};
             border: none;
-            background-color: ${theme.colors.background(100)};
+            background-color: ${theme.colors.navBackground(100)};
             transition: all .1s;
             cursor: pointer;
             white-space: nowrap; /* 추가 */
@@ -544,24 +546,25 @@ const StyledCategory = styled.div(({ theme }) => `
     }
 
     & .active {
-        font-weight: bold;
+        font-weight: normal;
         color: ${theme.colors.white()};
         background-color: ${theme.colors.categoryButtonBackground()};
     }
 
     & .category-container {
-        width: 100%;
+        width: auto;
         gap: 14px;
         margin: 20px 0 20px 0;
 
         & button {
             padding: 12px;
             display: flex;
-            border-radius: 12px;
+            margin: 12px 0;
+            border-radius: 24px;
             font-size: 14px;
             opacity: 0.5;
             color: ${theme.colors.text()};
-            background-color: ${theme.colors.background(100)};
+            background-color: ${theme.colors.navBackground(100)};
             transition: all .1s;
             cursor: pointer;
             white-space: nowrap; /* 추가 */
@@ -588,7 +591,7 @@ const StyledCategory = styled.div(({ theme }) => `
             border: none;
             font-weight: bold;
             color: ${theme.colors.buttonText(100)};
-            background-color: ${theme.colors.buttonBackground(90)};
+            background-color: ${theme.colors.buttonBackground(100)};
 
             & path {
                 fill: ${theme.colors.buttonText(100)};
@@ -606,16 +609,17 @@ const StyledCategory = styled.div(({ theme }) => `
 const StyledInput = styled.input(({ theme }) => `
     width: 100%;
     border: none;
-    border-radius: 8px 8px 0 0;
-    border-bottom: 1px solid ${theme.colors.inputBorder(100)};
+    border-radius: 28px;
     font-size: 14px;
     padding: 14px;
     font-weight: normal;
     background-color: ${theme.colors.inputBackground(100)};
+    transition: all .2s ease;
 
-        &::placeholder {
-            font-weight: normal;
-        }
+    &:focus {
+        border-radius: 12px 12px 0 0;
+        border-bottom: 2px solid ${theme.colors.inputBorder(100)};
+    }
 
     @media (max-width: 572px) {
         width: 100%;
@@ -626,7 +630,7 @@ const SortCategory = styled.div(({ theme }) => `
     padding: 0;
     display: flex;
     justify-content: space-between;
-    background-color: ${theme.colors.gray(20)};
+    background-color: ${theme.colors.buttonBackground(100)};
     border-radius: 12px;
 
     & .select-container {
@@ -765,8 +769,9 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                         value={searchTerm}
                         onChange={(e) => handleSearch(e.target.value)}
                     />
-                    <h1 className="page-title">카테고리</h1>
+
                     <div className="category-container">
+                        <h1 className="page-title">카테고리</h1>
                         {categories.map(category => (
                             <button
                                 type="button"
