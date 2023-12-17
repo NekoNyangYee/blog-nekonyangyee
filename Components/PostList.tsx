@@ -67,6 +67,7 @@ const NavContainer = styled.div(({ theme }) => `
 
     & .page-title {
         font-size: 22px;
+        padding-left: 10px;
     }
 
     & p {
@@ -118,17 +119,21 @@ const StyledPost = styled.div(({ theme }) => `
         padding: 10px 0;
         transition: all 0.3s ease;
 
-        @media (max-width: 1772px) {
-            grid-template-columns: repeat(2, 1fr);
-        }
+        & .article-container {
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 14px;
+            transition: all .3s;
+            background-color: ${theme.colors.navBackground(100)};
 
-        @media (max-width: 672px) {
-            grid-template-columns: repeat(1, 1fr);
-        }
-    }
+            & .article-info {
+                padding: 16px 0;
+            }
 
-    & .post-container.grid-view {
-        width: 100%;
+            &:active {
+                transform: scale(0.95);
+            }
+        }
 
         & .post-main-title {
             display: block;
@@ -144,106 +149,17 @@ const StyledPost = styled.div(({ theme }) => `
                 font-size: 20px;
             }
         }
-
+        
         & time {
             color: ${theme.colors.text(70)};
         }
 
-        & .article-container {
-            border-radius: 12px;
-            overflow: hidden;
-            padding: 0;
-            transition: all .3s;
-
-            & .article-info {
-                padding: 16px 0;
-            }
-
-            &:active {
-                transform: scale(0.95);
-            }
-        }
-    }
-
-    & .post-container.list-view {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-
-        & .article-container {
-            transition: all .3s;
-            &:active {
-                transform: scale(0.95);
-            }
+        @media (max-width: 1772px) {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        & img {
-            display: block;
-            width: 74px;
-            height: 74px;
-            object-fit: cover;
-            display: flex;
-            align-items: center;
-            margin: auto 0;
-            border-radius: 12px;
-        }
-
-        & article {
-            width: 100%;
-        }
-
-        & .description-area {
-            display: flex;
-            gap: 20px;
-        }
-
-        & .post-description {
-            display: none;
-        }
-
-        & .post-main-title {
-            display: block;
-            max-width: 100%;
-            font-size: 18px;
-            font-weight: bold;
-            color: ${theme.colors.text()};
-            word-break: break-all;
-            margin: 0 0 8px 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-
-            @media (max-width: 1572px) {
-                font-size: 16px;
-                max-width: 100%;
-            }
-
-            @media (max-width: 1372px) {
-                max-width: 400px;
-            }
-            
-            @media (max-width: 932px) {
-                max-width: 350px;
-            }
-
-            @media (max-width: 872px) {
-                font-size: 15px;
-                max-width: 310px;
-            }
-
-            @media (max-width: 672px) {
-                max-width: 250px;
-            }
-        }
-
-        & .article-container {
-            & .article-info {
-                padding: 10px 0;
-            }
-        }
-
-        & time {
-            color: ${theme.colors.text(70)};
+        @media (max-width: 672px) {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 
@@ -253,11 +169,15 @@ const StyledPost = styled.div(({ theme }) => `
     } 
     
     & input {
+        background-image: url('/res/search.png');
+        background-repeat : no-repeat;
+        background-size: 16px;
+        background-position: 16px center;
         width: 100%;
         border: none;
         border-radius: 28px;
         font-size: 16px;
-        padding: 12px;
+        padding: 16px 0 16px 40px;
         font-weight: normal;
         background-color: ${theme.colors.inputBackground(100)};
         transition: all .2s ease;
@@ -294,8 +214,8 @@ const StyledPost = styled.div(({ theme }) => `
             cursor: pointer;
 
             & rect {
-                fill: ${theme.colors.gray(70)};
-                stroke: none;
+                fill: none;
+                stroke: ${theme.colors.gray(70)};
             }
         }
         
@@ -396,6 +316,7 @@ const StyledPost = styled.div(({ theme }) => `
         display: flex;
         border-radius: 30px;
         overflow-x: auto;
+        margin: 10px 0;
         background-color: ${theme.colors.navBackground(100)};
         
         @media (min-width: 872px) {
@@ -502,11 +423,16 @@ const StyledPost = styled.div(({ theme }) => `
             padding: 10px 15px;
             background: none;
             border: none;
-            background-color: ${theme.colors.gray(10)};
+            border: 1px solid ${theme.colors.gray(40)};
             color: ${theme.colors.text()};
             cursor: pointer;
             font-weight: normal;
             font-size: 14px;
+        }
+
+        & .active {
+            background-color: ${theme.colors.sortBtnBackground(100)};
+            color: ${theme.colors.sortBtnText(100)};
         }
     }
 
@@ -607,11 +533,15 @@ const StyledCategory = styled.div(({ theme }) => `
 `);
 
 const StyledInput = styled.input(({ theme }) => `
+    background-image: url('/res/search.png');
+    background-repeat : no-repeat;
+    background-size: 16px;
+    background-position: 16px center;
     width: 100%;
     border: none;
     border-radius: 28px;
-    font-size: 14px;
-    padding: 14px;
+    font-size: 16px;
+    padding: 16px 0 16px 40px;
     font-weight: normal;
     background-color: ${theme.colors.inputBackground(100)};
     transition: all .2s ease;
@@ -665,7 +595,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     const [selectCategory, setSelectCategory] = useState<string>("");
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [page, setPage] = useState<number>(1);
-    const [viewMode, setViewMode] = useState<string>('grid');
 
     useEffect(() => {
         const pageToTop = () => {
@@ -675,26 +604,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         };
         pageToTop();
     }, [page]);
-
-    useEffect(() => {
-        const storedViewMode = localStorage.getItem('viewMode');
-        if (storedViewMode) {
-            setViewMode(storedViewMode);
-        }
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem('viewMode', viewMode);
-    }, [viewMode]);
-
-    const toggleGridView = () => {
-        setViewMode('grid');
-    };
-
-    const toggleListView = () => {
-        setViewMode('list');
-    };
-
 
     const categories: { title: string; keyword: string }[] = [
         { title: "전체", keyword: "" },
@@ -764,7 +673,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                 </div>
                 <StyledCategory>
                     <StyledInput
-                        type="search"
+                        type="text"
                         placeholder="검색"
                         value={searchTerm}
                         onChange={(e) => handleSearch(e.target.value)}
@@ -821,7 +730,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                 <StyledPost>
                     <Introduce />
                     <input
-                        type="search"
+                        type="text"
                         placeholder="검색"
                         value={searchTerm}
                         onChange={(e) => handleSearch(e.target.value)}
@@ -846,26 +755,8 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     </div>
                     <div className="select-category">
                         <p>{selectCategory === "" ? "전체" : `${selectCategory}`} ({Posts.length})</p>
-                        <SortCategory>
-                            <button onClick={toggleGridView} className={viewMode === 'grid' ? 'active' : ''}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
-                                    <rect x="1" y="1" width="31" height="13" rx="3" stroke="black" strokeWidth="2" />
-                                    <rect x="1" y="19" width="31" height="13" rx="3" stroke="black" strokeWidth="2" />
-                                </svg>
-                            </button>
-                            <button onClick={toggleListView} className={viewMode === 'list' ? 'active' : ''}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
-                                    <rect x="1" y="1" width="13" height="13" rx="3" stroke="black" strokeWidth="2" />
-                                    <rect x="1" y="19" width="13" height="13" rx="3" stroke="black" strokeWidth="2" />
-                                    <rect x="19" y="2" width="13" height="2" rx="1" fill="black" stroke="black" strokeWidth="2" strokeLinejoin="round" />
-                                    <rect x="19" y="11" width="13" height="2" rx="1" stroke="black" strokeWidth="2" strokeLinejoin="round" />
-                                    <rect x="19" y="20" width="13" height="2" rx="1" stroke="black" strokeWidth="2" strokeLinejoin="round" />
-                                    <rect x="19" y="29" width="13" height="2" rx="1" stroke="black" strokeWidth="2" strokeLinejoin="round" />
-                                </svg>
-                            </button>
-                        </SortCategory>
                     </div>
-                    <div className={`post-container ${viewMode === "list" ? "list-view" : "grid-view"}`}>
+                    <div className="post-container">
                         {(paginatedPosts.map((post: Post) => (
                             <div className="article-container">
                                 <Link href={post.url} key={post._id}>
