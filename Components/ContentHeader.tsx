@@ -15,6 +15,7 @@ const MainContentHeader = styled.header<{ scrolled: boolean }>(
   left: 0;   
   background-color: ${scrolled ? theme.colors.headerBackground(100) : theme.colors.background(100)};
   z-index: 20;
+  transition: .2s all ease;
   
   & .header-container {
     margin: 0 auto;

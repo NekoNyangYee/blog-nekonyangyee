@@ -140,7 +140,7 @@ export const StyledPost = styled.main(({ theme }) => `
   
     & a {
       text-decoration: none;
-      color: ${theme.colors.buttonBackground(80)};
+      color: ${theme.colors.sortBtnBackground(80)};
       font-size: 18px;
       font-weight: bold;
     }
@@ -153,7 +153,7 @@ export const StyledPost = styled.main(({ theme }) => `
       & blockquote {
         margin: 24px 0;
         padding: 10px;
-        border-left: 8px solid ${theme.colors.buttonBackground(80)};
+        border-left: 8px solid ${theme.colors.sortBtnBackground(80)};
         background-color: ${theme.colors.text(10)};
         border-left-width: 5px;
         border-radius: 0 12px 12px 0;

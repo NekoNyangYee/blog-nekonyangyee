@@ -13,6 +13,7 @@ const MainHeader = styled.header<{ scrolled: boolean }>(({ theme, scrolled }) =>
   background-color: ${scrolled ? theme.colors.headerBackground(100) : theme.colors.background(100)};
   z-index: 20;
   display: none;
+  transition: .2s all ease;
   
   @media (max-width: 872px) {
       display: block;
@@ -51,7 +52,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 100);
     }
 
     window.addEventListener('scroll', handleScroll);

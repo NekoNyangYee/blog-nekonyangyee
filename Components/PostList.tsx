@@ -191,7 +191,7 @@ const StyledPost = styled.div(({ theme }) => `
             width: 100%;
         }
 
-        @media (min-width: 872px) {
+        @media (min-width: 873px) {
             display: none;
             width: 100%;
         }
@@ -306,7 +306,7 @@ const StyledPost = styled.div(({ theme }) => `
         font-size: 22px;
         display: block;
 
-        @media (min-width: 872px) {
+        @media (min-width: 873px) {
             display: none;
         }
     }
@@ -319,7 +319,7 @@ const StyledPost = styled.div(({ theme }) => `
         margin: 10px 0;
         background-color: ${theme.colors.navBackground(100)};
         
-        @media (min-width: 872px) {
+        @media (min-width: 873px) {
             display: none;
         }
 
@@ -551,33 +551,8 @@ const StyledInput = styled.input(({ theme }) => `
         border-bottom: 2px solid ${theme.colors.inputBorder(100)};
     }
 
-    @media (max-width: 572px) {
+    @media (max-width: 972px) {
         width: 100%;
-    }
-`);
-
-const SortCategory = styled.div(({ theme }) => `
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    background-color: ${theme.colors.buttonBackground(100)};
-    border-radius: 12px;
-
-    & .select-container {
-        position: relative;
-    }
-
-    & svg {
-        position: relative;
-        width: 18px;
-        top: 1px;
-        transform: msFilter:;
-    }
-
-    & rect {
-        background-color: ${theme.colors.background(100)};
-        fill: none;
-        stroke: ${theme.colors.gray()};
     }
 `);
 
