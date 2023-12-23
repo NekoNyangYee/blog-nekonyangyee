@@ -121,8 +121,9 @@ export const StyledPost = styled.main(({ theme }) => `
       & img {
         width: 100px;
         height: 100px;
+        padding: 8px;
         object-fit: cover;
-        border-radius: 8px;
+        border-radius: 19px;
 
         @media (max-width: 672px) {
           display: none;

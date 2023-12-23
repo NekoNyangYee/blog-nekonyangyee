@@ -570,6 +570,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
     const [selectCategory, setSelectCategory] = useState<string>("");
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [page, setPage] = useState<number>(1);
+    const [dynamicPlaceholder, setDynamicPlaceholder] = useState<string>("검색");
 
     useEffect(() => {
         const pageToTop = () => {
@@ -594,6 +595,17 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         { title: "나의 일상", keyword: "나의 일상" },
         { title: "공지 & 잡담", keyword: "공지 & 잡담" }
     ];
+
+    const handleCategoryChange = (category: string) => {
+        setSelectCategory(category);
+        setPage(1);
+        setDynamicPlaceholder(`${category} 검색`);
+    };
+
+    const handleSearch = (searchTerm: string) => {
+        setSearchTerm(searchTerm);
+        setPage(1);
+    };
 
     const Posts: [] = allPosts
         .sort((a: { date: Date }, b: { date: Date }) => Number(new Date(b.date)) - Number(new Date(a.date)))
@@ -620,16 +632,6 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
 
     const paginatedPosts = Posts.slice(startIndex, endIndex);
 
-    const handleCategoryChange = (category: string) => {
-        setSelectCategory(category);
-        setPage(1);
-    };
-
-    const handleSearch = (searchTerm: string) => {
-        setSearchTerm(searchTerm);
-        setPage(1);
-    };
-
     return (
         <StyledFlexContainer>
             <NavContainer>
@@ -649,7 +651,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                 <StyledCategory>
                     <StyledInput
                         type="text"
-                        placeholder="검색"
+                        placeholder={dynamicPlaceholder}
                         value={searchTerm}
                         onChange={(e) => handleSearch(e.target.value)}
                     />
@@ -706,7 +708,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                     <Introduce />
                     <input
                         type="text"
-                        placeholder="검색"
+                        placeholder={dynamicPlaceholder}
                         value={searchTerm}
                         onChange={(e) => handleSearch(e.target.value)}
                     />

@@ -44,7 +44,6 @@ const StyledNyanCat = styled.div`
     & > span {
       width: 100%;
       background-size: auto 30px;
-      background-position-x: right;
     }
   }
 `;
@@ -64,10 +63,8 @@ const ScrollProgressBar = () => {
             setScrollProgress(progress);
         };
 
-        // 초기 계산
         handleScrollAndResize();
 
-        // 스크롤 및 크기 조정 이벤트에 대한 리스너
         window.addEventListener("scroll", handleScrollAndResize);
         window.addEventListener("resize", handleScrollAndResize);
 
