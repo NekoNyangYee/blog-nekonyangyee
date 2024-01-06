@@ -13,6 +13,12 @@ export const StyledSelectCategoryPost = styled.div(({ theme }) => `
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
 
+    & a {
+      padding: 14px;
+      border-radius: 12px;
+      background-color: ${theme.colors.navBackground(100)};
+    }
+
     @media (max-width: 872px) {
       grid-template-columns: repeat(2, 1fr);
     }
