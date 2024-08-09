@@ -7,7 +7,7 @@ time: 22:48
 description: JavaScript의 핵심 렉시컬 스코프에 대해 설명합니다.
 ---
 
-![thumbnail](/JavaScript-Lexical-Scope/thumbnail.avif)
+![thumbnail](/JavaScript-Lexical-Scope/thumbnail.jpg)
 
 안녕하세요. NekoNyangYee입니다.
 
