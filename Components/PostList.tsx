@@ -590,6 +590,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
         { title: "Python3", keyword: "Python3" },
         { title: "NodeJS", keyword: "NodeJS" },
         { title: "기타 개발", keyword: "기타 개발" },
+        { title: "알고리즘", keyword: "알고리즘" },
         { title: "프로그래머스", keyword: "프로그래머스" },
         { title: "방문 후기 & 리뷰", keyword: "방문 후기 & 리뷰" },
         { title: "나의 일상", keyword: "나의 일상" },
@@ -739,7 +740,10 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
                                 <Link href={post.url} key={post._id}>
                                     <article key={post._id}>
                                         <div className="description-area">
-                                            <img src={post.teaser} alt={post.title} />
+                                            <img
+                                                src={post.teaser === null ? "/no-image.png" : post.teaser}
+                                                alt={post.title}
+                                            />
                                             <div className="article-info">
                                                 <p className="category-state">{post.category}</p>
                                                 <h1 className="post-main-title">{post.title}</h1>
