@@ -1,5 +1,5 @@
 ---
-teaser: /JavaScript-Lexical-Scope/thumbnail.avif
+teaser: /JavaScript-Lexical-Scope/thumbnail.jpg
 category: JavaScript
 title: JavaScript 렉시컬 스코프 알아보기
 date: 2024-08-06T00:00:00+00:00
